@@ -17,6 +17,7 @@ La aplicación cuenta con los siguientes módulos:
 5. **Comentarios de Usuarios**: Permite a los usuarios dejar comentarios sobre libros e intercambios, creando una comunidad activa.
 
 ## Instalación
-1. Clona este repositorio en tu máquina local:
-   ```bash
-   git clone https://github.com/tu_usuario/aplicacion-de-intercambio-de-libros-usados.git
+1. Instalar github desktop y Registrrarse en github
+2. Clonar el repositorio
+3. Diseñar la web
+4. Disfutar.
