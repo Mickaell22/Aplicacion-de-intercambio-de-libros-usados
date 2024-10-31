@@ -1,8 +1,20 @@
+Contactame :)
+.mickaell (Discord)
+
+
 ¿Estara jodido el proyecto?
 si.
 
 Paleta de colores
 image.png
+
+Herramientas
+https://www.w3schools.com/html/default.asp (Cualquier consulta sobre html - css -javascript)
+https://validator.w3.org/#validate_by_upload (Validar)
+https://www.youtube.com/watch?v=ELSm-G201Ls&t=612s (Video de ayuda)
+
+Tipo de maquetizafcion?
+_______________
 
 Extenciones que deben instalar (Comodidad)
 Auto close tag
