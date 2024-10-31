@@ -1,0 +1,16 @@
+¿Estara jodido el proyecto?
+si.
+
+Paleta de colores
+image.png
+
+Extenciones que deben instalar (Comodidad)
+Auto close tag
+Auto rename tag
+color highlight
+live server
+Material icon
+Prettier
+
+Parcial #1
+Por ahora solo sera diseño asi que usen la paleta de colores y maquetizafcion
