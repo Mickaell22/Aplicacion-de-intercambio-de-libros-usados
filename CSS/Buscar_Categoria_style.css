@@ -1,0 +1,87 @@
+body{
+    margin: 0;
+    font-size: 20px;
+}
+
+
+.box-titulo{
+    height: 320px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20220504/pngtree-woman-in-bookstore-looking-for-book-bookstore-person-woman-photo-image_36345226.jpg);
+    background-position: center;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.box-titulo-opaco{
+    height: 295px;
+    width: 100%;
+    background: radial-gradient(ellipse at 50% 30%, transparent 0%, rgba(0,0,0,0.5) 50%, #000 100%);
+}
+.titulo{
+    display: inline-block;
+    border-bottom: 7px solid #D98B48;
+    color: #FFFB;
+    margin: 10% 0  45px;
+    border-radius: 20px;
+    width: auto;
+    height: auto;
+    font-size: 3em;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* sombra en la parte inferior */
+    text-shadow: 0 0 5px #d94;
+}
+
+
+
+
+.Secciones{
+    box-sizing: border-box;
+
+}
+
+.Secciones ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-shadow: 0 0 5px #000A;
+  }
+  
+  .Secciones li { 
+    flex: 1;
+    text-align: center;
+  }
+  
+  .Secciones li a {
+    display: block;
+    padding: 15px;
+    background-color: #F2D7B6;
+    border: 2px solid #000;
+    color: #000;
+    text-decoration: none;
+    font-size: 1em;
+  }
+  
+  .Secciones li a:hover {
+    background-color: #532F;
+    color: #fffb;
+    border: none;
+    border-bottom: 5px solid #593325;
+    font-weight: bold;
+  }
+
+
+  .relleno{
+    box-sizing: border-box;
+    margin: auto;
+    text-align: justify;
+    padding: 10%;
+    color: #000;
+    line-height: 40px;
+    font-size: 1.5em;
+    text-shadow: 0 0 5px #f88;
+}

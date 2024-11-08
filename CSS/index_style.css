@@ -28,6 +28,7 @@ html{
     color: white;
     line-height: 40px;
     font-size: 1.5em;
+    text-shadow: 0 0 5px #f88;
 }
 .titulo{
     display: inline-block;
@@ -38,14 +39,16 @@ html{
     width: auto;
     height: auto;
     font-size: 2.5em;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* sombra en la parte inferior */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 0 5px #d94;
 }
 
 .Secciones ul {
     display: flex;         /* Para distribuir el espacio horizontalmente */
     padding: 0;
     margin: 0;
-    list-style: none;      
+    list-style: none;     
+    text-shadow: 0 0 5px #000A;
 }
 .Secciones ul li {
     flex: 1;               /* Hace que cada li ocupe el mismo espacio */
@@ -63,10 +66,11 @@ html{
 }
 
 .Secciones ul li a:hover {
-    background-color: rgba(2, 2, 255, 0);
+    background-color: #593325;
     border: 0;
     border-bottom: 5px solid #593325;
     font-weight: bold;
+    
 }
 
 .fondo{
