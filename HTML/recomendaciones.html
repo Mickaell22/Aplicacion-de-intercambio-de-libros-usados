@@ -51,7 +51,7 @@
         }
         .grid-container{
             display: grid;
-            gap: 20px;
+            /* gap: 20px; */
             grid-template-columns: repeat(6, 1fr);
             grid-template-rows: repeat(6, auto);
 
@@ -110,6 +110,11 @@
             width: 200px;
             height: 200px;
         }
+        
+        .sidebar a{
+            display: block;
+            text-decoration: none;
+        }
 
     </style>
 </head>
@@ -136,7 +141,7 @@
 
     </header>
     <main class="main">
-        <div class="aventura">
+        <div id="aventura">
             <h3>Aventura</h3>
             <div id="lib" class="img-av">
                 <img src="/Image/portadas/aventura/principito.jpg" alt="">
@@ -151,7 +156,7 @@
                 <img src="/Image/portadas/aventura/vuelta.jpg" alt="">
             </div>
         </div>
-        <div class="terror">
+        <div id="terror">
             <h3>Terror</h3>
             <div id="lib" class="img-tr">
                 <img src="/Image/portadas/terror/it-a.jpg" alt="">
@@ -166,7 +171,7 @@
                 <img src="/Image/portadas/terror/gerald.jpg" alt="">
             </div>
         </div>
-        <div class="romance">
+        <div id="romance">
             <h3>Romance</h3>
             <div id="lib" class="img">
                 <img src="" alt="">
@@ -181,7 +186,7 @@
                 <img src="" alt="">
             </div>
         </div>
-        <div class="academicos">
+        <div id="academicos">
             <h3>Academicos</h3>
             <div id="lib" class="img">
                 <img src="" alt="">
@@ -196,7 +201,7 @@
                 <img src="" alt="">
             </div>
         </div>
-        <div class="autor-ec">
+        <div id="autor-ec">
             <h3>Autores ecuatorianos</h3>
             <div id="lib"  class="img-ec">
                 <img src="" alt="">
@@ -216,8 +221,13 @@
     </main>
     <aside class="sidebar">
         <h4>Categorias</h4>
-        <p>Artes</p>
-        <p>XD</p>
+        <ul>
+            <li><a href="#aventura">Aventura</a></li>
+            <li><a href="#terror">Terror</a></li>
+            <li><a href="#romance">Romance</a></li>
+            <li><a href="#academicos">Academicos</a></li>
+            <li><a href="#autor-ec">Ecuador</a></li>
+        </ul>
     </aside>
     <section class="section">
 
