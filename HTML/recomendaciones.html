@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta>
+    <meta name="author" content="Marco Antonio Salazar Mejia" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
@@ -19,10 +19,11 @@
         .Secciones ul li a {
             display: flex;
             flex-direction: row; /*importante*/
-            flex-wrap: wrap;/*ajusta los elementos en funcion al tamaño*/
+            flex-wrap: nowrap;/*ajusta los elementos en funcion al tamaño*/
             justify-content: center; /*alineacion del contenido*/
             /* justify-content: space-between; alineacion del contenido*/
             align-items: flex-start;/*items toman el tamaño adecuado menos strech (default)*/
+
             background-color: #F2D7B6;
             border: 2px solid #000;
             padding: 15px;         /* Ajusta el padding según prefieras */
@@ -114,6 +115,13 @@
         .sidebar a{
             display: block;
             text-decoration: none;
+        }
+
+        nav{
+            display: flex;
+            overflow-x: auto; /* Habilita el desplazamiento horizontal */
+            scroll-behavior: smooth; /* Desplazamiento suave */
+            flex-wrap: nowrap;/*ajusta los elementos en funcion al tamaño*/
         }
 
     </style>
