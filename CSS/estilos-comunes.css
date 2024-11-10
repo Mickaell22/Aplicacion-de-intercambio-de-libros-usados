@@ -1,3 +1,8 @@
+/*Estilos Universales*/
+html{
+    font-size: 1em;
+}
+
 /* Pie */
 .footer-content {
     display: grid;
