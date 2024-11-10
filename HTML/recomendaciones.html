@@ -32,12 +32,15 @@
             .header{
                 grid-column: 1/7;
                 grid-row: 1/2;
-                background-color: rgb(217, 139, 72);
+                
+                /*background-color: rgb(217, 139, 72);*/
             }
             .sidebar{
                 grid-column: 1/2;
                 grid-row: 3/5;
                 /* background-color: rgb(166, 87, 41); */
+                border-radius: 8px;
+                box-shadow: 0 20px 20px rgba(0, 0, 0)
             }
             .main{
                 grid-column: 2/7;
@@ -67,7 +70,7 @@
             .header{
                 grid-column: 1/7;
                 grid-row: 1/2;
-                background-color: rgb(217, 139, 72);
+                /*background-color: rgb(217, 139, 72);*/
             }
             .sidebar{
                 grid-column: 1/7;
@@ -118,6 +121,16 @@
             text-decoration: none;
         }
 
+        .main *{
+            margin: 10px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            font-family: Times New Roman;
+            font-size: 1.3rem;
+        }
     </style>
 </head>
 <body class="grid-container">
@@ -138,7 +151,7 @@
     <header class="header">
             <div class="box_presentacion">
                <div class="box_presentacion_opaco">
-                  <h1 class="titulo">Intercambios de libros usados</h1>
+                  <h1 class="titulo">Recomendaciones de Libros</h1>
                </div>
             </div>
 
@@ -153,16 +166,16 @@
                 las narrativas de aventura despiertan el espíritu explorador con cada página.
             </p>
             <div id="lib" class="img-av">
-                <img src="/Image/portadas/aventura/principito.jpg" alt="">
-                <img src="/Image/portadas/aventura/quijotte.jpg" alt="">
-                <img src="/Image/portadas/aventura/luna.jpg" alt="">
-                <img src="/Image/portadas/aventura/moby.jpg" alt="">
-                <img src="/Image/portadas/aventura/faro.jpg" alt="">
-                <img src="/Image/portadas/aventura/leguas.jpg" alt="">
-                <img src="/Image/portadas/aventura/tesoro.jpg" alt="">
-                <img src="/Image/portadas/aventura/tom.jpg" alt="">
-                <img src="/Image/portadas/aventura/tronos.jpg" alt="">
-                <img src="/Image/portadas/aventura/vuelta.jpg" alt="">
+                <img src="/Image/portadas/aventura/principito.jpg" alt="Libro el principito">
+                <img src="/Image/portadas/aventura/quijotte.jpg" alt="Libro Don Quijote">
+                <img src="/Image/portadas/aventura/luna.jpg" alt="Libro De la Tierra a la Luna">
+                <img src="/Image/portadas/aventura/moby.jpg" alt="Libro Moby Dick">
+                <img src="/Image/portadas/aventura/faro.jpg" alt="Libro El faro de el fin del mundo">
+                <img src="/Image/portadas/aventura/leguas.jpg" alt="Libro Veinte mil leguas">
+                <img src="/Image/portadas/aventura/tesoro.jpg" alt="Libro La isla del tesoro">
+                <img src="/Image/portadas/aventura/tom.jpg" alt="Libro Tom Sawyer">
+                <img src="/Image/portadas/aventura/tronos.jpg" alt="Libro Juego de tronos">
+                <img src="/Image/portadas/aventura/vuelta.jpg" alt="Libro La vuelta al mundo en 80 dias">
             </div>
         </div>
         <div id="terror">
@@ -174,16 +187,16 @@
                  ambientes inquietantes que te mantendrán en vilo hasta el final.
             </p>
             <div id="lib" class="img-tr">
-                <img src="/Image/portadas/terror/it-a.jpg" alt="">
-                <img src="/Image/portadas/terror/coraline.jpg" alt="">
-                <img src="/Image/portadas/terror/elcuervo.jpeg" alt="">
-                <img src="/Image/portadas/terror/carrrie.jpg" alt="">
-                <img src="/Image/portadas/terror/locura2.jpg" alt="">
-                <img src="/Image/portadas/terror/sleepy.jpg" alt="">
-                <img src="/Image/portadas/terror/usher.jpg" alt="">
-                <img src="/Image/portadas/terror/misery.jpg" alt="">
-                <img src="/Image/portadas/terror/dunwich.jpg" alt="">
-                <img src="/Image/portadas/terror/gerald.jpg" alt="">
+                <img src="/Image/portadas/terror/it-a.jpg" alt="Libro Eso">
+                <img src="/Image/portadas/terror/coraline.jpg" alt="Libro Coraline">
+                <img src="/Image/portadas/terror/elcuervo.jpeg" alt="Libro El cuervo">
+                <img src="/Image/portadas/terror/carrrie.jpg" alt="Libro Carrie">
+                <img src="/Image/portadas/terror/locura2.jpg" alt="Libro Las montañas de la locura 2">
+                <img src="/Image/portadas/terror/sleepy.jpg" alt="Libro La leyenda de Sleepy Hollow">
+                <img src="/Image/portadas/terror/usher.jpg" alt="Libro La caida de la casa Usher">
+                <img src="/Image/portadas/terror/misery.jpg" alt="Libro Misery">
+                <img src="/Image/portadas/terror/dunwich.jpg" alt="Libro El horror de Dunwich">
+                <img src="/Image/portadas/terror/gerald.jpg" alt="Libro El juego de Gerald">
             </div>
         </div>
         <div id="romance">
@@ -195,11 +208,11 @@
                 la complejidad de las relaciones humanas.
             </p>
             <div id="lib" class="img">
-                <img src="/Image/portadas/Amor/Como_Si_Fuera_Ayer.png" alt="">
-                <img src="/Image/portadas/Amor/Cuando_Te_Conoci.png" alt="">
-                <img src="/Image/portadas/Amor/EL_Beso_q_No_TeDi.png" alt="">
-                <img src="/Image/portadas/Amor/El_Mejor_Dia_De_Mi_Vida.png" alt="">
-                <img src="/Image/portadas/Amor/Punales_Al_Corazon.png" alt="">
+                <img src="/Image/portadas/Amor/Como_Si_Fuera_Ayer.png" alt="Libro Como si fuera ayer">
+                <img src="/Image/portadas/Amor/Cuando_Te_Conoci.png" alt="Libro Cuando te conoci">
+                <img src="/Image/portadas/Amor/EL_Beso_q_No_TeDi.png" alt="Libro El beso que no te di">
+                <img src="/Image/portadas/Amor/El_Mejor_Dia_De_Mi_Vida.png" alt="Libro El mejor dia de mi vida">
+                <img src="/Image/portadas/Amor/Punales_Al_Corazon.png" alt="Libro Puñales al corazon">
             </div>
         </div>
         <div id="fantasia">
@@ -210,9 +223,9 @@
                 y cada página te lleva a un universo lleno de maravillas y aventuras irreales.
             </p>
             <div id="lib" class="img">
-                <img src="/Image/portadas/Fantasia/Asutons_De_Honor.png" alt="">
-                <img src="/Image/portadas/Fantasia/El_Bosque_DeLas_7_Lunas.png" alt="">
-                <img src="/Image/portadas/Fantasia/Narnia.png" alt="">
+                <img src="/Image/portadas/Fantasia/Asutons_De_Honor.png" alt="Libro Asuntos de honor">
+                <img src="/Image/portadas/Fantasia/El_Bosque_DeLas_7_Lunas.png" alt="Libro El bosque de las 7 lunas">
+                <img src="/Image/portadas/Fantasia/Narnia.png" alt="Libro Narnia">
             </div>
         </div>
         <div id="comedia">
@@ -224,29 +237,29 @@
                 despierta sonrisas en cada momento.
             </p>
             <div id="lib" class="img">
-                <img src="/Image/portadas/Comedia/Amor_A_Primera_Vista.png" alt="">
-                <img src="/Image/portadas/Comedia/Capitan_Calzoncillos.png" alt="">
-                <img src="/Image/portadas/Comedia/Hazlo_Con_Humor.png" alt="">
-                <img src="/Image/portadas/Comedia/Super_Patata.png" alt="">
-                <img src="/Image/portadas/Comedia/There_Are_Moms.png" alt="">
-                <img src="/Image/portadas/Comedia/Un_Detectiva_Suelto_EnEl_Colegio.png" alt="">
+                <img src="/Image/portadas/Comedia/Amor_A_Primera_Vista.png" alt="Libro Amor a primera vista">
+                <img src="/Image/portadas/Comedia/Capitan_Calzoncillos.png" alt="Libro Capitan Calzoncillos">
+                <img src="/Image/portadas/Comedia/Hazlo_Con_Humor.png" alt="Libro Hazlo Con Humor">
+                <img src="/Image/portadas/Comedia/Super_Patata.png" alt="Libro Super Patata">
+                <img src="/Image/portadas/Comedia/There_Are_Moms.png" alt="Libro There are moms way worse than you ">
+                <img src="/Image/portadas/Comedia/Un_Detectiva_Suelto_EnEl_Colegio.png" alt="Libro Un detective anda suelto en el colegio">
             </div>
         </div>
         <div id="academicos">
-            <h3>Academicos</h3>
+            <h3>Académicos</h3>
             <p>
                 Para los amantes del conocimiento y el aprendizaje, esta categoría reúne obras 
                 que abarcan temas de ciencias, historia, filosofía, y mucho más. 
                 Una colección de lecturas que despiertan la curiosidad intelectual y enriquecen el saber.
             </p>
             <div id="lib" class="img">
-                <img src="/Image/portadas/academicos/alg.jpg" alt="">
-                <img src="/Image/portadas/academicos/arq.jpg" alt="">
-                <img src="/Image/portadas/academicos/c.jpg" alt="">
-                <img src="/Image/portadas/academicos/cabeza.jpg" alt="">
-                <img src="/Image/portadas/academicos/dibujo.jpg" alt="">
-                <img src="/Image/portadas/academicos/historia.jpg" alt="">
-                <img src="/Image/portadas/academicos/prog.jpg" alt="">
+                <img src="/Image/portadas/academicos/alg.jpg" alt="Libro Algoritmos">
+                <img src="/Image/portadas/academicos/arq.jpg" alt="Libro Arquitectura moderna">
+                <img src="/Image/portadas/academicos/c.jpg" alt="Libro El lenguaje de programacion C">
+                <img src="/Image/portadas/academicos/cabeza.jpg" alt="Libro Las vidas dentro de tu cabeza">
+                <img src="/Image/portadas/academicos/dibujo.jpg" alt="Libro Apuntes de dibujo tecnico">
+                <img src="/Image/portadas/academicos/historia.jpg" alt="Libro de historia">
+                <img src="/Image/portadas/academicos/prog.jpg" alt="Libro Fundamentos de programacion">
             </div>
         </div>
         <div id="autor-ec">
@@ -258,16 +271,14 @@
                 esta categoría destaca el talento literario ecuatoriano en toda su diversidad.
             </p>
             <div id="lib"  class="img-ec">
-                <img src="/Image/portadas/ec/cruces.jpg" alt="">
-                <img src="/Image/portadas/ec/crimenes.jpg" alt="">
-                <img src="/Image/portadas/ec/peste.jpg" alt="">
-                <img src="/Image/portadas/ec/sombras.jpg" alt="">
-                <img src="/Image/portadas/ec/tren.jpg" alt="">
-                <img src="/Image/portadas/ec/tu_vida.jpg" alt="">
+                <img src="/Image/portadas/ec/cruces.jpg" alt="Libro las cruces sobre el agua">
+                <img src="/Image/portadas/ec/crimenes.jpg" alt="Libro Los crimenes de Bartow">
+                <img src="/Image/portadas/ec/peste.jpg" alt="Libro El angel de la peste">
+                <img src="/Image/portadas/ec/sombras.jpg" alt="Libro El coleccionista de sombras">
+                <img src="/Image/portadas/ec/tren.jpg" alt="Libro El bicho que se bajo del tren">
+                <img src="/Image/portadas/ec/tu_vida.jpg" alt="Libro Necesito saber hoy de tu vida">
             </div>
         </div>
-
-
     </main>
     <aside class="sidebar">
         <h4>Categorias</h4>
@@ -281,13 +292,6 @@
             <li><a href="#autor-ec">Ecuador</a></li>
         </ul>
     </aside>
-    <footer class="pie">
-        <h5 class="h5-pie">Grupo 5</h5>
-        <ul class="ul-pie">
-
-        </ul>
-    </footer>
-
     <footer class="pie">
         <div class="footer-content">
             <!-- Sección de Contacto -->
