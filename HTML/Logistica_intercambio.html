@@ -1,15 +1,242 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Troya Garzon Geancarlos" />
+    <meta name="description" content="Este es un proyecto de diseño de aplicaciones web diseñado por el grupo # 5">
+    <meta name="keywords" content="Libro, intercambio, busqueda, filtrado, foro">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/estilos-comunes.css">
     <title>Document</title>
-</head>
-<body>
-    <div>
+    <style>
+        .Secciones ul {
+            display: flex;         /* Para distribuir el espacio horizontalmente */
+            padding: 0;
+            margin: 0;
+            list-style: none;      
+        }
+        .Secciones ul li {
+            flex: 1;               /* Hace que cada li ocupe el mismo espacio */
+            text-align: center;    /* Centra el texto dentro de cada li */
+        }
+        .Secciones ul li a {
+            display: flex;
+            flex-direction: row; /*importante*/
+            flex-wrap: nowrap;/*ajusta los elementos en funcion al tamaño*/
+            justify-content: center; /*alineacion del contenido*/
+            /* justify-content: space-between; alineacion del contenido*/
+            align-items: flex-start;/*items toman el tamaño adecuado menos strech (default)*/
 
-        Hola Mickaell
-    </div>
+            background-color: #F2D7B6;
+            border: 2px solid #000;
+            padding: 15px;         /* Ajusta el padding según prefieras */
+            text-decoration: none; /* Elimina el subrayado de los enlaces */
+            color: #000;
+            font-size: 1em;
+        }
+
+        .Secciones ul li a:hover {
+            background-color: rgba(2, 2, 255, 0);
+            border: 0;
+            border-bottom: 5px solid #593325;
+            font-weight: bold;
+        }
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .grid-container > *{
+            /* box-shadow: 10px 5px 37px -13px rgb(51, 51, 51, 0.74); */
+            /* border-radius: 10px; */
+            padding: 10px;
+            text-align: center;
+            font-weight: 500;
+        }
+        .grid-container{
+            display: grid;
+            /* gap: 20px; */
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(6, auto);
+
+            .navbar{
+                grid-column: 1/7;
+                grid-row: 2/3;
+            }
+            .header{
+                grid-column: 1/7;
+                grid-row: 1/2;
+                background-color: rgb(217, 139, 72);
+            }
+            .sidebar{
+                grid-column: 1/2;
+                grid-row: 3/5;
+                /* background-color: rgb(166, 87, 41); */
+            }
+            .main{
+                grid-column: 2/7;
+                grid-row: 3/5;
+            }
+            .pie{
+                grid-column: 1/7;
+                grid-row: 6/7;
+                background-color: rgb(217, 139, 72);
+            }
+            .section{
+                grid-column: 1/7;
+                grid-row: 5/6;
+            }
+        }
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 1.2rem;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+
+        .main div[id="lib"] {
+    display: flex;
+    gap: 10px; /* Reduce el espacio entre elementos */
+    padding: 10px; /* Reduce el espacio interior */
+    margin: 10px auto; /* Centra el contenedor en la página */
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    border: 1px solid black; 
+    background-color: rgb(217, 139, 72);
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: center;
+    max-width: 750px; /* Limita el ancho máximo del contenedor */
+}
+
+
+    img{
+            width: 200px;
+            height: 200px;
+        }
+        
+        .sidebar a{
+            display: block;
+            text-decoration: none;
+        }
+
+        nav{
+            display: flex;
+            overflow-x: auto; /* Habilita el desplazamiento horizontal */
+            scroll-behavior: smooth; /* Desplazamiento suave */
+            flex-wrap: nowrap;/*ajusta los elementos en funcion al tamaño*/
+        }
+
+    </style>
+</head>
+<body class="grid-container">
     
+    <nav class="navbar">
+        <div class="Secciones">
+            <ul>
+               <li><a href="index.html">Inicio</a></li>
+               <li><a href="Buscar_Categoria.html">Búsqueda</a></li>
+               <li><a href="Contacto_Directo.html">Contacto Directo</a></li>
+               <li><a href="Logistica_intercambio.html">Logística de Intercambio</a></li>
+               <li><a href="recomendaciones.html">Recomendaciones de Libros</a></li>
+               <li><a href="">Comentarios de Usuarios</a></li>
+               <li style="float:right"><a class="active" href="#about">Creditos</a></li>
+            </ul>
+         </div>
+    </nav>
+    <header class="header">
+            <div class="box_presentacion">
+               <div class="box_presentacion_opaco">
+                  <h1 class="titulo">Intercambios de libros usados</h1>
+               </div>
+            </div>
+
+    </header>
+    <main class="main">
+        <div id="aventura">
+            <h3>Datos Personales</h3>
+            <div id="lib" class="img-av">
+                <img src="/Image/GTROYA-PERFIL.jpg" alt="">
+                
+            </div>
+        </div>
+        
+        </div>
+        <div id="romance">
+            <h3>Ubicación</h3>
+            <div id="lib" class="img">
+                <img src="" alt="">
+                
+            </div>
+        </div>
+        <div id="academicos">
+            <h3>Método de Pago</h3>
+            <div id="lib" class="img">
+                <img src="" alt="">
+                
+            </div>
+        </div>
+        <div id="autor-ec">
+            <h3>Calificación</h3>
+            <div id="lib"  class="img-ec">
+                <img src="" alt="">
+                
+            </div>
+        </div>
+
+
+    </main>
+    <aside class="sidebar">
+        <h4>Elija una Opción</h4>
+        <ul>
+            <li><a href="#aventura">Datos Personales</a></li>
+            <li><a href="#terror">Ubicación</a></li>
+            <li><a href="#romance">Método de Pago</a></li>
+            <li><a href="#academicos">Calificación</a></li>
+            
+        </ul>
+    </aside>
+    <section class="section">
+
+    </section>
+    <footer class="pie">
+        <div class="footer-content">
+            <!-- Sección de Contacto -->
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <ul class="contact-info">
+                    <p>+593 0989334505</p>
+                    <p>gean.troyagar@.@ug.edu.ec</p>
+                </ul>
+            </div>
+
+            <!-- Sección de Redes Sociales -->
+            <div class="footer-section">
+                <h4>Redes Sociales</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/geancarlos.troyagarzon" target="_blank">Facebook</a>
+                    <a href="https://www.youtube.com/@GeancarlosTroyaGarzon" target="_blank">YouTube</a>
+                    <a href="https://github.com/geancarlos10" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/gtroyag/" target="_blank">LinkedIn</a>
+
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Participantes</h4>
+                <div class="participantes">
+                    <p>Moran Vera Mickael Adrian</p>
+                    <p>Aguilar Quinto Alejandro Alberto</p>
+                    <p>Fernandez Nanande Jahir Bismark</p>
+                    <p>Troya Garzon Geancarlos</p>
+                    <p>Salazar Mejia Marco Antonio</p>
+                </div>
+            </div>
+    </footer>
+    
+
 </body>
 </html>
