@@ -12,7 +12,7 @@ Este proyecto es una aplicación web diseñada para facilitar el intercambio de 
 La aplicación cuenta con los siguientes módulos:
 1. **Búsqueda por Área y Categoría**: MORAN VERA MICKAELL ADRIAN
 2. **Contacto Directo**: FERNANDEZ NANANDE JAHIR BISMARK
-3. **Logística de Intercambio**: 
+3. **Logística de Intercambio**: TROYA GARZON GEANCARLOS
 4. **Recomendaciones de Libros**: 
 5. **Comentarios de Usuarios**: 
 
