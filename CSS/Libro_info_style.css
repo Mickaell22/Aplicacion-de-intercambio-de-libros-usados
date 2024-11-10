@@ -223,14 +223,17 @@ body{
     grid-column: 2/-1;
     grid-row: 3/4;
     padding: 10px;
-    border-top: 1px solid #eee;
-    border: 7px solid red;
+    border-top: 2px solid #D98b48;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom: 6px solid #D98b48;
     margin-right: 20px;
     
 }
 
 .info h2 {
     margin: 0;
+    margin-left: 20px;
     font-size: 1.2em;
     color: #333;
 }
