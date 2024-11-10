@@ -130,7 +130,7 @@ body{
         background-color: rgb(217, 139, 72);
     }
     .section{
-        grid-column: 1/7;
+        grid-column: 2/6;
         grid-row: 5/6;
     }
   
@@ -206,13 +206,12 @@ body{
     border: 2px solid #000;
     border-radius: 25px;
     padding: 15px;
-    background-color: #fff; /* Opcional: añade un fondo */
-    transition: transform 0.2s; /* Opcional: para efecto hover */
+    background-color: #fff;
     cursor: pointer;
   }
   
   .chat:hover {
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
   }
   
   /* Para el contenido del chat */
@@ -237,3 +236,107 @@ body{
     color: #666;
     font-size: 0.9em;
   }
+
+  /* Estilos para el chat-libro */
+.chat-libro {
+  padding: 10px 15px;
+}
+
+.chat-libro h3 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.chat-libro p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.9em;
+  text-align: justify;
+}
+
+/* Chat */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 400px; /* O el alto que prefieras */
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 20px 5px rgba(0,0,0,0.5);
+  border: 2px solid #fffa;
+  margin-bottom: 20px;
+}
+
+/* Cabecera del chat */
+.chat-header {
+  padding: 15px;
+  background-color: #D98B48;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Área de mensajes */
+.chat-messages {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Estilos para los mensajes */
+.message {
+  max-width: 70%;
+  padding: 10px 15px;
+  border-radius: 15px;
+  margin: 5px 0;
+}
+
+.message.sent {
+  background-color: #D98B48;
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 5px;
+}
+
+.message.received {
+  background-color: #e9ecef;
+  color: black;
+  align-self: flex-start;
+  border-bottom-left-radius: 5px;
+}
+
+/* Área de entrada de mensaje */
+.chat-input {
+  display: flex;
+  padding: 15px;
+  gap: 10px;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
+
+.chat-input input {
+  flex-grow: 1;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+}
+
+.chat-input button {
+  padding: 10px 20px;
+  background-color: #D98B48;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.chat-input button:hover {
+  background-color: #c17a37;
+}
