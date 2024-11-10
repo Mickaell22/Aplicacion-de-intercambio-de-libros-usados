@@ -156,7 +156,7 @@ body{
       grid-column: 1/7;
       grid-row: 5/6;
   }
-}
+
 
 .main div[id ="lib"]{
   display: flex;
