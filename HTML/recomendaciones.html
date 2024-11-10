@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="Marco Antonio Salazar Mejia" />
+    <meta name="author" content="Marco Antonio Salazar Mejia">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/estilos-comunes.css">
     <title>Document</title>
@@ -18,83 +18,81 @@
             text-align: center;
 
         }
-        .grid-container{
+        .grid-container {
             display: grid;
-            /* gap: 20px; */
-
             grid-template-columns: repeat(6, 1fr);
             grid-template-rows: repeat(6, auto);
-
-            .navbar{
-                grid-column: 1/7;
-                grid-row: 2/3;
-            }
-            .header{
-                grid-column: 1/7;
-                grid-row: 1/2;
-                
-                /*background-color: rgb(217, 139, 72);*/
-            }
-            .sidebar{
-                grid-column: 1/2;
-                grid-row: 3/5;
-                /* background-color: rgb(166, 87, 41); */
-                border-radius: 8px;
-                box-shadow: 0 20px 20px rgba(0, 0, 0)
-            }
-            .main{
-                grid-column: 2/7;
-                grid-row: 3/5;
-            }
-            .pie{
-                grid-column: 1/7;
-                grid-row: 6/7;
-            }
-            .section{
-                grid-column: 1/7;
-                grid-row: 5/6;
-            }
+            /* Otras propiedades de grid-container */
         }
 
-        @media (max-width:500px) {
-            .grid-container{
-            display: grid;
-            /* gap: 20px; */
-            grid-template-columns: repeat(6, 1fr);
-            grid-template-rows: repeat(6, auto);
+        .navbar {
+            grid-column: 1/7;
+            grid-row: 2/3;
+        }
 
-            .navbar{
-                grid-column: 1/7;
-                grid-row: 2/3;
-            }
-            .header{
-                grid-column: 1/7;
-                grid-row: 1/2;
-                /*background-color: rgb(217, 139, 72);*/
-            }
-            .sidebar{
-                grid-column: 1/7;
-                grid-row: 3/4;
-                align-content: center; /*centra contenido*/
-                justify-content: space-between; /*alineacion del contenido*/
-                align-items: flex-start;/*items toman el tamaño adecuado menos strech (default)*/
-            }
-            .main{
-                grid-column: 1/7;
-                grid-row: 4/5;
-            }
-            .pie{
-                grid-column: 1/7;
-                grid-row: 6/7;
-            }
-            .section{
-                grid-column: 1/7;
-                grid-row: 5/6;
-            }
+        .header {
+            grid-column: 1/7;
+            grid-row: 1/2;
         }
+
+        .sidebar {
+            grid-column: 1/2;
+            grid-row: 3/5;
+            border-radius: 8px;
+            box-shadow: 0 20px 20px rgba(0, 0, 0);
         }
+
+        .main {
+            grid-column: 2/7;
+            grid-row: 3/5;
+        }
+
+        .pie {
+            grid-column: 1/7;
+            grid-row: 6/7;
+        }
+
+        .section {
+            grid-column: 1/7;
+            grid-row: 5/6;
+        }
+
+        @media (max-width: 500px) {
+        .navbar {
+            grid-column: 1/7;
+            grid-row: 2/3;
+        }
+
+        .header {
+            grid-column: 1/7;
+            grid-row: 1/2;
+        }
+
+        .sidebar {
+            grid-column: 1/7;
+            grid-row: 3/4;
+            align-content: center;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .main {
+            grid-column: 1/7;
+            grid-row: 4/5;
+        }
+
+        .pie {
+            grid-column: 1/7;
+            grid-row: 6/7;
+        }
+
+        .section {
+            grid-column: 1/7;
+            grid-row: 5/6;
+        }
+    }
         
-        .main div[id ="lib"]{
+        .main div[class ="lib"]{
             display: flex;
             gap: 20px; /*separador de elementos*/
             margin: 5px;
@@ -165,7 +163,7 @@
                 Desde selvas misteriosas hasta océanos profundos, 
                 las narrativas de aventura despiertan el espíritu explorador con cada página.
             </p>
-            <div id="lib" class="img-av">
+            <div class="lib">
                 <img src="/Image/portadas/aventura/principito.jpg" alt="Libro el principito">
                 <img src="/Image/portadas/aventura/quijotte.jpg" alt="Libro Don Quijote">
                 <img src="/Image/portadas/aventura/luna.jpg" alt="Libro De la Tierra a la Luna">
@@ -186,7 +184,7 @@
                  Historias de fantasmas, seres de pesadilla y 
                  ambientes inquietantes que te mantendrán en vilo hasta el final.
             </p>
-            <div id="lib" class="img-tr">
+            <div class="lib">
                 <img src="/Image/portadas/terror/it-a.jpg" alt="Libro Eso">
                 <img src="/Image/portadas/terror/coraline.jpg" alt="Libro Coraline">
                 <img src="/Image/portadas/terror/elcuervo.jpeg" alt="Libro El cuervo">
@@ -207,7 +205,7 @@
                 los relatos de romance nos muestran los altibajos del amor y 
                 la complejidad de las relaciones humanas.
             </p>
-            <div id="lib" class="img">
+            <div class="lib">
                 <img src="/Image/portadas/Amor/Como_Si_Fuera_Ayer.png" alt="Libro Como si fuera ayer">
                 <img src="/Image/portadas/Amor/Cuando_Te_Conoci.png" alt="Libro Cuando te conoci">
                 <img src="/Image/portadas/Amor/EL_Beso_q_No_TeDi.png" alt="Libro El beso que no te di">
@@ -222,7 +220,7 @@
                 En las historias de fantasía, la imaginación no tiene límites, 
                 y cada página te lleva a un universo lleno de maravillas y aventuras irreales.
             </p>
-            <div id="lib" class="img">
+            <div class="lib">
                 <img src="/Image/portadas/Fantasia/Asutons_De_Honor.png" alt="Libro Asuntos de honor">
                 <img src="/Image/portadas/Fantasia/El_Bosque_DeLas_7_Lunas.png" alt="Libro El bosque de las 7 lunas">
                 <img src="/Image/portadas/Fantasia/Narnia.png" alt="Libro Narnia">
@@ -236,7 +234,7 @@
                 la comedia ofrece entretenimiento que aligera el espíritu y 
                 despierta sonrisas en cada momento.
             </p>
-            <div id="lib" class="img">
+            <div class="lib">
                 <img src="/Image/portadas/Comedia/Amor_A_Primera_Vista.png" alt="Libro Amor a primera vista">
                 <img src="/Image/portadas/Comedia/Capitan_Calzoncillos.png" alt="Libro Capitan Calzoncillos">
                 <img src="/Image/portadas/Comedia/Hazlo_Con_Humor.png" alt="Libro Hazlo Con Humor">
@@ -252,7 +250,7 @@
                 que abarcan temas de ciencias, historia, filosofía, y mucho más. 
                 Una colección de lecturas que despiertan la curiosidad intelectual y enriquecen el saber.
             </p>
-            <div id="lib" class="img">
+            <div class="lib">
                 <img src="/Image/portadas/academicos/alg.jpg" alt="Libro Algoritmos">
                 <img src="/Image/portadas/academicos/arq.jpg" alt="Libro Arquitectura moderna">
                 <img src="/Image/portadas/academicos/c.jpg" alt="Libro El lenguaje de programacion C">
@@ -270,7 +268,7 @@
                 Desde relatos de la vida cotidiana hasta descripciones de paisajes únicos,
                 esta categoría destaca el talento literario ecuatoriano en toda su diversidad.
             </p>
-            <div id="lib"  class="img-ec">
+            <div class="lib">
                 <img src="/Image/portadas/ec/cruces.jpg" alt="Libro las cruces sobre el agua">
                 <img src="/Image/portadas/ec/crimenes.jpg" alt="Libro Los crimenes de Bartow">
                 <img src="/Image/portadas/ec/peste.jpg" alt="Libro El angel de la peste">
