@@ -1,0 +1,64 @@
+/*Estilos Universales*/
+html{
+    font-size: 1em;
+}
+
+/* Pie */
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 40px 20px;
+    color: #fff;
+    background: url(https://www.comunidadbaratz.com/wp-content/uploads/El-personal-de-biblioteca-es-pieza-clave-para-acercar-la-cultura-la-educacion-y-la-informacion.jpg);
+      background-position: bottom;
+      box-sizing: border-box;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+  }
+  
+  .footer-section {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    background: linear-gradient(#e59650, #d98b48);
+    padding: 25px;
+    box-shadow: 
+      0 8px 16px rgba(0, 0, 0, 0.1),
+      inset 0 -2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .footer-section h4 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    color: #dddd;
+    border-bottom: 2px solid #fffa;
+    text-shadow: 7px 7px 10px #000000;
+    font-weight: bold;
+  }
+  
+  .footer-section p{
+    color: #000000;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #fffa;
+    color: #fffa;
+  }
+  
+  .footer-section a:hover {
+    color: #caa679;
+    padding-left: 5px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+    color: #fff7;
+  }
