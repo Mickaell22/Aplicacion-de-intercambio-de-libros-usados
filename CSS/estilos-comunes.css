@@ -1,6 +1,32 @@
 /*Estilos Universales*/
-html{
-    font-size: 1em;
+p{
+    font-family: Times New Roman;
+    font-size: 1.2rem;
+}
+
+h1{
+    font-family: Cambria;
+    font-size: 2rem;
+}
+
+h2{
+    font-family: Cambria;
+    font-size: 1.8rem;
+}
+
+h3{
+    font-family: Cambria;
+    font-size: 1.7rem;
+}
+
+h4{
+    font-family: Cambria;
+    font-size: 1.6rem;
+}
+
+h5{
+    font-family: Cambria;
+    font-size: 1.5rem;
 }
 
 /* Pie */
