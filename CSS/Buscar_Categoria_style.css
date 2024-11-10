@@ -339,6 +339,11 @@ h3{
   color: #dddd;
   border-bottom: 2px solid #fffa;
   text-shadow: 7px 7px 10px #000000;
+  font-weight: bold;
+}
+
+.footer-section p{
+  color: #fffa;
 }
 
 .footer-section ul {
@@ -350,11 +355,12 @@ h3{
   color: #fff;
   text-decoration: none;
   border-bottom: 1px solid #fffa;
+  color: #fffa;
 }
 
 .footer-section a:hover {
   color: #caa679;
   padding-left: 5px;
   box-shadow: 0 10px 15px rgba(0,0,0,0.3);
-  color: #fffa;
+  color: #fff7;
 }
