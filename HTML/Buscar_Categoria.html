@@ -24,8 +24,8 @@
     <title>Intercambios de libros usados</title>
 </head>
 
-<body>
-    <header>
+<body class="grid-container">
+    <header class="navbar">
         <div class="box-titulo">
             <div class="box-titulo-opaco">
                 <h1 class="titulo">Búsqueda</h1>
@@ -43,24 +43,197 @@
             </div>
         </div>
     </header>
-    <main>
-        <aside>
-            <div class="filtros-busqueda">
-                <header>
-                    
-                </header>
-            </div>
-        </aside>
+    <aside class="sidebar">
+        <h2>Fitros de busqueda</h2>
+        <!-- Filytos -->
+        <!-- #1 -->
+        <h3>Area</h3>
+        <label for="ciencia" class="opcion">
+            <input type="checkbox" name="area" id="ciencia" value="ciencias">
+            Ciencias
+        </label>
+        <label for="Tecnologia" class="opcion">
+            <input type="checkbox" name="area" id="Tecnologia" value="Tecnologia">
+            Tecnologia
+        </label>
+        <label for="Biologia" class="opcion">
+            <input type="checkbox" name="area" id="Biologia" value="Biologia">
+            Biologia
+        </label>
+        <label for="Matematicas" class="opcion">
+            <input type="checkbox" name="area" id="Matematicas" value="Matematicas">
+            Matematicas
+        </label>
 
-        <div class="relleno">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, adipisci vero aliquam error corrupti sunt quasi illum fugiat possimus doloribus, voluptas nobis? Quaerat error facilis id minima officia modi nobis!</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, adipisci vero aliquam error corrupti sunt quasi illum fugiat possimus doloribus, voluptas nobis? Quaerat error facilis id minima officia modi nobis!</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, adipisci vero aliquam error corrupti sunt quasi illum fugiat possimus doloribus, voluptas nobis? Quaerat error facilis id minima officia modi nobis!</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, adipisci vero aliquam error corrupti sunt quasi illum fugiat possimus doloribus, voluptas nobis? Quaerat error facilis id minima officia modi nobis!</p>
+
+        <!-- #2 -->
+        <h3>Categoria</h3>
+        <label for="Novelas" class="opcion">
+            <input type="checkbox" name="area" id="Novelas" value="Novelas">
+            Novelas
+        </label>
+        <label for="Historia" class="opcion">
+            <input type="checkbox" name="area" id="Historia" value="Historia">
+            Historia
+        </label>
+        <label for="Biografia" class="opcion">
+            <input type="checkbox" name="area" id="Biografia" value="Biografia">
+            Biografia
+        </label>
+        <label for="Matematicas" class="opcion">
+            <input type="checkbox" name="area" id="Matematicas" value="Matematicas">
+            Matematicas
+        </label>
+
+        <!-- #3 -->
+        <h3>Condicion del libro</h3>
+        <label for="Nuevo" class="opcion">
+            <input type="checkbox" name="area" id="Nuevo" value="Nuevo">
+            Nuevo
+        </label>
+        <label for="Usado" class="opcion">
+            <input type="checkbox" name="area" id="Usado" value="Usado">
+            Usado
+        </label>
+        <label for="Muy_usado" class="opcion">
+            <input type="checkbox" name="area" id="Muy_usado" value="Muy_usado">
+            Muy usado
+        </label>
+
+        <!-- #4 -->
+        <h3>Idioma</h3>
+        <label for="Español" class="opcion">
+            <input type="checkbox" name="area" id="Español" value="Español">
+            Español
+        </label>
+        <label for="Ingles" class="opcion">
+            <input type="checkbox" name="area" id="Ingles" value="Ingles">
+            Ingles
+        </label>
+        <label for="Frances" class="opcion">
+            <input type="checkbox" name="area" id="Frances" value="Frances">
+            Frances
+        </label>
+        <label for="Otro" class="opcion">
+            <input type="checkbox" name="area" id="Otro" value="Otro">
+            Otro
+        </label>
+        <!-- #5 -->
+    </aside>
+    <main class="main">
+        <div class="search">
+            <input type="text" class="search-input" placeholder="Buscar tu libros...">
+            <button class="search-button">Buscar</button>
         </div>
 
+        <!-- Elemento 1 -->
+        <div class="elemento">
+            <img src="../Image/Comedia/Hazlo_Con_Humor.png" alt="Libro 1">
+            <h3>#1</h3>
+            <input type="button" class="Info button" value="Información">
+            <input type="button" class="Comprar button" value="Pedir">
+        </div>
+
+        <!-- Elemento 2 -->
+        <div class="elemento">
+            <img src="../Image/Comedia/Hazlo_Con_Humor.png" alt="Libro 2">
+            <h3>#2</h3>
+            <input type="button" class="Info button" value="Información">
+            <input type="button" class="Comprar button" value="Pedir">
+        </div>
+
+        <!-- Elemento 3 -->
+        <div class="elemento">
+            <img src="../Image/Comedia/Hazlo_Con_Humor.png" alt="Libro 3">
+            <h3>#3</h3>
+            <input type="button" class="Info button" value="Información">
+            <input type="button" class="Comprar button" value="Pedir">
+        </div>
+
+        <!-- Elemento 4 -->
+        <div class="elemento">
+            <img src="../Image/Comedia/Hazlo_Con_Humor.png" alt="Libro 4">
+            <h3>#4</h3>
+            <input type="button" class="Info button" value="Información">
+            <input type="button" class="Comprar button" value="Pedir">
+        </div>
+
+        <!-- Elemento 5 -->
+        <div class="elemento">
+            <img src="../Image/Comedia/Hazlo_Con_Humor.png" alt="Libro 1">
+            <h3>#5</h3>
+            <input type="button" class="Info button" value="Información">
+            <input type="button" class="Comprar button" value="Pedir">
+        </div>
+
+        <!-- Elemento 6 -->
+        <div class="elemento">
+            <img src="../Image/Comedia/Hazlo_Con_Humor.png" alt="Libro 2">
+            <h3>#6</h3>
+            <input type="button" class="Info button" value="Información">
+            <input type="button" class="Comprar button" value="Pedir">
+        </div>
+
+        <!-- Elemento 7 -->
+        <div class="elemento">
+            <img src="../Image/Comedia/Hazlo_Con_Humor.png" alt="Libro 3">
+            <h3>#7</h3>
+            <input type="button" class="Info button" value="Información">
+            <input type="button" class="Comprar button" value="Pedir">
+        </div>
+
+        <!-- Elemento 8 -->
+        <div class="elemento">
+            <img src="../Image/Comedia/Hazlo_Con_Humor.png" alt="Libro 4">
+            <h3>#8</h3>
+            <input type="button" class="Info button" value="Información">
+            <input type="button" class="Comprar button" value="Pedir">
+        </div>
+
+
     </main>
-    <footer></footer>
+
+
+    <footer class="pie">
+        <div class="footer-content">
+            <!-- Sección de Contacto -->
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+365 0999999999</span>
+                    </li>
+                    <li>
+                        <span>mickaelmoranver.@ug.edu.ec</span>
+                    </li>
+
+                </ul>
+            </div>
+
+            <!-- Sección de Redes Sociales -->
+            <div class="footer-section">
+                <h4>Redes Sociales</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/mickael.moranvera" target="_blank">Facebook</a>
+                    <a href="https://www.youtube.com/channel/UCk1Fy0DXDryNcILKx5irmXQ" target="_blank">YouTube</a>
+                    <a href="https://github.com/Mickaell22" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/mickaell-moran-vera-ba421a2a3/" target="_blank">LinkedIn</a>
+
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Participantes</h4>
+                <div class="participantes">
+                    <p>Moran Vera Mickael Adrian</p>
+                    <p>Moran Vera Mickael Adrian</p>
+                    <p>Moran Vera Mickael Adrian</p>
+                    <p>Moran Vera Mickael Adrian</p>
+                    <p>Moran Vera Mickael Adrian</p>
+                </div>
+            </div>
+    </footer>
 
 </body>
 
