@@ -28,6 +28,50 @@ h5{
     font-family: Cambria;
     font-size: 1.5rem;
 }
+/*Barra de Nav*/
+.Secciones ul {
+    display: flex;         /* Para distribuir el espacio horizontalmente */
+    padding: 0;
+    margin: 0;
+    list-style: none;     
+    text-shadow: 0 0 5px #000A;
+}
+.Secciones ul li {
+    flex: 1;               /* Hace que cada li ocupe el mismo espacio */
+    text-align: center;    /* Centra el texto dentro de cada li */
+}
+.Secciones ul li a {
+    display: block;        /* Hace que los enlaces ocupen el espacio completo */
+    background-color: #F2D7B6;
+
+    border: 2px solid #000;
+    padding: 15px;         /* Ajusta el padding según prefieras */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: #000;
+    font-size: 1em;
+}
+
+.Secciones ul li a:hover {
+    background-color: #593325;
+    border: 0;
+    border-bottom: 5px solid #593325;
+    font-weight: bold;
+    
+}
+
+body{
+    font-family: Verdana;
+    font-size: 1.2rem;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+nav{
+    display: flex;
+    overflow-x: auto; /* Habilita el desplazamiento horizontal */
+    scroll-behavior: smooth; /* Desplazamiento suave */
+    flex-wrap: nowrap;/*ajusta los elementos en funcion al tamaño*/
+}
 
 /* Pie */
 .footer-content {
