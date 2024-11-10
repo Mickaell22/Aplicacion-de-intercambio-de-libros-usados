@@ -28,7 +28,53 @@ h5{
     font-family: Cambria;
     font-size: 1.5rem;
 }
+/*Barra de Nav*/
+.Secciones ul {
+    display: flex;         /* Para distribuir el espacio horizontalmente */
+    padding: 0;
+    margin: 0;
+    list-style: none;      
+}
+.Secciones ul li {
+    flex: 1;               /* Hace que cada li ocupe el mismo espacio */
+    text-align: center;    /* Centra el texto dentro de cada li */
+}
+.Secciones ul li a {
+    display: flex;
+    flex-direction: row; /*importante*/
+    flex-wrap: nowrap;/*ajusta los elementos en funcion al tamaño*/
+    justify-content: center; /*alineacion del contenido*/
+    /* justify-content: space-between; alineacion del contenido*/
+    align-items: flex-start;/*items toman el tamaño adecuado menos strech (default)*/
 
+    background-color: #F2D7B6;
+    border: 2px solid #000;
+    padding: 15px;         /* Ajusta el padding según prefieras */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: #000;
+    font-size: 1em;
+}
+
+.Secciones ul li a:hover {
+    background-color: rgba(2, 2, 255, 0);
+    border: 0;
+    border-bottom: 5px solid #593325;
+    font-weight: bold;
+}
+
+body{
+    font-family: Verdana;
+    font-size: 1.2rem;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+nav{
+    display: flex;
+    overflow-x: auto; /* Habilita el desplazamiento horizontal */
+    scroll-behavior: smooth; /* Desplazamiento suave */
+    flex-wrap: nowrap;/*ajusta los elementos en funcion al tamaño*/
+}
 /* Pie */
 .footer-content {
     display: grid;
