@@ -51,60 +51,41 @@
         <h2>Fitros de busqueda</h2>
         <!-- Filytos -->
         <!-- #1 -->
-        <h3>Area</h3>
-        <label for="ciencia" class="opcion">
-            <input type="checkbox" name="area" id="ciencia" value="ciencias">
-            Ciencias
+        <h3>Calificacion</h3>
+        <label for="5_Estrella" class="opcion">
+            <input type="checkbox" name="area" id="5_Estrella" value="5_Estrella">
+            5 Estrella
         </label>
-        <label for="Tecnologia" class="opcion">
-            <input type="checkbox" name="area" id="Tecnologia" value="Tecnologia">
-            Tecnologia
+        <label for="4_Estrella" class="opcion">
+            <input type="checkbox" name="area" id="4_Estrella" value="4_Estrella">
+            4 Estrella
         </label>
-        <label for="Biologia" class="opcion">
-            <input type="checkbox" name="area" id="Biologia" value="Biologia">
-            Biologia
+        <label for="3_Estrella" class="opcion">
+            <input type="checkbox" name="area" id="3_Estrella" value="3_Estrella">
+            3 Estrella
         </label>
-        <label for="Matematicas" class="opcion">
-            <input type="checkbox" name="area" id="Matematicas" value="Matematicas">
-            Matematicas
+        <label for="2_Estrella" class="opcion">
+            <input type="checkbox" name="area" id="2_Estrella" value="2_Estrella">
+            2 Estrella
+        </label>
+        <label for="1_Estrella" class="opcion">
+            <input type="checkbox" name="area" id="1_Estrella" value="1_Estrella">
+            1 Estrella
         </label>
 
 
         <!-- #2 -->
-        <h3>Categoria</h3>
-        <label for="Novelas" class="opcion">
-            <input type="checkbox" name="area" id="Novelas" value="Novelas">
-            Novelas
+        <h3>Fecha</h3>
+        <label for="reciente" class="opcion">
+            <input type="checkbox" name="area" id="reciente" value="reciente">
+            Mas recientes
         </label>
-        <label for="Historia" class="opcion">
-            <input type="checkbox" name="area" id="Historia" value="Historia">
-            Historia
-        </label>
-        <label for="Biografia" class="opcion">
-            <input type="checkbox" name="area" id="Biografia" value="Biografia">
-            Biografia
-        </label>
-        <label for="Matematicas" class="opcion">
-            <input type="checkbox" name="area" id="Matematicas" value="Matematicas">
-            Matematicas
+        <label for="antiguos" class="opcion">
+            <input type="checkbox" name="area" id="antiguos" value="antiguos">
+            Mas antiguos
         </label>
 
         <!-- #3 -->
-        <h3>Condicion del libro</h3>
-        <label for="Nuevo" class="opcion">
-            <input type="checkbox" name="area" id="Nuevo" value="Nuevo">
-            Nuevo
-        </label>
-        <label for="Usado" class="opcion">
-            <input type="checkbox" name="area" id="Usado" value="Usado">
-            Usado
-        </label>
-        <label for="Muy_usado" class="opcion">
-            <input type="checkbox" name="area" id="Muy_usado" value="Muy_usado">
-            Muy usado
-        </label>
-
-        <!-- #4 -->
         <h3>Idioma</h3>
         <label for="Español" class="opcion">
             <input type="checkbox" name="area" id="Español" value="Español">
@@ -126,7 +107,107 @@
     </aside>
 
      <main class="main">
+        <section class="section">
+            <div class="search">
+                <input type="text" class="search-input" placeholder="Busca tus libros...">
+                <button class="search-button">Buscar</button>
+            </div>
+        </section>
+
+            <div class="comentario-form">
+                <h3>Deja tu comentario</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" placeholder="Tu nombre">
+                    </div>
         
+                    <div class="form-group">
+                        <label for="libro">Libro</label>
+                        <select id="libro">
+                            <option value="">Selecciona un libro</option>
+                            <option value="algebra">Álgebra</option>
+                            <option value="calculo">Cálculo</option>
+                        </select>
+                    </div>
+        
+                    <div class="form-group">
+                        <label>Calificación</label>
+                        <div class="star-rating">
+                            <span>★</span>
+                            <span>★</span>
+                            <span>★</span>
+                            <span>★</span>
+                            <span>★</span>
+                        </div>
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="comentario">Tu comentario</label>
+                        <textarea id="comentario" placeholder="Escribe tu comentario aquí..."></textarea>
+                    </div>
+        
+                    <button type="submit" class="submit-btn">Publicar comentario</button>
+                </form>
+            </div>
+
+            <div class="comentarios-lista">
+                <h3>Comentarios</h3>
+                
+                <div class="comentario-card">
+                    <div class="comentario-header">
+                        <div class="usuario-info">
+                            <div class="usuario-avatar">AA</div>
+                            <div>
+                                <h4>Alejandro Alberto</h4>
+                                <div class="calificacion">★★★★★</div>
+                            </div>
+                        </div>
+                        <span class="comentario-fecha">17 Ene 2024</span>
+                    </div>
+                    <p class="comentario-texto">
+                        Me gusto el libro refleja mi vida
+                    </p>
+                </div>
+
+                
+                <div class="comentario-card">
+                    <div class="comentario-header">
+                        <div class="usuario-info">
+                            <div class="usuario-avatar">M</div>
+                            <div>
+                                <h4>Micka</h4>
+                                <div class="calificacion">★☆☆☆☆</div>
+                            </div>
+                        </div>
+                        <span class="comentario-fecha">9 Nov 2024</span>
+                    </div>
+                    <p class="comentario-texto">
+                        No me gusto
+                    </p>
+                </div>
+
+                <div class="comentario-card">
+                    <div class="comentario-header">
+                        <div class="usuario-info">
+                            <div class="usuario-avatar">MS</div>
+                            <div>
+                                <h4>Marco Salazar</h4>
+                                <div class="calificacion">★☆☆☆☆</div>
+                            </div>
+                        </div>
+                        <span class="comentario-fecha">7 Ago 2024</span>
+                    </div>
+                    <p class="comentario-texto">
+                        No entendi mucho que quizo interpretar el autor al final
+                    </p>
+                </div>
+
+
+
+            </div>
+            
+
      </main>
 
 
