@@ -1,0 +1,29 @@
+.sidebar {
+    border: 2px solid #000; /* Color y grosor del borde */
+    padding: 15px;           /* Añade espacio dentro del aside */
+    border-radius: 10px;     /* Esquinas redondeadas */
+    background-color: #F2D7B6;
+}
+
+.sidebar ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    padding-left: 0;  
+    margin: 0;   
+}
+.sidebar ul li {
+    margin-bottom: 10px; /* Agrega espacio entre las opciones */
+}
+.sidebar ul li a{
+    color: black;
+}
+.sidebar ul li a:visited {
+    text-decoration: underline; /* Subraya el enlace visitado */
+    color: #593325; /* Cambia el color del texto después de visitarlo */
+}
+.sidebar ul li a:hover {
+    background-color: rgba(2, 2, 255, 0); /* Cambia el color de fondo al pasar el ratón */
+    border: 0; /* Elimina el borde */
+    border-bottom: 5px solid #593325; /* Agrega un borde en la parte inferior */
+    font-weight: bold; /* Hace el texto en negrita */
+    color: #F2D7B6; /* Cambia el color del texto al pasar el ratón */
+}
