@@ -77,7 +77,7 @@
         .navbar {
             grid-column: 1/7;
             grid-row: 1/3;
-            padding: none;
+            padding: 0;
         }
 
         .header {
@@ -163,13 +163,15 @@
         }
 
         /* bOTONES */
-        .button {
+        .button,
+        input {
             margin-top: 20px;
             padding: 10px 25px;
             border: none;
             border-radius: 25px;
             font-weight: bold;
             cursor: pointer;
+            text-decoration: none;
         }
 
         .Info.button {
@@ -197,7 +199,6 @@
             border-top-right-radius: 25px;
             border-bottom: 6px solid #D98b48;
             margin-right: 20px;
-
         }
 
         .info h2 {
@@ -355,32 +356,19 @@
 
             <div class="Botones">
                 <input type="button" class="Info button" value="Comprar">
-                <a href="Contacto_Directo.html">
-
-                    <input type="button" class="Comprar button" value="Chat">
-                </a>
-
-
-                <a href="Comentarios.html">
-                    <input type="button" class="Info button" value="Comentarios">
+                <a href="Contacto_Directo.html" class="Comprar button"> Chat </a>
+                <a href="Comentarios.html" class="Info button">Comentarios
                 </a>
             </div>
         </div>
 
         <div class="resenia">
             <h2>Reseña del libro</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus saepe ratione, architecto vitae
-                asperiores eligendi porro quas quod ad dolorem consequatur in repudiandae quis eaque magnam, qui placeat
-                earum animi.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime debitis vitae voluptatum dicta?
-                Molestiae, voluptatum! Accusamus repellat dolores illum autem quasi, odit mollitia et. Possimus et earum
-                veritatis dolores quasi!
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad non aperiam rerum molestiae culpa, quod
-                laboriosam nulla fugit dolorum architecto eius suscipit nisi? Commodi, tempore natus nesciunt nulla
-                deserunt ad.
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, quam voluptates omnis molestias
-                recusandae est adipisci? Est ducimus, laborum deleniti nisi quis nobis voluptate assumenda vel, beatae
-                quia quo quae.
+            <p>"Como si fuera ayer" es una novela de Isabel San Sebastián que entrelaza el pasado y el presente a través
+                de una historia de amor, misterio y redescubrimiento personal. La trama sigue a Sara, una mujer que
+                vuelve a su ciudad natal, donde revive los recuerdos de un amor de juventud que dejó una profunda huella
+                en su vida. En su retorno, Sara se enfrenta no solo a las memorias de aquel romance, sino también a una
+                serie de eventos que despiertan secretos familiares, conflictos no resueltos y sentimientos encontrados.
             </p>
         </div>
     </main>
@@ -391,12 +379,8 @@
             <div class="footer-section">
                 <h4>Contacto</h4>
                 <ul class="contact-info">
-                    <li>
-                        <p>+365 0999999999</p>
-                    </li>
-                    <li>
-                        <p>mickaelmoranver.@ug.edu.ec</p>
-                    </li>
+                    <li>+365 0999999999</li>
+                    <li>mickaelmoranver.@ug.edu.ec</li>
                 </ul>
             </div>
 
@@ -421,6 +405,7 @@
                     <p>Salazar Mejia Marco Antonio</p>
                 </div>
             </div>
+        </div>
     </footer>
 
 
