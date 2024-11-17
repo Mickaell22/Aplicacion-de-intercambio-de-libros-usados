@@ -54,20 +54,6 @@
       overflow: hidden;
     }
 
-    .form-contenedor{
-      grid-column: 1/7;
-      grid-row: 6/7;
-      border: 7px solid red;
-      box-sizing: border-box;
-    }
-
-    .form_input{
-      padding-bottom: 20px;
-      border: 2px solid #333333;
-      width: 80%;;
-      text-align: center;
-    }
-
     /* :( */
     .grid-container>* {
       text-align: center;
@@ -133,10 +119,96 @@
     }
 
 
+    /* Form */
+    .form-container {
+      width: 100%;
+      max-width: 450px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #F5F5F5;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-title {
+      text-align: center;
+      color: #333;
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .form-input {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-input label {
+      display: block;
+      color: #555;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    .form-input input {
+      width: 90%;
+      padding: 0.8rem;
+      border: 1px solid #ddd5;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .form-input input:focus {
+      outline: none;
+      border-color: #4A90E2;
+      box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+    }
+
+    .button-uno,
+    .button-dos {
+      width: 100%;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .button-uno {
+      background-color: #4A90E2;
+      color: white;
+    }
+
+    .button-uno:hover {
+      background-color: #357ABD;
+    }
+
+    .register-section {
+      margin-top: 1rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid #eee;
+      text-align: center;
+    }
+
+    .register-text {
+      color: #666;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .button-dos {
+      background-color: #e8f0fe;
+      color: #4A90E2;
+      border: 1px solid #4A90E2;
+    }
+
+    .button-dos:hover {
+      background-color: #d3e3fd;
+    }
   </style>
-
-
-
 
 </head>
 
@@ -164,23 +236,35 @@
   <main class="main">
     <div class="fondo">
       <div class="fondo_opaco">
-        <div class="form-contenedor">
-          <form>
-            <h2>Login</h2>
-            <div class="form_input">
-              <label for="email">Email
-                <input type="email" placeholder="Ingrese su correo" id="email">
-              </label>
-              
-            </div>
-            <div class="form_input">
-              <label for="password">Contraseña
-                <input type="password" placeholder="Ingrese su contraseña" id="password">
+        <div class="form-container">
+          <form class="form-login">
+            <h2 class="form-title">Login</h2>
 
-              </label>
+            <div class="form-input">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="Ingrese su correo" required>
             </div>
+
+            <div class="form-input">
+              <label for="password">Contraseña</label>
+              <input type="password" id="password" placeholder="Ingrese su contraseña" required>
+            </div>
+
+            <button type="submit" class="submit-btn button-uno">
+              Iniciar sesión
+            </button>
           </form>
+
+          <div class="register-section">
+            <p class="register-text">
+              ¿No tienes una cuenta? Registrarse es gratis, haz click en el botón de abajo
+            </p>
+            <button type="button" class="register-btn button-dos" onclick="location.href='Register.html'">
+              Registrarse
+            </button>
+          </div>
         </div>
+
 
       </div>
     </div>
