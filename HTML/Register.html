@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <!-- Autor -->
+  <!-- Autor -->
   <meta name="author" content="Moran Vera Mickaell Adrian">
 
   <!-- Metadatos -->
@@ -24,19 +25,408 @@
   <!-- Titulo de Pagina -->
   <title>Intercambios de libros usados</title>
 
+  <style>
+    .box-titulo {
+      height: 320px;
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+      background-image: url(https://img.freepik.com/fotos-premium/grupo-personas-estan-sonriendo-formando-circulo-escena-es-feliz-amistosa_1053268-24758.jpg);
+      background-position: center;
+      box-sizing: border-box;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    .box-titulo-opaco {
+      height: 295px;
+      width: 100%;
+      background: radial-gradient(ellipse at 50% 30%, transparent 0%, rgba(0, 0, 0, 0.5) 50%, #000 100%);
+    }
+
+    .titulo {
+      display: inline-block;
+      border-bottom: 7px solid #D98B48;
+      color: #FFFB;
+      margin: 10% 0 45px;
+      border-radius: 20px;
+      width: auto;
+      height: auto;
+      font-size: 3em;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+      /* sombra en la parte inferior */
+      text-shadow: 0 0 5px #d94;
+    }
+
+    .grid-container>* {
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .grid-container {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(6, auto);
+    }
+
+    .navbar {
+      grid-column: 1/7;
+      grid-row: 1/3;
+      padding: 0;
+    }
+
+    .header {
+      grid-column: 1/7;
+      grid-row: 1/2;
+      background-color: rgb(217, 139, 72);
+    }
+
+    .sidebar {
+      grid-column: 1/2;
+      grid-row: 3/7;
+      background-color: rgb(242, 242, 242);
+      /* background-color: rgb(166, 87, 41); */
+      margin-left: 20px;
+
+      border-right: 7px solid #D98b48;
+      border-top: 7px solid #D98b48;
+      border-left: 3px solid #D98B48;
+
+      border-radius: 8px;
+      box-shadow: 0 20px 20px rgba(0, 0, 0)
+    }
+
+    .main {
+      grid-template-rows: auto auto;
+      grid-column: 1/7;
+      grid-row: 3/5;
+      background-color: rgb(242, 242, 242);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      /* 4 columnas iguales */
+      gap: 20px;
+      padding-top: 30px;
+    }
+
+    .pie {
+      grid-column: 1/7;
+      grid-row: 6/7;
+      background-color: rgb(217, 139, 72);
+    }
+
+    .section {
+      grid-column: 1/7;
+      grid-row: 5/6;
+    }
+
+    .frase {
+      grid-column: 1/3;
+      grid-row: 3/5;
+      margin-left: 100px;
+      padding: 40px;
+      background: linear-gradient(#f5f7fa 0%, #c3cfe2 100%);
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      max-width: 600px;
+    }
+
+    .frase-principal {
+      font-size: 3rem;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      font-weight: bold;
+      line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .frase-secundaria {
+      font-size: 1.5rem;
+      /* También más grande */
+      color: #546e7a;
+      line-height: 1.6;
+      margin: 0;
+      font-weight: 400;
+    }
+
+
+    /* form registrar */
+    .form-container {
+      grid-column: 3/6;
+      grid-row: 3/6;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: left;
+    }
+
+    .form-register {
+      border: 2px solid #333333;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    .form-titulo {
+      text-align: center;
+      color: #333333;
+      margin-bottom: 20px;
+    }
+
+    .form-input {
+      margin-bottom: 20px;
+    }
+
+    .form-input label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333333;
+
+    }
+
+    .form-input input,
+    .form-input select {
+      width: 90%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .radio-group {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .radio-group input[type="radio"] {
+      width: auto;
+    }
+
+    .radio-group label {
+      display: inline;
+      margin: 0;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .btn-submit:hover {
+      background-color: #45a049;
+    }
+
+
+    /* UN PIE!!! */
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      padding: 20px 20px;
+      color: #fff;
+      background: url(https://img.freepik.com/fotos-premium/grupo-personas-estan-sonriendo-formando-circulo-escena-es-feliz-amistosa_1053268-24758.jpg);
+      background-position: bottom;
+      box-sizing: border-box;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+  </style>
+
+
 </head>
-<body>
-    <header>
 
-    </header>
+<body class="grid-container">
+  <header class="navbar">
+    <!-- FOndo igual a las anteriores -->
+    <!-- Titulo, Se parte de nuestra comunidad? Unete a nosotros?  -->
+    <!-- Barra navegadore -->
+    <div class="box-titulo">
+      <div class="box-titulo-opaco">
+        <h1 class="titulo">¡Sé parte de nuestra comunidad!</h1>
+        <div class="Secciones">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Buscar_Categoria.html">Búsqueda</a></li>
+            <li><a href="Contacto_Directo.html">Mensajeria directa</a></li>
+            <li><a href="Logistica_intercambio.html">Logística de Intercambio</a></li>
+            <li><a href="recomendaciones.html">Recomendaciones de Libros</a></li>
+            <li><a href="Comentarios.html">Comentarios de Usuarios</a></li>
+            <li style="float:right"><a class="active" href="#about">Creditos</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-    <main>
+  </header>
 
-    </main>
+  <main class="main">
+    <!-- Form 
+          Nombre
+          Apellido
+          Correo
+          Celular
+          Ubicacion geografica
+          Fecha de nac = Mayor de edad unicamente >18
+          Geenero = Masculino o Femenino o Otro
 
-    <footer>
-      
-    </footer>
+          Usuario
+          Contrasenia
+          Repetir contrasenia
+
+          Elegir plan?
+
+          Aceptar terminos y condiciones (Checkbox)
+      -->
+
+    <div class="frase">
+      <h3 class="frase-principal">¡Únete a nuestra comunidad!</h3>
+      <p class="frase-secundaria">Comienza tu viaje con nosotros y descubre un mundo de posibilidade.</p>
+    </div>
+
+    <div class="form-container">
+      <form class="form-register">
+        <h2 class="form-titulo">Registrarse</h2>
+
+        <!-- Nombre -->
+        <div class="form-input">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+
+        <!-- Apellido -->
+        <div class="form-input">
+          <label for="apellido">Apellido</label>
+          <input type="text" id="apellido" name="apellido" required>
+        </div>
+
+        <!-- Usuario -->
+        <div class="form-input">
+          <label for="usuario">Nombre de usuario</label>
+          <input type="text" id="usuario" name="usuario" required>
+        </div>
+
+        <!-- Celular -->
+        <div class="form-input">
+          <label for="celular">Número de celular</label>
+          <input type="tel" id="celular" name="celular" pattern="[0-9]{10}" required>
+        </div>
+
+        <!-- Ubicación geográfica -->
+        <div class="form-input">
+          <label for="ubicacion">Ubicación</label>
+          <select id="ubicacion" name="ubicacion" required>
+            <option value="">Seleccione su ubicación</option>
+            <option value="norte">Norte</option>
+            <option value="sur">Sur</option>
+            <option value="este">Este</option>
+            <option value="oeste">Oeste</option>
+          </select>
+        </div>
+
+        <!-- Fecha nacimiento -->
+        <div class="form-input">
+          <label for="fecha_nac">Fecha de nacimiento</label>
+          <input type="date" id="fecha_nac" name="fecha_nac" required>
+        </div>
+
+        <!-- Género -->
+        <div class="form-input">
+          <label>Género</label>
+          <div class="radio-group">
+            <input type="radio" id="masculino" name="genero" value="masculino" required>
+            <label for="masculino">Masculino</label>
+            <input type="radio" id="femenino" name="genero" value="femenino">
+            <label for="femenino">Femenino</label>
+            <input type="radio" id="otro" name="genero" value="otro">
+            <label for="otro">Otro</label>
+          </div>
+        </div>
+
+        <!-- Correo -->
+        <div class="form-input">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" name="correo" required>
+        </div>
+
+        <!-- Contraseña -->
+        <div class="form-input">
+          <label for="contrasenia">Contraseña</label>
+          <input type="password" id="contrasenia" name="contrasenia" required>
+        </div>
+
+        <!-- Repetir contraseña -->
+        <div class="form-input">
+          <label for="confirmar_contrasenia">Confirmar contraseña</label>
+          <input type="password" id="confirmar_contrasenia" name="confirmar_contrasenia" required>
+        </div>
+
+        <!-- Botón de envío -->
+        <div class="form-input">
+          <button type="submit" class="btn-submit">Registrarse</button>
+        </div>
+      </form>
+    </div>
+
+
+
+
+  </main>
+
+  <footer class="pie">
+    <div class="footer-content">
+      <!-- Sección de Contacto -->
+      <div class="footer-section">
+        <h4>Contacto</h4>
+        <ul class="contact-info">
+          <li>
+            <p>+365 0999999999</p>
+          </li>
+          <li>
+            <p>mickaelmoranver.@ug.edu.ec</p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Sección de Redes Sociales -->
+      <div class="footer-section">
+        <h4>Redes Sociales</h4>
+        <div class="social-links">
+          <a href="https://www.facebook.com/mickael.moranvera" target="_blank">Facebook</a>
+          <a href="https://www.youtube.com/channel/UCk1Fy0DXDryNcILKx5irmXQ" target="_blank">YouTube</a>
+          <a href="https://github.com/Mickaell22" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/mickaell-moran-vera-ba421a2a3/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Participantes</h4>
+        <div class="participantes">
+          <p>Moran Vera Mickael Adrian</p>
+          <p>Aguilar Quinto Alejandro Alberto</p>
+          <p>Fernandez Nanande Jahir Bismark</p>
+          <p>Troya Garzon Geancarlos</p>
+          <p>Salazar Mejia Marco Antonio</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 </body>
+
 </html>
