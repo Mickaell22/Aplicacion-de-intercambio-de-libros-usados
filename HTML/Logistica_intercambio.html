@@ -145,6 +145,7 @@
        flex-direction: column;
        justify-content: center;
        align-items: flex-start;
+       padding-left: 30px;
       }
 
        .datos-personales p {
@@ -263,6 +264,49 @@
     object-fit: contain; /* Asegura que la imagen no se distorsione */
     text-align: left ;
 }
+
+#bancoguayaquil{
+    width: 50px; 
+    height: 50px; /* Forzará una altura específica */
+    margin: 5px;
+    border-radius: 5px;
+    object-fit: contain; 
+    
+}
+#bancopichincha{
+    width: 50px; 
+    height: 50px; /* Forzará una altura específica */
+    margin: 5px;
+    border-radius: 5px;
+    object-fit: contain; 
+    
+}
+#bancopacifico{
+    width: 50px; 
+    height: 50px; /* Forzará una altura específica */
+    margin: 5px;
+    border-radius: 5px;
+    object-fit: contain; 
+    
+}
+#efectivo{
+    width: 120px; 
+    height: 120px; /* Forzará una altura específica */
+    margin: 5px;
+    border-radius: 5px;
+    object-fit: contain; 
+}
+#img-cal{
+    width: 120px; 
+    height: 120px; /* Forzará una altura específica */
+    margin: 5px;
+    border-radius: 10px;
+    object-fit: contain; 
+}
+#foto-perfil{
+    margin-left: 80px;
+
+}
         
 
     </style>
@@ -294,9 +338,9 @@
         
             <h3 id="datos" class="partes">Datos Personales</h4>
             <div class="lib">
-                    <img src="/Image/GTROYA-PERFIL.jpg" alt="Geancarlos Troya">
+                    <img id="foto-perfil" src="/Image/GTROYA-PERFIL.jpg" alt="Geancarlos Troya">
                     <div class="datos-personales">
-                        
+                    
                         <p><strong>Nombres:</strong> Geancarlos</p>
                         <p><strong>Apellidos:</strong> Troya Garzón</p>
                         <p><strong>Fecha de Nacimiento:</strong> 13/09/1999</p>
@@ -304,6 +348,7 @@
                         <p><strong>Preferencia de libros:</strong> Comedia</p>
                         <p><strong>Edad</strong> 25</p>
                     </div>
+                    
                 
             </div>
             <h3 id="ubi" class="partes">Ubicación</h4>
@@ -319,15 +364,21 @@
            <div class="lib img">
                
                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbg3VQZhoZuJGrzKu5VrWPIq30GqhhECx-LA&s" alt="Dinero">
-               <p><strong>Transferencia:</strong>   Banco Pichincha, Banco Guayaquil, Banco del Pacífico</p>
-               <p><strong>Efectivo:</strong>   El valor del intercambio es de : $20 </p>
+               <p><strong>Transferencia:</strong></p>  
+               <p>Banco Pichincha, Banco Guayaquil, Banco del Pacífico</p>
+               <img id="bancoguayaquil" src="https://images.seeklogo.com/logo-png/40/1/banco-guayaquil-2020-fondo-magenta-logo-png_seeklogo-408168.png?v=638658831250000000" alt="Banco Guayaquil">
+               <img id="bancopichincha" src="https://w7.pngwing.com/pngs/337/382/png-transparent-banco-pichincha-nuevo-fondo-amarillo-hd-logo-thumbnail.png" alt="Banco Pichincha">
+               <img id="bancopacifico" src="https://images.seeklogo.com/logo-png/35/1/banco-del-pacifico-nuevo-fondo-cian-logo-png_seeklogo-354205.png?v=638652914490000000" alt="Banco del Pacifico">
+               <p><strong>Efectivo:</strong></p>
+               <p> El valor del intercambio es de : $20</p>
+               <img id="efectivo" src="https://png.pngtree.com/png-clipart/20200224/original/pngtree-cash-in-hand-icon-cartoon-style-png-image_5211912.jpg" alt="Efectivo">
             </div>
 
             <h3 id="califi" class="partes">Calificación</h4>
            <div class="lib">
                <p>Estoy satisfecho con la entrega del libro que tanto anhelaba ,la atención fue rápida y efectiva, espero poder disfrutarlo y leerlo hasta que termine mi plazo de lectura. 10 de 10 el servicio.</p>
                
-               <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn2uU0U2Wl1auPqKxV_D2i1t4BL5GbJZO1qQ&s" alt="Dinero">
+               <img id="img-cal" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn2uU0U2Wl1auPqKxV_D2i1t4BL5GbJZO1qQ&s" alt="Dinero">
                
            </div>
     </main>
