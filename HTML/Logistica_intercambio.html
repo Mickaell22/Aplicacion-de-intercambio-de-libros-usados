@@ -70,8 +70,13 @@
             }
             .sidebar{
                 grid-column: 1/2;
-                grid-row: 3/5;
+                grid-row: 3/4;
                 
+            }
+            .sidebar2{
+                grid-column: 1/2;
+                grid-row: 4/5;
+
             }
             .main{
                 grid-column: 2/7;
@@ -84,8 +89,8 @@
                 
             }
             .section{
-                grid-column: 1/7;
-                grid-row: 5/6;
+                grid-column: 1/6;
+                grid-row: 4/5;
             }
         
         body{
@@ -195,6 +200,12 @@
           border-radius: 10px;     /* Esquinas redondeadas */
           background-color: #F2D7B6;
         }
+        .sidebar2 {
+          border: 2px solid #000; /* Color y grosor del borde */
+          padding: 15px;           /* Añade espacio dentro del aside */
+          border-radius: 10px;     /* Esquinas redondeadas */
+          background-color: #F2D7B6;
+        }
 
         .sidebar ul {
          list-style: none; /* Elimina los puntos de la lista */
@@ -237,9 +248,13 @@
 .botones-pago button:hover {
     background-color: #593325; /* Cambia de color al pasar el ratón */
 }
-
-
-
+.partes{
+   color: black;
+   font-family: 'Playfair Display', serif; /* Fuente elegante */
+   font-size: 1.8rem; /* Ajusta el tamaño */
+   margin: 10px 0; /* Espacio arriba y abajo */
+   
+}
 
 .imagen-pago {
     width: 20%; /* Cada imagen ocupará aproximadamente la mitad del contenedor */
@@ -277,10 +292,8 @@
     </header>
     <main class="main">
         
-        
+            <h3 id="datos" class="partes">Datos Personales</h4>
             <div class="lib">
-            
-                
                     <img src="/Image/GTROYA-PERFIL.jpg" alt="Geancarlos Troya">
                     <div class="datos-personales">
                         
@@ -293,6 +306,7 @@
                     </div>
                 
             </div>
+            <h3 id="ubi" class="partes">Ubicación</h4>
             <div class="lib img">
                
                <p><strong>Ubicación Domicilio:</strong> Calle 11ava y Federico Godin, Guayaquil</p>
@@ -301,13 +315,15 @@
                <p><strong>Coordenadas:</strong> Lat: -0.1807, Long: -78.4678</p>
                <iframe src="https://www.google.com/maps/embed?pb=..."></iframe>
            </div>
+           <h3 id="metodo"class="partes">Método de Pago</h4>
            <div class="lib img">
                
                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbg3VQZhoZuJGrzKu5VrWPIq30GqhhECx-LA&s" alt="Dinero">
                <p><strong>Transferencia:</strong>   Banco Pichincha, Banco Guayaquil, Banco del Pacífico</p>
                <p><strong>Efectivo:</strong>   El valor del intercambio es de : $20 </p>
             </div>
-            
+
+            <h3 id="califi" class="partes">Calificación</h4>
            <div class="lib">
                <p>Estoy satisfecho con la entrega del libro que tanto anhelaba ,la atención fue rápida y efectiva, espero poder disfrutarlo y leerlo hasta que termine mi plazo de lectura. 10 de 10 el servicio.</p>
                
@@ -319,11 +335,15 @@
         <h4>Elija una Opción</h4>
         <ul>
             <li><a href="#datos">Datos Personales</a></li>
-            <li><a href="#ubicacion">Ubicación</a></li>
-            <li><a href="#pago">Método de Pago</a></li>
-            <li><a href="#calificacion">Calificación</a></li>
+            <li><a href="#ubi">Ubicación</a></li>
+            <li><a href="#metodo">Método de Pago</a></li>
+            <li><a href="#califi">Calificación</a></li>
             
         </ul>
+    </aside>
+    <aside class="sidebar2">
+        <h4>¡IMPORTANTE!</h4>
+        <p>El plazo de entrega de libros rige hasta que se cumpla un mes, pasado de eso, deberá pagar un recargo de $10</p>
     </aside>
     <footer class="pie">
         <div class="footer-content">
