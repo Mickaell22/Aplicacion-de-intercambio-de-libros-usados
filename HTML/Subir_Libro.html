@@ -133,7 +133,7 @@
       flex-direction: column;
       justify-content: center;
       height: 100%;
-      max-width: 600px;
+      width: 500px;
     }
 
     .frase-principal {
@@ -154,13 +154,20 @@
       margin: 0;
       font-weight: 400;
     }
+    .frase img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+      margin-top: 20px;
+    }
 
 
     /* Registra tu librop :) ... Tengo hambre :( */
     .form-container {
       grid-column: 5/8;
       grid-row: 1/6;
-      max-width: 600px;
+      width: 600px;
       margin: 0 auto;
       padding: 20px;
       text-align: left;
@@ -301,6 +308,7 @@
     <div class="frase">
       <h3 class="frase-principal">¡Comparte tu libro con nuestra comunidad!</h3>
       <p class="frase-secundaria">Comienza tu viaje con nosotros y descubre un mundo de posibilidades.</p>
+      <img src="https://img.freepik.com/fotos-premium/hombre-sienta-pila-libros-libro-su-regazo_853645-14105.jpg" alt="Una persona sentada sobre una pila de libros">
     </div>
     <div class="form-container">
       <form class="form-upload" id="formulario" onsubmit="return validarFormulario()">
