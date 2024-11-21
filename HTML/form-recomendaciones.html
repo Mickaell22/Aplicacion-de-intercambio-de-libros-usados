@@ -6,6 +6,36 @@
     <link rel="stylesheet" href="../CSS/estilos-comunes.css">
     <title>Recomendacion personal</title>
     <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .grid-container > *{
+            padding: 10px;
+            text-align: center;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(6, auto);
+        }
+        .header {
+            grid-column: 1/7;
+            grid-row: 1/2;
+        }
+        .navbar {
+            grid-column: 1/7;
+            grid-row: 2/3;
+        }
+        .main {
+            grid-column: 1/7;
+            grid-row: 3/6;
+        }
+        .pie {
+            grid-column: 1/7;
+            grid-row: 6/7;
+        }
 
     </style>
 </head>
@@ -27,53 +57,55 @@
     <header class="header">
             <div class="box_presentacion">
                <div class="box_presentacion_opaco">
-                  <h1 class="titulo">Recomendaciones de Libros</h1>
+                  <h1 class="titulo">Formulario de recomendación personal</h1>
                </div>
             </div>
     </header>
-    <form action="" id="form" onsubmit="return validarFormulario()">
-        <div id="datosPersonales">
-            <div>
-                <label for="nombres">Nombres Completos</label>
-                <input type="text" id="nombres" name="nombres">
+    <main>
+        <form action="" id="form" onsubmit="return validarFormulario()">
+            <div id="datosPersonales">
+                <div>
+                    <label for="nombres">Nombres Completos</label>
+                    <input type="text" id="nombres" name="nombres">
+                </div>
+                <div>
+                    <label for="apellidos">Apellidos</label> 
+                    <input type="text" id="apellidos" name="apellidos">
+                </div>
+                <div>
+                    <label for="correo">Correo electronico</label>
+                    <input type="email" id="correo" name="correo">
+                </div>
+            </div>
+            <div id="datosLibro">
+                <div>
+                    <label for="titulo">Titulo del libro</label>
+                    <input type="text" id="titulo" name="titulo">
+                </div>
+                <div>
+                    <label for="">Seleccione la categoría</label>
+                    <select name="" id="">
+                        <option value="">Elija...</option>
+                        <option value="">Aventura</option>
+                        <option value="">Terror</option>
+                        <option value="">Romance</option>
+                        <option value="">Fantasía</option>
+                        <option value="">Comedia</option>
+                        <option value="">Académicos</option>
+                        <option value="">Ecuador</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="resumen">Sinopsis del libro</label>
+                    <textarea name="resumen" id="resumen"></textarea>
+                </div>
             </div>
             <div>
-                <label for="apellidos">Apellidos</label> 
-                <input type="text" id="apellidos" name="apellidos">
+                <button type="submit" value="enviar">Enviar</button>
+                <button type="reset" value="cancelar">Limpiar</button>
             </div>
-            <div>
-                <label for="correo">Correo electronico</label>
-                <input type="email" id="correo" name="correo">
-            </div>
-        </div>
-        <div id="datosLibro">
-            <div>
-                <label for="titulo">Titulo del libro</label>
-                <input type="text" id="titulo" name="titulo">
-            </div>
-            <div>
-                <label for="">Seleccione la categoría</label>
-                <select name="" id="">
-                    <option value="">Elija...</option>
-                    <option value="">Aventura</option>
-                    <option value="">Terror</option>
-                    <option value="">Romance</option>
-                    <option value="">Fantasía</option>
-                    <option value="">Comedia</option>
-                    <option value="">Académicos</option>
-                    <option value="">Ecuador</option>
-                </select>
-            </div>
-            <div>
-                <label for="resumen">Sinopsis del libro</label>
-                <textarea name="resumen" id="resumen"></textarea>
-            </div>
-        </div>
-        <div>
-            <button type="submit" value="enviar">Enviar</button>
-            <button type="reset" value="cancelar">Limpiar</button>
-        </div>
-    </form>
+        </form>
+    </main>
     <script type="text/javascript" src="../JavaScript/Validaciones_Recomendaciones.js"></script>
     <footer class="pie">
         <div class="footer-content">
