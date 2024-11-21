@@ -6,8 +6,48 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="">
-
+    <form action="" id="form" onsubmit="return validarFormulario()">
+        <div id="datosPersonales">
+            <div>
+                <label for="nombres">Nombres Completos</label>
+                <input type="text" id="nombres" name="nombres">
+            </div>
+            <div>
+                <label for="apellidos">Apellidos</label> 
+                <input type="text" id="apellidos" name="apellidos">
+            </div>
+            <div>
+                <label for="correo">Correo electronico</label>
+                <input type="email" id="correo" name="correo">
+            </div>
+        </div>
+        <div id="datosLibro">
+            <div>
+                <label for="titulo">Titulo del libro</label>
+                <input type="text" id="titulo" name="titulo">
+            </div>
+            <div>
+                <label for="">Seleccione la categoría</label>
+                <select name="" id="">
+                    <option value="">Elija...</option>
+                    <option value="">Aventura</option>
+                    <option value="">Terror</option>
+                    <option value="">Romance</option>
+                    <option value="">Fantasía</option>
+                    <option value="">Comedia</option>
+                    <option value="">Académicos</option>
+                    <option value="">Ecuador</option>
+                </select>
+            </div>
+            <div>
+                <label for="resumen">Sinopsis del libro</label>
+                <textarea name="resumen" id="resumen"></textarea>
+            </div>
+        </div>
+        <div>
+            <button type="submit" value="enviar">Enviar</button>
+            <button type="reset" value="cancelar">Limpiar</button>
+        </div>
 
         
     </form>
