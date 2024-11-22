@@ -261,6 +261,54 @@
             background-size: cover;
             background-attachment: fixed;
         }
+
+
+        @media screen and (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                /* Single column layout */
+            }
+
+            .navbar,
+            .main,
+            .sidebar,
+            .pie {
+                grid-column: 1 / -1;
+                /* Full width */
+            }
+
+            .main {
+                grid-template-columns: 1fr;
+                /* Single column for book elements */
+                gap: 10px;
+            }
+
+            .elemento {
+                height: auto;
+                /* Adjust height dynamically */
+            }
+
+            .search-input {
+                width: 100%;
+                /* Full width search bar */
+            }
+
+            .titulo {
+                font-size: 2em;
+                /* Smaller title */
+                margin: 10% 0 20px;
+            }
+
+            .Secciones ul {
+                flex-direction: column;
+                /* Stack menu items vertically */
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                /* Stack footer sections */
+            }
+        }
     </style>
 
 
@@ -288,7 +336,7 @@
     </header>
     <aside class="sidebar">
         <h2>Filtros de búsqueda</h2>
-        
+
         <!-- Filtros de Área -->
         <h3>Área</h3>
         <label for="ciencia" class="opcion">
@@ -307,7 +355,7 @@
             <input type="checkbox" name="area" id="matematicas" value="Matematicas">
             Matemáticas
         </label>
-    
+
         <!-- Filtros de Categoría -->
         <h3>Categoría</h3>
         <label for="novelas" class="opcion">
@@ -334,7 +382,7 @@
             <input type="checkbox" name="categoria" id="aventura" value="Aventura">
             Aventura
         </label>
-    
+
         <!-- Filtros de Condición -->
         <h3>Condición del libro</h3>
         <label for="nuevo" class="opcion">
@@ -349,7 +397,7 @@
             <input type="checkbox" name="condicion" id="muy_usado" value="Muy_usado">
             Muy usado
         </label>
-    
+
         <!-- Filtros de Idioma -->
         <h3>Idioma</h3>
         <label for="espanol" class="opcion">
@@ -563,8 +611,8 @@
             <!-- Sección de Contacto -->
             <div class="footer-section">
                 <h4>Contacto</h4>
-                    <p>+365 0999999999</p>
-                    <p>mickaelmoranver.@ug.edu.ec</p>
+                <p>+365 0999999999</p>
+                <p>mickaelmoranver.@ug.edu.ec</p>
             </div>
 
             <!-- Sección de Redes Sociales -->
@@ -591,7 +639,7 @@
             </div>
         </div>
     </footer>
-<script src="../JavaScript/Filtro_Buscar-Categoria.js"></script>
+    <script src="../JavaScript/Filtro_Buscar-Categoria.js"></script>
 </body>
 
 </html>

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Marco Antonio Salazar Mejia">
     <link rel="stylesheet" href="../CSS/estilos-comunes.css">
     <title>Recomendacion personal</title>
     <style>
@@ -35,14 +36,12 @@
             display: flex;
             flex-direction: column;
             padding: 30px;
-            /* margin: auto; */
             width: 100%;
             border-radius: 5px;
             font-family: Verdana;
-            /* text-align: center; */
             justify-content: center;
             align-items: center;
-            box-shadow: 17px 13px 37px #000;
+            box-shadow: 17px 17px 34px #000;
         }
         .pie {
             grid-column: 1/7;
@@ -56,8 +55,9 @@
             font-size: 18px;
 
         }
-        form label{
+        .form label{
             display: block;
+            margin: 10px;
         }
         form input, select, textarea{
             height: 40px;
@@ -65,12 +65,16 @@
             display: block;
             outline: none;
             border-radius: 5px;
-            border: 1px solid #ccc;
+            border: 1px solid #D98B48;
+        }
+        .form textarea{
+            height: 100px;
         }
         form .button{
-            background-color: #593325; /* Green */
-            height: 40px;
+            background-color: #D98B48;
+            height: 45px;
             width: 100%;
+            border-radius: 10px;
             border: none;
             color: white;
             padding: 15px 32px;
@@ -85,13 +89,54 @@
             border: 1px solid #ccc; /* Borde para visibilidad */
             border-radius: 5px; /* Bordes redondeados */
             box-sizing: border-box; /* Evita que el padding influya en el ancho total */
+            border-bottom-color: #D98B48;
+            border-bottom-width: 2px ;
+            font-family: Verdana;
         }
         .form fieldset{
+            text-align: center;
             display: block;
             width: 90%;
             margin: 20px;
+            border-color: #D98B48;
+        }
+        legend{
+            text-align: justify;
+            background-color: #D98B48;
+            border-radius: 10px;
+            color: white;
+            box-sizing: border-box;
+            padding: 5px;
         }
 
+        @media (max-width: 500px) {
+            .header {
+                grid-column: 1/7;
+                grid-row: 1/2;
+            }
+            .navbar {
+                grid-column: 1/7;
+                grid-row: 2/3;
+            }
+            .form {
+                grid-column: 1/7;
+                grid-row: 3/6;
+                display: flex;
+                flex-direction: column;
+                padding: 10px;
+                width: 100%;
+                border-radius: 5px;
+                font-family: Verdana;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 17px 13px 20spx #000;
+            }
+            .pie {
+                grid-column: 1/7;
+                grid-row: 6/7;
+            }
+        }
+        
     </style>
 </head>
 <body class="grid-container">
@@ -116,16 +161,18 @@
                </div>
             </div>
     </header>
-        <form class="form" id="form" onsubmit="return validarFormulario()">
+        <form action="" class="form" id="form" onsubmit="return validarFormulario()" novalidate>
             <fieldset>
-                <legend>    Datos personales</legend>
+                <legend>
+                    <h6>Datos personales</h6>
+                </legend>
                 <div id="datosPersonales">
                     <div class="form-group">
                         <label for="nombres">Nombres Completos</label>
                         <input type="text" placeholder="Ingrese sus nombres completos" id="nombres" name="nombres">
                     </div>
                     <div class="form-group">
-                        <label for="apellidos">Apellidos</label> 
+                        <label for="apellidos">Apellidos Completos</label> 
                         <input type="text" placeholder="Ingrese sus apellidos completos" id="apellidos" name="apellidos">
                     </div>
                     <div class="form-group">
@@ -135,23 +182,25 @@
                 </div>
             </fieldset>
             <fieldset>
-                <legend>Datos del libro recomendado</legend>
+                <legend>
+                    <h6>Datos del libro recomendado</h6>
+                </legend>
                 <div id="datosLibro">
                     <div class="form-group">
                         <label for="titulo">Titulo del libro</label>
                         <input type="text" placeholder="Ingrese el titulo del libro" id="titulo" name="titulo">
                     </div>
                     <div class="form-group">
-                        <label for="">Seleccione la categoría</label>
-                        <select name="" id="">
+                        <label for="catLib">Seleccione la categoría</label>
+                        <select name="catLib" id="catLib" class="categorias">
                             <option value="">Elija...</option>
-                            <option value="">Aventura</option>
-                            <option value="">Terror</option>
-                            <option value="">Romance</option>
-                            <option value="">Fantasía</option>
-                            <option value="">Comedia</option>
-                            <option value="">Académicos</option>
-                            <option value="">Ecuador</option>
+                            <option value="aventura">Aventura</option>
+                            <option value="terror">Terror</option>
+                            <option value="romance">Romance</option>
+                            <option value="fantasia">Fantasía</option>
+                            <option value="comedia">Comedia</option>
+                            <option value="academicos">Académicos</option>
+                            <option value="ecuador">Ecuador</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -161,7 +210,9 @@
                 </div>
             </fieldset>
             <div>
-                <button class="button" type="submit" value="enviar">Enviar</button>
+                <button class="button" type="submit">
+                    <h6>Enviar</h6>
+                </button>
             </div>
         </form>
     <script type="text/javascript" src="../JavaScript/Validaciones_Recomendaciones.js"></script>

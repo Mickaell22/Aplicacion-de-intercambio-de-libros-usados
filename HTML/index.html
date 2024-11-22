@@ -212,6 +212,59 @@
       color: red;
       display: block;
     }
+
+    @media screen and (max-width: 600px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+        /* Single column layout */
+      }
+
+      .navbar,
+      .main,
+      .pie {
+        grid-column: 1 / -1;
+        /* Full width */
+      }
+
+      .box_presentacion {
+        height: auto;
+        /* Dynamic height */
+      }
+
+      .Secciones ul {
+        flex-direction: column;
+        /* Stack menu items vertically */
+      }
+
+      .Secciones ul li {
+        margin-bottom: 5px;
+      }
+
+      .form-container {
+        width: 95%;
+        /* Nearly full width */
+        padding: 1rem;
+        margin: 1rem auto;
+      }
+
+      .form-input input {
+        width: 100%;
+        /* Full width inputs */
+      }
+
+      .titulo {
+        font-size: 2em;
+        /* Smaller title */
+        margin: 10% 0 20px;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        /* Stack footer sections */
+        gap: 15px;
+        padding: 10px;
+      }
+    }
   </style>
 
 </head>
@@ -255,7 +308,7 @@
             </div>
 
             <!-- Algo referente a un catchapp? -->
-             <!-- Esqa cobromacions de la de si eres un robot -->
+            <!-- Esqa cobromacions de la de si eres un robot -->
 
             <button type="submit" class="submit-btn button-uno">
               Iniciar sesión
@@ -275,7 +328,7 @@
 
       </div>
     </div>
-    
+
   </main>
 
   <footer class="pie">
