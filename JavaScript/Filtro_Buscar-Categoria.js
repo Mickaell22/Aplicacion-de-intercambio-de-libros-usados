@@ -185,7 +185,6 @@ function mostrarLibros(librosFiltrados) {
     
     // Limpiar los libros actuales
     mainContainer.innerHTML = '';
-    // Volver a añadir el div de búsqueda
     mainContainer.appendChild(searchDiv);
 
     librosFiltrados.forEach(libro => {
@@ -208,7 +207,6 @@ document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
     checkbox.addEventListener('change', filtrarLibros);
 });
 
-// También podemos añadir la funcionalidad de búsqueda por texto
 const searchInput = document.querySelector('.search-input');
 const searchButton = document.querySelector('.search-button');
 
