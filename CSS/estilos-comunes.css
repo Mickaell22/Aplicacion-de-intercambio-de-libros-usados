@@ -116,14 +116,15 @@ nav{
     gap: 30px;
     padding: 40px 20px;
     color: #fff;
-    background: url(https://www.comunidadbaratz.com/wp-content/uploads/El-personal-de-biblioteca-es-pieza-clave-para-acercar-la-cultura-la-educacion-y-la-informacion.jpg);
-      background-position: bottom;
-      box-sizing: border-box;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-attachment: fixed;
+    background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20220504/pngtree-woman-in-bookstore-looking-for-book-bookstore-person-woman-photo-image_36345226.jpg);
+    background-position: center;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
   }
   
+
   .footer-section {
     display: flex;
     flex-direction: column;
