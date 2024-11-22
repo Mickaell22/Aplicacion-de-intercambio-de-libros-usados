@@ -103,7 +103,8 @@
       grid-column: 1/7;
       grid-row: 3/5;
       background-color: rgb(242, 242, 242);
-      display: grid;
+      display: flex;
+      justify-content: center;
       grid-template-columns: repeat(7, 1fr);
       /* 4 columnas iguales */
       gap: 20px;
@@ -251,66 +252,74 @@
 
         <!-- Autor -->
         <div class="form-input">
-          <label for="autor">Autor</label>
+          <label for="autor">Correo Electrónico</label>
           <input type="text" id="autor" name="autor" required>
         </div>
 
-        <!-- Género literario -->
+          <!-- Asunto -->
         <div class="form-input">
-          <label for="genero">Género</label>
-          <select id="genero" name="genero" required>
-            <option value="">Seleccione un género</option>
-            <option value="novela">Novela</option>
-            <option value="poesia">Poesía</option>
-            <option value="ensayo">Ensayo</option>
-            <option value="biografia">Biografía</option>
-            <option value="infantil">Literatura Infantil</option>
-            <option value="academico">Académico</option>
-            <option value="otro">Otro</option>
-          </select>
+          <label for="asunto">Asunto</label>
+          <input type="text" id="asunto" name="asunto" required>
         </div>
 
-        <!-- Año de publicación -->
+        <!--Numero de telefono -->
         <div class="form-input">
-          <label for="anio">Año de Publicación</label>
-          <input type="number" id="anio" name="anio" min="1000" max="2024" required>
-        </div>
-
-        <!-- Editorial -->
-        <div class="form-input">
-          <label for="editorial">Editorial</label>
-          <input type="text" id="editorial" name="editorial">
+          <label for="telefono">Número de Telefóno</label>
+          <input type="text" id="telefono" name="telefono" required>
         </div>
 
         <!-- Descripción -->
         <div class="form-input">
-          <label for="descripcion">Descripción</label>
+          <label for="descripcion">Descripción del Mensaje</label>
           <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
         </div>
 
-        <!-- ISBN -->
+        <!-- Categoría del Problema -->
         <div class="form-input">
-          <label for="isbn">ISBN (opcional)</label>
-          <input type="text" id="isbn" name="isbn">
+          <label for="categoria">Categoría</label>
+          <select id="categoria" name="categoria" required>
+            <option value="">Seleccione una Categoría</option>
+            <option value="tecnico">Problema Técnico</option>
+            <option value="politicias">Problema sobre Políticas</option>
+            <option value="incidencia">Incidencia con el libro</option>
+            <option value="sugerencia">Sugerencia</option>
+            <option value="otro">Otro</option>
+          </select>
         </div>
 
-        <!-- Portada del libro -->
+        <!-- Adjuntar Archivos -->
         <div class="form-input">
-          <label for="portada">Portada del Libro</label>
-          <input type="file" id="portada" name="portada" accept="image/*" required>
-          <small class="file-info">Formatos aceptados: JPG, PNG. Máximo 5MB</small>
+          <label for="archivo">Adjuntar Archivos o Imágenes</label>
+          <input type="file" id="archivo" name="archivo" accept=".jpg,.jpeg,.png,.pdf,.doc,.docx" multiple>
+      </div>
+
+
+        <!-- Prioridad del Mensaje -->
+        <div class="form-input">
+          <label for="prioridad">Prioridad del Mensaje</label>
+          <select id="prioridad" name="prioridad" required>
+            <option value="">Seleccione la Prioridad del Mensaje</option>
+            <option value="baja">Baja</option>
+            <option value="media">Media</option>
+            <option value="alta">Alta</option>
+          </select>
         </div>
 
-        <!-- Archivo del libro -->
-        <div class="form-input">
-          <label for="archivo">Archivo del Libro</label>
-          <input type="file" id="archivo" name="archivo" accept=".pdf" required>
-          <small class="file-info">Formatos aceptados: PDF. Máximo 50MB</small>
+
+        <!-- Consentimiento de privacidad -->
+       <div class="form-input" style="display: flex; align-items: flex-start;">
+       <input type="checkbox" id="privacidad" name="privacidad" required style="margin-right: 8px; margin-top: 4px;">
+       <label for="privacidad" style="line-height: 1.4;">
+        Acepto que mi mensaje y los datos proporcionados se utilicen para fines de atención al cliente según la política de privacidad.
+        <a href="/politica-privacidad" target="_blank">política de privacidad</a>.
+        </label>
         </div>
+
+        
 
         <!-- Botón de envío -->
         <div class="form-input">
-          <button type="submit" class="btn-submit">Subir Libro</button>
+          <button type="submit" class="btn-submit">Enviar</button>
         </div>
       </form>
     </div>
