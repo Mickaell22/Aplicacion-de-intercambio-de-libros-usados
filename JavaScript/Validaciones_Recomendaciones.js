@@ -56,6 +56,10 @@ function validarFormulario(){
             cargarMsj("El minimo de caracteres es 30", desc);
             esValido = false;
         }
+        
+    if(esValido === true){
+        alert("El formulario ha sido enviado correctamente");
+    }
     return esValido;
 }
 function cargarMsj(mensaje, elemento){

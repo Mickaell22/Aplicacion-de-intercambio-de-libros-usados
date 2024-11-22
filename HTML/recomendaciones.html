@@ -104,7 +104,8 @@
             overflow-x: auto; /* Habilita el desplazamiento horizontal */
             scroll-behavior: smooth; /* Desplazamiento suave */
             border: 1px solid black; 
-            background-color: rgb(217, 139, 72);
+            background-color: #F2D7B6;
+            /* background-color: rgb(217, 139, 72); */
             padding: 20px;
             flex-direction: row; /*importante*/
             /*flex-wrap: wrap; ajusta los elementos en funcion al tamaño*/
@@ -145,6 +146,13 @@
             display: inline-block;
             cursor: pointer;
         }
+        .libros h3{
+            background-color: #D98B48;
+            border-radius: 10px;
+            color: white;
+            box-sizing: border-box;
+            padding: 5px;
+        }
     </style>
 </head>
 <body class="grid-container">
@@ -154,10 +162,10 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="Buscar_Categoria.html">Búsqueda</a></li>
                 <!-- Contacto directo? -->
-                <li><a href="Contacto_Directo.html">Mensajeria directa</a></li> 
+                <li><a href="Contacto_Directo.html">Mensajeria directa</a></li>
                 <li><a href="Logistica_intercambio.html">Logística de Intercambio</a></li>
                 <li><a href="recomendaciones.html">Recomendaciones de Libros</a></li>
-                <li><a href="">Comentarios de Usuarios</a></li>
+                <li><a href="Comentarios.html">Comentarios de Usuarios</a></li>
                 <li style="float:right"><a class="active" href="#about">Creditos</a></li>
             </ul>
          </div>
@@ -170,7 +178,7 @@
             </div>
     </header>
     <main class="main">
-        <div id="aventura">
+        <div id="aventura" class="libros">
             <h3>Aventura</h3>
             <p>
                 Sumérgete en historias llenas de acción, exploración y 
@@ -191,7 +199,7 @@
                 <img src="/Image/portadas/aventura/vuelta.jpg" alt="Libro La vuelta al mundo en 80 dias">
             </div>
         </div>
-        <div id="terror">
+        <div id="terror" class="libros">
             <h3>Terror</h3>
             <p>
                 Explora el lado oscuro de la literatura, donde el miedo, el suspenso y
@@ -212,7 +220,7 @@
                 <img src="/Image/portadas/terror/gerald.jpg" alt="Libro El juego de Gerald">
             </div>
         </div>
-        <div id="romance">
+        <div id="romance" class="libros">
             <h3>Romance</h3>
             <p>
                 Vive las historias de amor en todas sus formas: apasionadas, prohibidas, 
@@ -228,7 +236,7 @@
                 <img src="/Image/portadas/Amor/Punales_Al_Corazon.png" alt="Libro Puñales al corazon">
             </div>
         </div>
-        <div id="fantasia">
+        <div id="fantasia" class="libros">
             <h3>Fantasia</h3>
             <p>
                 Embárcate en mundos mágicos llenos de criaturas míticas, héroes, y batallas épicas. 
@@ -241,7 +249,7 @@
                 <img src="/Image/portadas/Fantasia/Narnia.png" alt="Libro Narnia">
             </div>
         </div>
-        <div id="comedia">
+        <div id="comedia" class="libros">
             <h3>Comedia</h3>
             <p>
                 Disfruta de historias ligeras y divertidas que traen alegría y risas. 
@@ -258,7 +266,7 @@
                 <img src="/Image/portadas/Comedia/Un_Detectiva_Suelto_EnEl_Colegio.png" alt="Libro Un detective anda suelto en el colegio">
             </div>
         </div>
-        <div id="academicos">
+        <div id="academicos" class="libros">
             <h3>Académicos</h3>
             <p>
                 Para los amantes del conocimiento y el aprendizaje, esta categoría reúne obras 
@@ -275,7 +283,7 @@
                 <img src="/Image/portadas/academicos/prog.jpg" alt="Libro Fundamentos de programacion">
             </div>
         </div>
-        <div id="autor-ec">
+        <div id="autor-ec" class="libros">
             <h3>Autores ecuatorianos</h3>
             <p>
                 Descubre la riqueza de la literatura ecuatoriana, con historias y 
@@ -345,6 +353,23 @@
             </div>
         </div>
     </footer>
-
+    <script>
+        //obetener los elementos a usar
+        const titulo = document.querySelectorAll(".libros h3");
+        for(let i=0; i<titulo.length; i++){
+            titulo[i].addEventListener("click", function(e){
+                const parrafo = this.nextElementSibling;
+                const imagenesDiv = this.parentNode.querySelector(".lib");
+                // Alternar la visibilidad de ambos
+                if (parrafo.style.display !== "none" && imagenesDiv.style.display !== "none") {
+                    parrafo.style.display = "none";
+                    imagenesDiv.style.display = "none";
+                } else {
+                    parrafo.style.display = "block";
+                    imagenesDiv.style.display = "flex";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
