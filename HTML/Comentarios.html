@@ -337,6 +337,11 @@
             background-size: cover;
             background-attachment: fixed;
         }
+
+        .error {
+            color: red;
+            display: block;
+        }
     </style>
 
 
@@ -435,7 +440,7 @@
 
         <div class="comentario-form">
             <h3>Deja tu comentario</h3>
-            <form>
+            <form id="formulario" onsubmit="return validarFormulario()">
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
                     <input type="text" id="nombre" placeholder="Tu nombre">
@@ -562,7 +567,7 @@
         </div>
     </footer>
 
-
+    <script src="../JavaScript/Validaciones_Comentario.js"></script>
 </body>
 
 </html>
