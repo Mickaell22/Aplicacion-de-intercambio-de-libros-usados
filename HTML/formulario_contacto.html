@@ -276,6 +276,62 @@
             background-size: cover;
             background-attachment: fixed;
         }
+        @media (max-width: 768px) {
+  /* Ajustar el contenedor principal */
+  .grid-container {
+    display: block; /* Cambiar de grid a flujo de bloque */
+    padding: 10px;
+  }
+
+  .navbar, .header, .footer-content {
+    text-align: center;
+  }
+
+  /* Formulario */
+  .form-container {
+    margin: 10px auto; /* Centrar en la pantalla */
+    width: 40%; /* Reducir el ancho del formulario */
+    padding: 15px;
+  }
+
+  .form-titulo {
+    font-size: 1.5em; /* Reducir el tamaño del título */
+  }
+
+  .form-input {
+    width: 100%; /* Asegurar que ocupe el ancho del contenedor */
+  }
+
+  /* Frase lateral */
+  .frase {
+    margin: 10px auto;
+    width: 50%; /* Ajustar el ancho al 100% */
+    height: auto;
+  }
+
+  .frase img {
+    width: 100%; /* Imagen se adapta al contenedor */
+    height: auto;
+  }
+
+  /* Ajustes generales para el texto */
+  .titulo {
+    font-size: 2em; /* Reducir tamaño del texto */
+    margin: 5% 0 20px;
+  }
+
+  .form-input input,
+  .form-input select,
+  .form-input textarea {
+    font-size: 14px; /* Reducir texto dentro de inputs */
+  }
+
+  /* Botón */
+  .btn-submit {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
   </style>
 
 
