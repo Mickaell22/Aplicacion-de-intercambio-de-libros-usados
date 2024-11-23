@@ -329,10 +329,77 @@
     display: inline-block;
     cursor: pointer;
         }
+        @media (max-width: 768px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr; /* Coloca todas las secciones en una columna */
+        grid-template-rows: auto; /* Ajusta el tamaño de las filas automáticamente */
+        gap: 10px; /* Añade espacio entre los elementos */
+    }
 
+    .header, 
+    .navbar, 
+    .main, 
+    .sidebar, 
+    .sidebar2, 
+    .pie {
+        grid-column: 1; /* Cada sección ocupa toda la fila */
+        grid-row: auto; /* Ajusta la fila automáticamente */
+    }
+
+    .navbar ul {
+        flex-direction: column; /* Cambia la barra de navegación a una lista vertical */
+        gap: 5px; /* Añade espacio entre las opciones */
+    }
+
+    .base {
+        flex-direction: column; /* Cambia la disposición a vertical */
+        align-items: center; /* Centra los elementos */
+        padding: 20px; /* Ajusta el padding para pantallas pequeñas */
+    }
+
+    .base img {
+        width: 150px; /* Ajusta el tamaño de las imágenes */
+        height: 150px;
+    }
+
+    .datos-personales {
+        text-align: center; /* Centra el texto */
+        padding-left: 0; /* Elimina el padding izquierdo */
+    }
+
+    iframe {
+        width: 100%; /* Asegura que el mapa ocupe todo el ancho disponible */
+        height: 200px; /* Ajusta la altura del mapa */
+    }
+
+    .botones-pago {
+        flex-direction: column; /* Cambia los botones a una disposición vertical */
+        gap: 15px; /* Añade espacio entre los botones */
+    }
+
+    .botones-pago button {
+        width: 100%; /* Ocupa todo el ancho del contenedor */
+    }
+
+    .sidebar ul li a {
+        font-size: 0.9em; /* Reduce el tamaño del texto */
+        padding: 10px; /* Ajusta el padding de los enlaces */
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column; /* Apila las secciones del footer verticalmente */
+        text-align: center; /* Centra el texto */
+        gap: 15px; /* Espacio entre las secciones */
+    }
+
+    .footer-section p, .footer-section a {
+        font-size: 0.8em; /* Reduce el tamaño del texto en el footer */
+    }
+}
 
         
-
     </style>
 </head>
 <body class="grid-container">
@@ -360,8 +427,8 @@
     </header>
     <main class="main">
         
-            <h3 id="datos" class="partes">Datos Personales</h4>
-            <div class="base">
+            <h3 id="datos" class="partes">Datos Personales</h3>
+            <div id ="base" class="base" >
                     <img id="foto-perfil" src="/Image/GTROYA-PERFIL.jpg" alt="Geancarlos Troya">
                     <div class="datos-personales">
                     
@@ -375,22 +442,22 @@
                     
                 
             </div>
-            <h3 id="ubi" class="partes">Ubicación</h4>
+            <h3 id="ubi" class="partes">Ubicación</h3>
             <div class="base img">
                
-               <p><strong>Ubicación Domicilio:</strong> Calle 11ava y Federico Godin, Guayaquil</p>
-               <p><strong>Referencia:</strong> Cerca del Parque Puerto Liza</p>
-               <p><strong>Horario de entrega de libro:</strong> Lunes 3-5pm</p>
-               <p><strong>Coordenadas:</strong> Lat: -0.1807, Long: -78.4678</p>
+               <p class="parrafos"><strong>Ubicación Domicilio:</strong> Calle 11ava y Federico Godin, Guayaquil</p>
+               <p class="parrafos"><strong>Referencia:</strong> Cerca del Parque Puerto Liza</p>
+               <p class ="parrafos"><strong>Horario de entrega de libro:</strong> Lunes 3-5pm</p>
+               <p class ="parrafos"><strong>Coordenadas:</strong> Lat: -0.1807, Long: -78.4678</p>
                <iframe src="https://www.google.com/maps/embed?pb=..."></iframe>
            </div>
-           <h3 id="metodo"class="partes">Método de Pago</h4>
+           <h3 id="metodo"class="partes">Método de Pago</h3>
             
             <div class="base img">
                 <img id="din" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbg3VQZhoZuJGrzKu5VrWPIq30GqhhECx-LA&s" alt="Dinero">
                 
                 <div id="imagenes-transferencia" class="base img">
-                    <p><strong>Transferencia:</strong></p>
+                    <p class="parrafos"><strong>Transferencia:</strong></p>
                     <div class="bancos">
                         <img id="bancoguayaquil" src="https://images.seeklogo.com/logo-png/40/1/banco-guayaquil-2020-fondo-magenta-logo-png_seeklogo-408168.png?v=638658831250000000" alt="Banco Guayaquil">
                         <img id="bancopichincha" src="https://w7.pngwing.com/pngs/337/382/png-transparent-banco-pichincha-nuevo-fondo-amarillo-hd-logo-thumbnail.png" alt="Banco Pichincha">
@@ -399,16 +466,16 @@
                 </div>
                 
                 <div id="imagenes-efectivo" class="base img">
-                    <p><strong>Efectivo:</strong></p>
+                    <p class="parrafos"><strong>Efectivo:</strong></p>
                     <p>$20</p>
                     <img id="efectivo" src="https://png.pngtree.com/png-clipart/20200224/original/pngtree-cash-in-hand-icon-cartoon-style-png-image_5211912.jpg" alt="Efectivo">
                 </div>
             </div>
             
 
-            <h3 id="califi" class="partes">Calificación</h4>
+            <h3 id="califi" class="partes">Calificación</h3>
            <div class="base">
-               <p>Estoy satisfecho con la entrega del libro que tanto anhelaba ,la atención fue rápida y efectiva, espero poder disfrutarlo y leerlo hasta que termine mi plazo de lectura. 10 de 10 el servicio.</p>
+               <p class="parrafos">Estoy satisfecho con la entrega del libro que tanto anhelaba ,la atención fue rápida y efectiva, espero poder disfrutarlo y leerlo hasta que termine mi plazo de lectura. 10 de 10 el servicio.</p>
                
                <img id="img-cal" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn2uU0U2Wl1auPqKxV_D2i1t4BL5GbJZO1qQ&s" alt="Dinero">
                
@@ -420,7 +487,7 @@
         <a href="formulario_contacto.html" target="_blank"><button type="button" id="btnEnviar">LLenar Formulario </button></a>
     </section>
     <aside class="sidebar">
-        <h4>Elija una Opción</h4>
+        <h4 class="importante">Elija una Opción</h4>
         <ul>
             <li><a href="#datos">Datos Personales</a></li>
             <li><a href="#ubi">Ubicación</a></li>
@@ -430,8 +497,8 @@
         </ul>
     </aside>
     <aside class="sidebar2">
-        <h4>¡IMPORTANTE!</h4>
-        <p>El plazo de entrega de libros rige hasta que se cumpla un mes, pasado de eso, deberá pagar un recargo de $10</p>
+        <h4 class="importante">¡IMPORTANTE!</h4>
+        <p id="advertencia">El plazo de entrega de libros rige hasta que se cumpla un mes, pasado de eso, deberá pagar un recargo de $10</p>
     </aside>
     <footer class="pie">
         <div class="footer-content">

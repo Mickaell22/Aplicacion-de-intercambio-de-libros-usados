@@ -44,6 +44,11 @@
       width: 100%;
       background: radial-gradient(ellipse at 50% 30%, transparent 0%, rgba(0, 0, 0, 0.5) 50%, #000 100%);
     }
+    .error {
+      color: red;
+      display: block;
+      
+    }
 
     .titulo {
       display: inline-block;
@@ -122,7 +127,7 @@
     }
 
 
-    .form-contenedor {
+    .form-container {
       grid-column: 1/6;
       grid-row: 1/6;
       max-width: 600px;
@@ -306,82 +311,78 @@
       <img src="https://img.freepik.com/fotos-premium/estres-comunicacion-llamadas-telefonicas-persona-computadora-portatil-que-habla-contacto-tecnico-problema-computadora-error-404-o-bloqueo-base-datos-lectura-crisis-sistema-falla-consulta-hombre-sitio-web-o-software_590464-160495.jpg" alt="Una persona atendiendo a otra">
     </div>
 
-    <div class="form-contenedor">
-      <form class="form-upload">
+    <div class="form-container">
+      <form class="form-upload" id="formulario" onsubmit="return validarFormulario()">
         <h2 class="form-titulo">Formulario de Contacto</h2>
 
-        <!-- Título del libro -->
+        <!-- Nombre -->
         <div class="form-input">
-          <label for="titulo">Nombre del usuario</label>
-          <input type="text" id="titulo" name="titulo" required>
+          <label for="nombre">Nombre del Usuario</label>
+          <input type="text" id="nombre" name="nombre">
         </div>
 
-        <!-- Autor -->
+        <!-- Correo -->
         <div class="form-input">
-          <label for="autor">Correo Electrónico</label>
-          <input type="text" id="autor" name="autor" required>
+          <label for="correo">Correo Electrónico</label>
+          <input type="text" id="correo" name="correo">
         </div>
 
-          <!-- Asunto -->
+        <!-- Asunto -->
         <div class="form-input">
           <label for="asunto">Asunto</label>
-          <input type="text" id="asunto" name="asunto" required>
+          <input type="text" id="asunto" name="asunto">
         </div>
 
-        <!--Numero de telefono -->
+        <!-- Telefono -->
         <div class="form-input">
-          <label for="telefono">Número de Telefóno</label>
-          <input type="text" id="telefono" name="telefono" required>
+          <label for="telefono">Número de Telefono</label>
+          <input type="text" id="telefono" name="telefono">
         </div>
 
         <!-- Descripción -->
         <div class="form-input">
           <label for="descripcion">Descripción del Mensaje</label>
-          <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+          <textarea id="descripcion" name="descripcion" rows="4"></textarea>
         </div>
 
-        <!-- Categoría del Problema -->
+       
+
+        <!-- Categoria del Problema-->
         <div class="form-input">
-          <label for="categoria">Categoría</label>
-          <select id="categoria" name="categoria" required>
-            <option value="">Seleccione una Categoría</option>
-            <option value="tecnico">Problema Técnico</option>
-            <option value="politicias">Problema sobre Políticas</option>
-            <option value="incidencia">Incidencia con el libro</option>
+          <label for="categoria">Categoria del Problema</label>
+          <select id="categoria" name="categoria">
+            <option value="">Seleccione una Categoria</option>
+            <option value="tecnico">Problema Tecnico</option>
+            <option value="politica">Problema sobre Politicas</option>
+            <option value="libro">Incidencia con el libro</option>
             <option value="sugerencia">Sugerencia</option>
             <option value="otro">Otro</option>
           </select>
         </div>
 
-        <!-- Adjuntar archivos -->
+        <!-- Captura -->
         <div class="form-input">
-          <label for="adjuntar">Adjuntar imagen</label>
-          <input type="file" id="adjuntar" name="adjuntar" accept="image/*">
-          <small class="file-info">Formatos aceptados: JPG, PNG. Máximo 20MB</small>
+          <label for="captura">Adjuntar captura de pantalla</label>
+          <input type="file" id="captura" name="captura" accept="image/*">
+          <small class="file-info">Formatos aceptados: JPG, PNG. Máximo 5MB</small>
         </div>
 
-
-        <!-- Prioridad del Mensaje -->
+        <!-- Proridad del Mensaje-->
         <div class="form-input">
-          <label for="prioridad">Prioridad del Mensaje</label>
-          <select id="prioridad" name="prioridad" required>
-            <option value="">Seleccione la Prioridad del Mensaje</option>
+          <label for="mensaje">Prioridad del Mensaje</label>
+          <select id="mensaje" name="mensaje">
+            <option value="">Seleccione una opción:</option>
             <option value="baja">Baja</option>
             <option value="media">Media</option>
             <option value="alta">Alta</option>
           </select>
         </div>
 
-
-        <!-- Consentimiento de privacidad -->
-       <div class="form-input" style="display: flex; align-items: flex-start;">
-       <input type="checkbox" id="privacidad" name="privacidad" required style="margin-right: 8px; margin-top: 4px;">
-       <label for="privacidad" style="line-height: 1.4;">
-        Acepto que mi mensaje y los datos proporcionados se utilicen para fines de atención al cliente según la política de privacidad.
-        </label>
-        </div>
-
-        
+       <!-- Cantidad de sugerencias o problemas -->
+       <div class="form-input">
+        <label for="cantidad">Cantidad de sugerencias o problemas</label>
+        <input type="number" id="cantidad" name="cantidad" min="1" max="5">
+      </div>
 
         <!-- Botón de envío -->
         <div class="form-input">
@@ -431,6 +432,7 @@
       </div>
     </div>
   </footer>
+  <script src="../JavaScript/Validaciones_Contact.js"></script>
 </body>
 
 </html>
