@@ -318,7 +318,7 @@
     width: 140px;
    
 }
-#btnEnviar {
+#BtnEnviar{
     
     background-color: #3498db;
     border: none;
@@ -326,7 +326,6 @@
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     cursor: pointer;
         }
         @media (max-width: 768px) {
@@ -429,7 +428,7 @@
         
             <h3 id="datos" class="partes">Datos Personales</h3>
             <div id ="base" class="base" >
-                    <img id="foto-perfil" src="/Image/GTROYA-PERFIL.jpg" alt="Geancarlos Troya">
+                    <img id="foto-perfil" src="../Image/GTROYA-PERFIL.jpg" alt="Geancarlos Troya">
                     <div class="datos-personales">
                     
                         <p><strong>Nombres:</strong> Geancarlos</p>
@@ -484,7 +483,9 @@
     <section class="problemas">
         <h2>¿Tienes algún incoveniente o recomendación?</h2>
         <p>Envíanos tu caso para comunicarnos contigo y ayudarte a resolverlo.</p>
-        <a href="formulario_contacto.html" target="_blank"><button type="button" id="btnEnviar">LLenar Formulario </button></a>
+        <button type="button" id="BtnEnviar" class="Info button" onclick="location.href='formulario_contacto.html'">
+            LLenar el Formulario
+        </button>
     </section>
     <aside class="sidebar">
         <h4 class="importante">Elija una Opción</h4>
