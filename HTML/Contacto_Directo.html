@@ -187,6 +187,20 @@
             flex: 1;
         }
 
+        .chat-header-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .chat-header-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+        }
+
         .chat img {
             width: 60px;
             height: 60px;
@@ -351,8 +365,7 @@
     <main class="main">
         <div class="search">
             <input type="text" class="search-input" placeholder="Busca tus chats...">
-            <a href="Buscar_Categoria.html"
-                class="search-button">Buscar
+            <a href="Buscar_Categoria.html" class="search-button">Buscar
             </a>
         </div>
         <div class="chat">
@@ -457,7 +470,47 @@
         </div>
     </footer>
 
+    <script>
+        const chats = document.querySelectorAll('.chat');
+        const chatContainer = document.querySelector('.chat-container');
+        const chatHeader = document.querySelector('.chat-header');
+        const chatMessages = document.querySelector('.chat-messages');
 
+        // Primero modificamos el HTML del chat-header para incluir la imagen
+        chatHeader.innerHTML = `
+    <div class="chat-header-content">
+        <img src="../Image/portadas/academicos/alg.jpg" alt="" class="chat-header-img">
+        <h3>Chat - Algebra</h3>
+    </div>
+`;
+
+        // Función para manejar el clic en un chat
+        chats.forEach(chat => {
+            chat.addEventListener('click', function () {
+                // Obtener el título del chat clickeado y la imagen
+                const chatTitle = this.querySelector('h3').textContent;
+                const chatImage = this.querySelector('img').src;
+
+                // Actualizar el título y la imagen en el chat-header
+                chatHeader.innerHTML = `
+            <div class="chat-header-content">
+                <img src="${chatImage}" alt="" class="chat-header-img">
+                <h3>Chat - ${chatTitle}</h3>
+            </div>
+        `;
+
+                // Limpiar los mensajes
+                chatMessages.innerHTML = '';
+
+                // Hacer scroll hasta el chat-container
+                chatContainer.scrollIntoView({ behavior: 'smooth' });
+
+                // Resaltar el chat seleccionado
+                chats.forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
 </body>
 
 </html>
