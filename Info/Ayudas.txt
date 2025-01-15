@@ -26,3 +26,6 @@ Prettier
 
 Parcial #1
 Por ahora solo sera diseño asi que usen la paleta de colores y maquetizafcion
+
+Parcial #2
+Programacion de lado del servidor y usar MVC
