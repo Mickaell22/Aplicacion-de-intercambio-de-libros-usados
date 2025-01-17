@@ -11,7 +11,7 @@ class LoginController {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Obtener y sanitizar los datos del formulario
             $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-            $password = $_POST['password']; // La contraseña no se sanitiza para no afectar caracteres especiales
+            $password = $_POST['password'];
             
             // Validar que los campos no estén vacíos
             if (empty($email) || empty($password)) {
@@ -38,16 +38,20 @@ class LoginController {
                     $_SESSION['usuario_email'] = $usuario->getCorreoElectronico();
                     $_SESSION['usuario_pais'] = $usuario->getPais();
                     $_SESSION['usuario_ubicacion'] = $usuario->getUbicacion();
+                    $_SESSION['rol'] = $usuario->getRol();
                     
                     // Establecer cookie de "recordar sesión" si se solicitó
                     if (isset($_POST['recordar']) && $_POST['recordar'] == '1') {
-                        $token = bin2hex(random_bytes(32)); // Generar token seguro
-                        setcookie('remember_token', $token, time() + (86400 * 30), '/'); // 30 días
-                        // Aquí podrías guardar el token en la base de datos para validarlo después
+                        $token = bin2hex(random_bytes(32));
+                        setcookie('remember_token', $token, time() + (86400 * 30), '/');
                     }
                     
-                    // Redirigir a la página de búsqueda
-                    header('Location: ' . URL_BASE . 'index.php?c=busqueda&f=index');
+                    // Redirigir según el rol
+                    if ($usuario->getRol() === 'admin') {
+                        header('Location: ' . URL_BASE . 'index.php?c=admin&f=index');
+                    } else {
+                        header('Location: ' . URL_BASE . 'index.php?c=busqueda&f=index');
+                    }
                     exit;
                 } else {
                     // Credenciales inválidas
@@ -55,19 +59,17 @@ class LoginController {
                     exit;
                 }
             } catch (Exception $e) {
-                // Log del error
                 error_log("Error en login: " . $e->getMessage());
                 header('Location: ' . URL_BASE . 'index.php?error=error_sistema');
                 exit;
             }
         } else {
-            // Verificar si hay un token de "recordar sesión"
+            // Para peticiones GET
             if (!isset($_SESSION['usuario_id']) && isset($_COOKIE['remember_token'])) {
-                // Aquí podrías validar el token contra la base de datos
-                // y hacer login automático si es válido
+                // TODO: Implementar la validación del token
+                // $this->loginDAO->validarToken($_COOKIE['remember_token']);
             }
             
-            // Mostrar la vista principal
             require_once 'view/templates/main.php';
         }
     }

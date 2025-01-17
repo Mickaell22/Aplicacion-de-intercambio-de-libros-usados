@@ -1,3 +1,4 @@
+<!-- Autor: Moran Vera Mickaell -->
 <!DOCTYPE html>
 <html lang="es">
 
@@ -279,152 +280,117 @@
       max-height: 200px;
     }
 
+    .admin-actions {
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+
+    .admin-button {
+      display: inline-block;
+      padding: 12px 25px;
+      background: linear-gradient(#FF4081, #FF9800);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .admin-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    }
   </style>
-
-
 
 
 </head>
 
-<body class="grid-container">
-  <header class="navbar">
-    <div class="box-titulo">
-      <div class="box-titulo-opaco">
-        <h1 class="titulo">¡Comparte tus libros con nosotros!</h1>
-        <div class="Secciones">
-          <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="Buscar_Categoria.html">Búsqueda</a></li>
-            <li><a href="Contacto_Directo.html">Mensajeria directa</a></li>
-            <li><a href="Logistica_intercambio.html">Logística de Intercambio</a></li>
-            <li><a href="recomendaciones.html">Recomendaciones de Libros</a></li>
-            <li><a href="Comentarios.html">Comentarios de Usuarios</a></li>
-            <li style="float:right"><a class="active" href="#about">Creditos</a></li>
-          </ul>
-        </div>
+<main class="main">
+  <div class="frase">
+    <h3 class="frase-principal">¡Comparte tu libro con nuestra comunidad!</h3>
+    <p class="frase-secundaria">Comienza tu viaje con nosotros y descubre un mundo de posibilidades.</p>
+    <img src="https://img.freepik.com/fotos-premium/hombre-sienta-pila-libros-libro-su-regazo_853645-14105.jpg"
+      alt="Una persona sentada sobre una pila de libros">
+
+    <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin'): ?>
+      <div class="admin-actions">
+        <a href="index.php?c=admin&f=libros" class="admin-button">
+          Gestionar Libros
+        </a>
       </div>
-    </div>
-  </header>
+    <?php endif; ?>
 
-  <main class="main">
-    <div class="frase">
-      <h3 class="frase-principal">¡Comparte tu libro con nuestra comunidad!</h3>
-      <p class="frase-secundaria">Comienza tu viaje con nosotros y descubre un mundo de posibilidades.</p>
-      <img src="https://img.freepik.com/fotos-premium/hombre-sienta-pila-libros-libro-su-regazo_853645-14105.jpg"
-        alt="Una persona sentada sobre una pila de libros">
-    </div>
-    <div class="form-container">
-      <form class="form-upload" id="formulario" onsubmit="return validarFormulario()">
-        <h2 class="form-titulo">Subir Libro</h2>
+  </div>
+  <div class="form-container">
+    <form class="form-upload" id="formulario" method="POST" action="index.php?c=libro&f=publicar"
+      enctype="multipart/form-data" onsubmit="return validarFormulario()">
+      <h2 class="form-titulo">Subir Libro</h2>
 
-        <!-- Título del libro -->
-        <div class="form-input">
-          <label for="titulo">Título del Libro</label>
-          <input type="text" id="titulo" name="titulo">
-        </div>
-
-        <!-- Autor -->
-        <div class="form-input">
-          <label for="autor">Autor</label>
-          <input type="text" id="autor" name="autor">
-        </div>
-
-        <!-- Género literario -->
-        <div class="form-input">
-          <label for="genero">Género</label>
-          <select id="genero" name="genero">
-            <option value="">Seleccione un género</option>
-            <option value="novela">Novela</option>
-            <option value="poesia">Poesía</option>
-            <option value="ensayo">Ensayo</option>
-            <option value="biografia">Biografía</option>
-            <option value="infantil">Literatura Infantil</option>
-            <option value="academico">Académico</option>
-            <option value="otro">Otro</option>
-          </select>
-        </div>
-
-        <!-- Año de publicación -->
-        <div class="form-input">
-          <label for="anio">Año de Publicación</label>
-          <input type="number" id="anio" name="anio" min="1000" max="2024">
-        </div>
-
-        <!-- Editorial -->
-        <div class="form-input">
-          <label for="editorial">Editorial</label>
-          <input type="text" id="editorial" name="editorial">
-        </div>
-
-        <!-- Descripción -->
-        <div class="form-input">
-          <label for="descripcion">Descripción</label>
-          <textarea id="descripcion" name="descripcion" rows="4"></textarea>
-        </div>
-
-        <!-- Portada del libro -->
-        <div class="form-input">
-          <label for="portada">Portada del Libro</label>
-          <input type="file" id="portada" name="portada" accept="image/*">
-          <small class="file-info">Formatos aceptados: JPG, PNG. Máximo 5MB</small>
-        </div>
-
-        <!-- Archivo del libro -->
-        <div class="form-input">
-          <label for="archivo">Archivo del Libro</label>
-          <input type="file" id="archivo" name="archivo" accept=".pdf">
-          <small class="file-info">Formatos aceptados: PDF. Máximo 50MB</small>
-        </div>
-
-        <!-- Botón de envío -->
-        <div class="form-input">
-          <button type="submit" class="btn-submit">Subir Libro</button>
-        </div>
-      </form>
-    </div>
-
-  </main>
-
-
-  <footer class="pie">
-    <div class="footer-content">
-      <!-- Sección de Contacto -->
-      <div class="footer-section">
-        <h4>Contacto</h4>
-        <ul class="contact-info">
-          <li>
-            <p>+365 0999999999</p>
-          </li>
-          <li>
-            <p>mickaelmoranver.@ug.edu.ec</p>
-          </li>
-        </ul>
+      <!-- Título del libro -->
+      <div class="form-input">
+        <label for="titulo">Título del Libro</label>
+        <input type="text" id="titulo" name="titulo">
       </div>
 
-      <!-- Sección de Redes Sociales -->
-      <div class="footer-section">
-        <h4>Redes Sociales</h4>
-        <div class="social-links">
-          <a href="https://www.facebook.com/mickael.moranvera" target="_blank">Facebook</a>
-          <a href="https://www.youtube.com/channel/UCk1Fy0DXDryNcILKx5irmXQ" target="_blank">YouTube</a>
-          <a href="https://github.com/Mickaell22" target="_blank">GitHub</a>
-          <a href="https://www.linkedin.com/in/mickaell-moran-vera-ba421a2a3/" target="_blank">LinkedIn</a>
-        </div>
+      <!-- Autor -->
+      <div class="form-input">
+        <label for="autor">Autor</label>
+        <input type="text" id="autor" name="autor">
       </div>
 
-      <div class="footer-section">
-        <h4>Participantes</h4>
-        <div class="participantes">
-          <p>Moran Vera Mickael Adrian</p>
-          <p>Aguilar Quinto Alejandro Alberto</p>
-          <p>Fernandez Nanande Jahir Bismark</p>
-          <p>Troya Garzon Geancarlos</p>
-          <p>Salazar Mejia Marco Antonio</p>
-        </div>
+      <!-- Género literario -->
+      <div class="form-input">
+        <label for="genero">Género</label>
+        <select id="genero" name="genero">
+          <option value="">Seleccione un género</option>
+          <option value="novela">Novela</option>
+          <option value="poesia">Poesía</option>
+          <option value="ensayo">Ensayo</option>
+          <option value="biografia">Biografía</option>
+          <option value="infantil">Literatura Infantil</option>
+          <option value="academico">Académico</option>
+          <option value="otro">Otro</option>
+        </select>
       </div>
-    </div>
-  </footer>
-  <script src="../JavaScript/Validaciones_Subir-libro.js"></script>
+
+      <!-- Año de publicación -->
+      <div class="form-input">
+        <label for="anio">Año de Publicación</label>
+        <input type="number" id="anio" name="anio" min="1000" max="2024">
+      </div>
+
+      <!-- Editorial -->
+      <div class="form-input">
+        <label for="editorial">Editorial</label>
+        <input type="text" id="editorial" name="editorial">
+      </div>
+
+      <!-- Descripción -->
+      <div class="form-input">
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" name="descripcion" rows="4"></textarea>
+      </div>
+
+      <!-- Portada del libro -->
+      <div class="form-input">
+        <label for="portada">Portada del Libro</label>
+        <input type="file" id="portada" name="portada" accept="image/*">
+        <small class="file-info">Formatos aceptados: JPG, PNG. Máximo 5MB</small>
+      </div>
+
+      <!-- Botón de envío -->
+      <div class="form-input">
+        <button type="submit" class="btn-submit">Subir Libro</button>
+      </div>
+    </form>
+  </div>
+</main>
+
+
+
+<script src="../JavaScript/Validaciones_Subir-libro.js"></script>
 
 </body>
 

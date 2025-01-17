@@ -11,6 +11,7 @@ class UsuarioDTO {
     private $genero;
     private $correo_electronico;
     private $contrasena;
+    private $rol;
 
     // Getters
     public function getId() { return $this->id; }
@@ -24,8 +25,12 @@ class UsuarioDTO {
     public function getGenero() { return $this->genero; }
     public function getCorreoElectronico() { return $this->correo_electronico; }
     public function getContrasena() { return $this->contrasena; }
+    public function getRol() { return $this->rol;    }
+
 
     // Setters
+    public function setRol($rol) { $this->rol = $rol;
+    }
     public function setId($id) { $this->id = $id; }
     public function setNombre($nombre) { $this->nombre = $nombre; }
     public function setApellido($apellido) { $this->apellido = $apellido; }

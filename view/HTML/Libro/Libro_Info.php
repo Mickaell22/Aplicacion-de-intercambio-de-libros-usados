@@ -1,3 +1,4 @@
+<!-- Autor: Moran Vera Mickaell -->
 <!DOCTYPE html>
 <html lang="es">
 
@@ -22,8 +23,53 @@
 
     <!-- Titulo de pagiona -->
     <title>Intercambios de libros usados</title>
+</head>
 
-    <style>
+<body class="grid-container">
+    <aside class="sidebar">
+        <img src="<?php echo $libro['imagen']; ?>" alt="Portada de <?php echo $libro['titulo']; ?>">
+        <h2><?php echo $libro['titulo']; ?></h2>
+        <h3><?php echo $libro['autor']; ?></h3>
+        <p><?php echo $libro['descripcion']; ?></p>
+    </aside>
+
+    <main class="main">
+        <div class="info">
+            <h2 class="info-libro"><?php echo $libro['titulo']; ?></h2>
+            <h3 class="info-autor"><?php echo $libro['autor']; ?></h3>
+            <p>Valoracion: <?php echo $libro['valoracion']; ?> Estrellas</p>
+
+            <div class="Botones">
+                <button type="button" class="Info button"
+                    onclick="location.href='index.php?c=libro&f=comprar&id=<?php echo $libro['id']; ?>'">
+                    Comprar
+                </button>
+                <button type="button" class="Comprar button"
+                    onclick="location.href='index.php?c=mensajeria&f=chat&id=<?php echo $libro['id']; ?>'">
+                    Chat
+                </button>
+                <button type="button" class="Info button"
+                    onclick="location.href='index.php?c=comentarios&f=ver&id=<?php echo $libro['id']; ?>'">
+                    Comentarios
+                </button>
+                <button type="button" class="Comprar button" onclick="location.href='index.php?c=libro&f=publicar'">
+                    Publica tu libro!
+                </button>
+                <button type="button" class="Info button"
+                    onclick="location.href='index.php?c=libro&f=denunciar&id=<?php echo $libro['id']; ?>'">
+                    Denunciar
+                </button>
+            </div>
+        </div>
+
+        <div class="resenia">
+            <h2>Reseña del libro</h2>
+            <p><?php echo $libro['resena']; ?></p>
+        </div>
+    </main>
+</body>
+
+<style>
         /* Totuilo */
         .box-titulo {
             height: 320px;
@@ -85,8 +131,8 @@
         }
 
         .sidebar {
-            grid-column: 1/2;
-            grid-row: 1/3;
+            grid-column: 1/3;
+            grid-row: 3/4;
             background-color: rgb(242, 242, 242);
             margin-left: 20px;
             border: 7px solid #D98b48;
@@ -266,112 +312,3 @@
             background-attachment: fixed;
         }
     </style>
-</head>
-
-<body class="grid-container">
-    <header class="navbar">
-        <div class="box-titulo">
-            <div class="box-titulo-opaco">
-                <h1 class="titulo">"Titulo del libro"</h1>
-                <div class="Secciones">
-                    <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="Buscar_Categoria.html">Búsqueda</a></li>
-                        <li><a href="Contacto_Directo.html">Mensajeria directa</a></li>
-                        <li><a href="Logistica_intercambio.html">Logística de Intercambio</a></li>
-                        <li><a href="recomendaciones.html">Recomendaciones de Libros</a></li>
-                        <li><a href="Comentarios.html">Comentarios de Usuarios</a></li>
-                        <li style="float:right"><a class="active" href="#about">Creditos</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </header>
-    <main class="main">
-        <aside class="sidebar">
-            <img src="../Image/portadas/Amor/Como_Si_Fuera_Ayer.png" alt="Portada del libro _____">
-            <h2>Titulo del libro</h2>
-            <h3>Autor</h3>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod aliquam laudantium nulla aspernatur fuga
-                soluta debitis? At alias culpa vel quidem adipisci odio eaque minima deserunt sequi quis, error
-                corrupti!
-            </p>
-        </aside>
-
-        <div class="info">
-            <img src="../Image/portadas/terror/" alt="">
-            <h2 class="info-libro">Titulo del libro</h2>
-            <h3 class="info-autor">Autor</h3>
-            <p>Valoracion: 4.1 Estrellas</p>
-
-            <div class="Botones">
-                <button type="button" class="Info button" onclick="location.href='Comprar.html'">
-                    Comprar
-                </button>
-                <button type="button" class="Comprar button" onclick="location.href='Contacto_Directo.html'">
-                    Chat
-                </button>
-                <button type="button" class="Info button" onclick="location.href='Comentarios.html'">
-                    Comentarios
-                </button>
-                
-                <button type="button" class="Comprar button" onclick="location.href='Subir_Libro.html'">
-                    Publica tu libro!
-                </button>
-                
-                <button type="button" class="Info button" onclick="location.href='denuncia.html'">
-                    Denunciar
-                </button>
-            </div>
-        </div>
-
-        <div class="resenia">
-            <h2>Reseña del libro</h2>
-            <p>"Como si fuera ayer" es una novela de Isabel San Sebastián que entrelaza el pasado y el presente a través
-                de una historia de amor, misterio y redescubrimiento personal. La trama sigue a Sara, una mujer que
-                vuelve a su ciudad natal, donde revive los recuerdos de un amor de juventud que dejó una profunda huella
-                en su vida. En su retorno, Sara se enfrenta no solo a las memorias de aquel romance, sino también a una
-                serie de eventos que despiertan secretos familiares, conflictos no resueltos y sentimientos encontrados.
-            </p>
-        </div>
-    </main>
-
-    <footer class="pie">
-        <div class="footer-content">
-            <!-- Sección de Contacto -->
-            <div class="footer-section">
-                <h4>Contacto</h4>
-                <p>+365 0999999999</p>
-                <p>mickaelmoranver.@ug.edu.ec</p>
-            </div>
-
-            <!-- Sección de Redes Sociales -->
-            <div class="footer-section">
-                <h4>Redes Sociales</h4>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/mickael.moranvera" target="_blank">Facebook</a>
-                    <a href="https://www.youtube.com/channel/UCk1Fy0DXDryNcILKx5irmXQ" target="_blank">YouTube</a>
-                    <a href="https://github.com/Mickaell22" target="_blank">GitHub</a>
-                    <a href="https://www.linkedin.com/in/mickaell-moran-vera-ba421a2a3/" target="_blank">LinkedIn</a>
-
-                </div>
-            </div>
-
-            <div class="footer-section">
-                <h4>Participantes</h4>
-                <div class="participantes">
-                    <p>Moran Vera Mickael Adrian</p>
-                    <p>Aguilar Quinto Alejandro Alberto</p>
-                    <p>Fernandez Nanande Jahir Bismark</p>
-                    <p>Troya Garzon Geancarlos</p>
-                    <p>Salazar Mejia Marco Antonio</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
-</body>
-
-</html>

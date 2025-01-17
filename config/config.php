@@ -3,6 +3,7 @@
 define("ESTILOS2", "assets/CSS/estilos-comunes-2.css");
 define("MAIN_VIEW", "view/templates/main.php");
 define("IMG_PATH", "assets/CSS/Image/");
+define("LIBRO_INFO", "view/HTML/Libro/Libro_Info.php");
 
 //HEADER
 define("HEADER", "view/templates/header.php");
