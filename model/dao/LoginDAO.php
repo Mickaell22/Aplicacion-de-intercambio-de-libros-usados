@@ -1,27 +1,30 @@
 <?php
-require_once __DIR__ . '/../../config/database.php';
 require_once __DIR__ . '/../dto/UsuarioDTO.php';
 
 class LoginDAO {
     private $conn;
-    private $database;
 
     public function __construct() {
-        $this->database = new Database();
-    }
-
-    private function conectar() {
         try {
-            $this->conn = $this->database->getConnection();
+            require_once __DIR__ . '/../../config/Database.php';
+            $database = new Database();
+            $this->conn = $database->getConnection();
+            
+            if (!$this->conn) {
+                throw new Exception("No se pudo establecer la conexión con la base de datos");
+            }
         } catch (Exception $e) {
-            die("Error de conexión: " . $e->getMessage());
+            error_log("Error en LoginDAO constructor: " . $e->getMessage());
+            throw $e;
         }
     }
 
     public function validarUsuario($email, $password) {
         try {
-            $this->conectar();
-            
+            if (!$this->conn) {
+                throw new Exception("No hay conexión a la base de datos");
+            }
+
             $sql = "SELECT * FROM Usuarios 
                     WHERE correo_electronico = :email 
                     AND contrasena = :password 
@@ -32,27 +35,24 @@ class LoginDAO {
             $stmt->bindParam(':password', $password, PDO::PARAM_STR);
             $stmt->execute();
             
-            if ($stmt->rowCount() > 0) {
-                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 $usuario = new UsuarioDTO();
                 $usuario->setId($row['id']);
                 $usuario->setNombre($row['nombre']);
                 $usuario->setApellido($row['apellido']);
                 $usuario->setNombreUsuario($row['nombre_usuario']);
-                $usuario->setNumeroCelular($row['numero_celular']);
+                $usuario->setCorreoElectronico($row['correo_electronico']);
                 $usuario->setPais($row['pais']);
                 $usuario->setUbicacion($row['ubicacion']);
-                $usuario->setFechaNacimiento($row['fecha_nacimiento']);
-                $usuario->setGenero($row['genero']);
-                $usuario->setCorreoElectronico($row['correo_electronico']);
+                $usuario->setRol($row['rol']);
+                
                 return $usuario;
             }
+            
             return null;
         } catch(PDOException $e) {
             error_log("Error en validarUsuario: " . $e->getMessage());
-            return null;
-        } finally {
-            $this->conn = null;
+            throw $e;
         }
     }
 }

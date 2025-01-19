@@ -36,18 +36,26 @@ class LibroDAO {
         }
     }
 
-    public function getAllLibros() {
+    public function getAllLibros($mostrarPendientes = false) {
         try {
             $sql = "SELECT l.*, u.nombre as nombre_usuario 
                     FROM libros l 
-                    INNER JOIN usuarios u ON l.usuario_id = u.id 
-                    WHERE l.estado = 'aprobado' 
-                    ORDER BY l.fecha_registro DESC";
+                    INNER JOIN usuarios u ON l.usuario_id = u.id";
+            
+            if ($mostrarPendientes) {
+                // Mostrar solo pendientes y rechazados
+                $sql .= " WHERE l.estado IN ('pendiente', 'rechazado')";
+            } else {
+                // Mostrar solo aprobados
+                $sql .= " WHERE l.estado = 'aprobado'";
+            }
+            
+            $sql .= " ORDER BY l.fecha_registro DESC";
             
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
-        } catch(PDOException $e) {
+        } catch (PDOException $e) {
             error_log("Error en getAllLibros: " . $e->getMessage());
             return [];
         }
@@ -103,6 +111,32 @@ class LibroDAO {
         } catch(PDOException $e) {
             error_log("Error en getLibroById: " . $e->getMessage());
             return null;
+        }
+    }
+
+    public function cambiarEstado($id, $estado) {
+        try {
+            $sql = "UPDATE libros SET estado = :estado WHERE id = :id";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(':estado', $estado, PDO::PARAM_STR);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            return $stmt->execute();
+        } catch(PDOException $e) {
+            error_log("Error en cambiarEstado: " . $e->getMessage());
+            return false;
+        }
+    }
+
+    public function eliminarLibro($id) {
+        try {
+            $sql = "DELETE FROM libros WHERE id = :id";
+            
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            return $stmt->execute();
+        } catch(PDOException $e) {
+            error_log("Error en eliminarLibro: " . $e->getMessage());
+            return false;
         }
     }
 }

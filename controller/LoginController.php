@@ -48,7 +48,7 @@ class LoginController {
                     
                     // Redirigir según el rol
                     if ($usuario->getRol() === 'admin') {
-                        header('Location: ' . URL_BASE . 'index.php?c=admin&f=index');
+                        header('Location: ' . URL_BASE . 'index.php?c=busqueda&f=index');
                     } else {
                         header('Location: ' . URL_BASE . 'index.php?c=busqueda&f=index');
                     }

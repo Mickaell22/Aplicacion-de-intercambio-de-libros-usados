@@ -295,12 +295,7 @@
       text-decoration: none;
       border-radius: 25px;
       font-weight: bold;
-      transition: all 0.3s ease;
-    }
-
-    .admin-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
     }
   </style>
 
@@ -314,13 +309,13 @@
     <img src="https://img.freepik.com/fotos-premium/hombre-sienta-pila-libros-libro-su-regazo_853645-14105.jpg"
       alt="Una persona sentada sobre una pila de libros">
 
-    <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin'): ?>
-      <div class="admin-actions">
-        <a href="index.php?c=admin&f=libros" class="admin-button">
-          Gestionar Libros
-        </a>
-      </div>
-    <?php endif; ?>
+      <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin'): ?>
+            <div class="admin-actions">
+                <button type="button" class="admin-button" onclick="location.href='index.php?c=admin&f=libros'">
+                    Gestionar Libros
+                </button>
+            </div>
+        <?php endif; ?>
 
   </div>
   <div class="form-container">
