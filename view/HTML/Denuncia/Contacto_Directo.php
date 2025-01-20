@@ -22,8 +22,88 @@
 
     <!-- Titulo de pagiona -->
     <title>Intercambios de libros usados</title>
+</head>
 
-    <style>
+    <main class="main">
+        <div class="search">
+            <input type="text" class="search-input" placeholder="Busca tus chats...">
+            <button class="search-button">Buscar</button>
+        </div>
+
+        <div class="chats-container">
+            <?php
+            $chats = [
+                ['imagen' => 'assets/CSS/Image/portadas/academicos/alg.jpg', 'titulo' => 'Algebra', 'ultimo_mensaje' => 'Algebra...'],
+                ['imagen' => 'assets/CSS/Image/portadas/academicos/arq.jpg', 'titulo' => 'Arquitectura', 'ultimo_mensaje' => 'Arquitectura...'],
+            ];
+
+            foreach ($chats as $chat): ?>
+                <div class="chat">
+                    <img src="<?php echo $chat['imagen']; ?>" alt="<?php echo $chat['titulo']; ?>">
+                    <h3><?php echo $chat['titulo']; ?></h3>
+                    <p><?php echo $chat['ultimo_mensaje']; ?></p>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </main>
+
+    <section class="section">
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="chat-header-content">
+                    <img src="assets/CSS/Image/portadas/academicos/alg.jpg" alt="" class="chat-header-img">
+                    <h3>Chat - Algebra</h3>
+                </div>
+            </div>
+            <div class="chat-messages">
+                <div class="message sent">
+                    <p>Aun tiene el libro disponible?</p>
+                </div>
+                <div class="message received">
+                    <p>No :(</p>
+                </div>
+                <div class="message sent">
+                    <p>Ta bien</p>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Escribe aqui tu mensaje...">
+                <button>Enviar</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const chats = document.querySelectorAll('.chat');
+        const chatContainer = document.querySelector('.chat-container');
+        const chatHeader = document.querySelector('.chat-header');
+        const chatMessages = document.querySelector('.chat-messages');
+
+        chats.forEach(chat => {
+            chat.addEventListener('click', function () {
+                const chatTitle = this.querySelector('h3').textContent;
+                const chatImage = this.querySelector('img').src;
+
+                chatHeader.innerHTML = `
+            <div class="chat-header-content">
+                <img src="${chatImage}" alt="" class="chat-header-img">
+                <h3>Chat - ${chatTitle}</h3>
+            </div>
+        `;
+
+                chatMessages.innerHTML = '';
+                chatContainer.scrollIntoView({ behavior: 'smooth' });
+
+                chats.forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+<style>
         .box-titulo {
             height: 320px;
             width: 100%;
@@ -338,179 +418,4 @@
             background-size: cover;
             background-attachment: fixed;
         }
-    </style>
-
-
-</head>
-
-<body class="grid-container">
-    <header class="navbar">
-        <div class="box-titulo">
-            <div class="box-titulo-opaco">
-                <h1 class="titulo">Mensajeria directa</h1>
-                <div class="Secciones">
-                    <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="Buscar_Categoria.html">Búsqueda</a></li>
-                        <li><a href="Contacto_Directo.html">Mensajeria directa</a></li>
-                        <li><a href="Logistica_intercambio.html">Logística de Intercambio</a></li>
-                        <li><a href="recomendaciones.html">Recomendaciones de Libros</a></li>
-                        <li><a href="Comentarios.html">Comentarios de Usuarios</a></li>
-                        <li style="float:right"><a class="active" href="#about">Creditos</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </header>
-    <main class="main">
-        <div class="search">
-            <input type="text" class="search-input" placeholder="Busca tus chats...">
-            <a href="Buscar_Categoria.html" class="search-button">Buscar
-            </a>
-        </div>
-        <div class="chat">
-            <img src="../Image/portadas/academicos/alg.jpg" alt="">
-            <h3>Algebra</h3>
-            <p>Algebra...</p>
-        </div>
-        <div class="chat">
-            <img src="../Image/portadas/academicos/arq.jpg" alt="">
-            <h3>Arquitectura</h3>
-            <p>Arquitectura...</p>
-        </div>
-        <div class="chat">
-            <img src="../Image/portadas/academicos/c.jpg" alt="">
-            <h3>Lenguaje de programacion C</h3>
-            <p>C...</p>
-        </div>
-        <div class="chat">
-            <img src="../Image/portadas/academicos/cabeza.jpg" alt="">
-            <h3>Las vidas dentro de tu cabeza</h3>
-            <p>Mensaje...</p>
-        </div>
-        <div class="chat">
-            <img src="../Image/portadas/academicos/dibujo.jpg" alt="">
-            <h3>Apuntes de dibujo tecnico</h3>
-            <p>Mensaje...</p>
-        </div>
-        <div class="chat">
-            <img src="../Image/portadas/academicos/historia.jpg" alt="">
-            <h3>Historia</h3>
-            <p>Mensaje...</p>
-        </div>
-        <div class="chat">
-            <img src="../Image/portadas/academicos/prog.jpg" alt="">
-            <h3>Programacion</h3>
-            <p>Mensaje...</p>
-        </div>
-        <div class="chat">
-            <img src="../Image/portadas/terror/locura2.jpg" alt="">
-            <h3>Las montañas de la locura 2</h3>
-            <p>Mensaje...</p>
-        </div>
-    </main>
-    <section class="section">
-        <div class="chat-container">
-            <div class="chat-header">
-                <h3>Chat - Algebra</h3>
-            </div>
-            <div class="chat-messages">
-                <div class="message sent">
-                    <p>Aun tiene el libro disponible?</p>
-                </div>
-                <div class="message received">
-                    <p>No :(</p>
-                </div>
-                <div class="message sent">
-                    <p>Ta bien</p>
-                </div>
-            </div>
-            <div class="chat-input">
-                <input type="text" placeholder="Escribe aqui tu mensaje...">
-                <button>Enviar</button>
-            </div>
-        </div>
-    </section>
-
-    <footer class="pie">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Contacto</h4>
-                <ul class="contact-info">
-                    <li>
-                        <p>+365 0999999999</p>
-                    </li>
-                    <li>
-                        <p>jahir.fernandezn@ug.edu.ec</p>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Sección de Redes Sociales -->
-            <div class="footer-section">
-                <h4>Redes Sociales</h4>
-                <div class="social-links">
-                    <a href="" target="_blank">Facebook</a>
-                    <a href="" target="_blank">YouTube</a>
-                    <a href="" target="_blank">GitHub</a>
-                    <a href="" target="_blank">LinkedIn</a>
-                </div>
-            </div>
-
-            <div class="footer-section">
-                <h4>Participantes</h4>
-                <div class="participantes">
-                    <p>Moran Vera Mickael Adrian</p>
-                    <p>Aguilar Quinto Alejandro Alberto</p>
-                    <p>Fernandez Nanande Jahir Bismark</p>
-                    <p>Troya Garzon Geancarlos</p>
-                    <p>Salazar Mejia Marco Antonio</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        const chats = document.querySelectorAll('.chat');
-        const chatContainer = document.querySelector('.chat-container');
-        const chatHeader = document.querySelector('.chat-header');
-        const chatMessages = document.querySelector('.chat-messages');
-
-        // Primero modificamos el HTML del chat-header para incluir la imagen
-        chatHeader.innerHTML = `
-    <div class="chat-header-content">
-        <img src="../Image/portadas/academicos/alg.jpg" alt="" class="chat-header-img">
-        <h3>Chat - Algebra</h3>
-    </div>
-`;
-
-        // Función para manejar el clic en un chat
-        chats.forEach(chat => {
-            chat.addEventListener('click', function () {
-                // Obtener el título del chat clickeado y la imagen
-                const chatTitle = this.querySelector('h3').textContent;
-                const chatImage = this.querySelector('img').src;
-
-                // Actualizar el título y la imagen en el chat-header
-                chatHeader.innerHTML = `
-            <div class="chat-header-content">
-                <img src="${chatImage}" alt="" class="chat-header-img">
-                <h3>Chat - ${chatTitle}</h3>
-            </div>
-        `;
-
-                // Limpiar los mensajes
-                chatMessages.innerHTML = '';
-
-                // Hacer scroll hasta el chat-container
-                chatContainer.scrollIntoView({ behavior: 'smooth' });
-
-                // Resaltar el chat seleccionado
-                chats.forEach(c => c.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
-    </script>
-</body>
-
-</html>
+</style>

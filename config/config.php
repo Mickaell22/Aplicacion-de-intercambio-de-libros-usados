@@ -5,7 +5,8 @@ define("MAIN_VIEW", "view/templates/main.php");
 define("IMG_PATH", "assets/CSS/Image/");
 define("LIBRO_INFO", "view/HTML/Libro/Libro_Info.php");
 define("LIBROS_VIEW", "view/HTML/Libro/libros.php");
-
+define("MENSAJERIA_VIEW", "view/HTML/Denuncia/Contacto_Directo.php");
+define("GESTIONAR_DENUNCIAS", "view/HTML/Denuncia/gestionar.php");
 
 //HEADER
 define("HEADER", "view/templates/header.php");

@@ -37,6 +37,21 @@ CREATE TABLE Usuarios (
 ALTER TABLE Usuarios
 ADD COLUMN rol ENUM('admin', 'usuario') NOT NULL DEFAULT 'usuario';
 
+-- denuncias
+CREATE TABLE denuncias (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    libro_id INT NOT NULL,
+    usuario_id INT NOT NULL,
+    tipo VARCHAR(50) NOT NULL,
+    descripcion TEXT NOT NULL,
+    evidencia VARCHAR(255),
+    fecha_incidente DATE NOT NULL,
+    fecha_registro DATETIME DEFAULT CURRENT_TIMESTAMP,
+    estado ENUM('pendiente', 'revisada', 'resuelta') DEFAULT 'pendiente',
+    FOREIGN KEY (libro_id) REFERENCES libros(id),
+    FOREIGN KEY (usuario_id) REFERENCES Usuarios(id)
+);
+
 
 
 -- Insert
