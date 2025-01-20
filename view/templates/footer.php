@@ -1,3 +1,6 @@
+<!-- Autor: Moran Vera Mickaell -->
+
+<!-- FOOTER -->
 <footer class="pie">
         <div class="footer-content">
             <div class="footer-section">

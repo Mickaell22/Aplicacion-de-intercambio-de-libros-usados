@@ -1,5 +1,7 @@
+<!-- Autor: Moran Vera Mickaell -->
+
+<!-- SUB-HEADER? -->
 <?php
-// Obtener valores de las cookies o usar valores predeterminados
 $headerTitle = isset($_COOKIE['header_title']) ? $_COOKIE['header_title'] : 'Búsqueda';
 $headerImage = isset($_COOKIE['header_image']) ? $_COOKIE['header_image'] : 'https://png.pngtree.com/thumb_back/fw800/background/20220504/pngtree-woman-in-bookstore-looking-for-book-bookstore-person-woman-photo-image_36345226.jpg';
 ?>
@@ -16,10 +18,6 @@ $headerImage = isset($_COOKIE['header_image']) ? $_COOKIE['header_image'] : 'htt
     <link rel="stylesheet" href="<?php echo ESTILOS2; ?>">
     <link rel="icon" href="assets/Image/icon.png" type="image/png">
     <title>Intercambios de libros usados</title>
-
-    <style>
-        /* ... tus estilos ... */
-    </style>
 </head>
 <body class="grid-container">
     <header class="navbar">

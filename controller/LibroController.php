@@ -1,3 +1,5 @@
+<!-- Autor: Moran Vera Mickaell -->
+
 <?php
 require_once 'model/dao/LibroDAO.php';
 require_once 'model/dto/LibroDTO.php';
@@ -45,7 +47,6 @@ class LibroController {
 
     public function publicar() {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            // Validar campos requeridos
             if(empty($_POST["titulo"]) || empty($_POST["autor"]) || empty($_POST["genero"])) {
                 $_SESSION["mensaje"] = "Por favor complete todos los campos requeridos";
                 $_SESSION["tipo"] = "error";
@@ -77,6 +78,53 @@ class LibroController {
 
         require_once SUB_HEADER;
         require_once 'view/HTML/Libro/Subir_Libro.php';
+        require_once FOOTER;
+    }
+
+    public function editar() {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $id = isset($_POST['id']) ? (int)$_POST['id'] : 0;
+            
+            try {
+                $libro = $this->populate();
+                
+                // Procesar imagen solo si se subió una nueva
+                if(isset($_FILES['portada']) && $_FILES['portada']['error'] == 0) {
+                    $imagen = $this->procesarImagen($_FILES['portada']);
+                    if ($imagen) {
+                        $libro->setImagen($imagen);
+                    }
+                }
+    
+                if ($this->libroDAO->actualizarLibro($id, $libro)) {
+                    $_SESSION['mensaje'] = "Libro actualizado exitosamente";
+                    $_SESSION['tipo'] = "success";
+                } else {
+                    $_SESSION['mensaje'] = "Error al actualizar el libro";
+                    $_SESSION['tipo'] = "error";
+                }
+                
+                header('Location: ' . URL_BASE . 'index.php?c=admin&f=libros');
+                exit;
+            } catch (Exception $e) {
+                $_SESSION['mensaje'] = "Error al actualizar el libro";
+                $_SESSION['tipo'] = "error";
+                header('Location: ' . URL_BASE . 'index.php?c=admin&f=libros');
+                exit;
+            }
+        } 
+        
+        // Para GET, mostrar formulario de edición
+        $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+        $libro = $this->libroDAO->getLibroById($id);
+        
+        if (!$libro) {
+            header('Location: ' . URL_BASE . 'index.php?c=admin&f=libros');
+            exit;
+        }
+    
+        require_once SUB_HEADER;
+        require_once 'view/HTML/Libro/Editar_Libro.php';
         require_once FOOTER;
     }
 

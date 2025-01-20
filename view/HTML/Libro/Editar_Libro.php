@@ -1,221 +1,76 @@
 <!-- Autor: Moran Vera Mickaell -->
-<div class="admin-container">
-    <div class="admin-header">
-        <h1>Gestión de Libros</h1>
-        <div class="admin-actions">
-            <a href="<?php echo URL_BASE; ?>index.php?c=libro&f=publicar" class="btn-crear">Nuevo Libro</a>
-            <form method="GET" action="" class="filter-form">
-                <input type="hidden" name="c" value="admin">
-                <input type="hidden" name="f" value="libros">
-                <label class="checkbox-label">
-    <input type="checkbox" name="mostrar_pendientes" value="1" 
-        <?php echo isset($_GET['mostrar_pendientes']) ? 'checked' : ''; ?> 
-        onchange="this.form.submit()">
-    Mostrar Pendientes y Rechazados
-</label>
-            </form>
-        </div>
-    </div>
+<main class="main">
+    <div class="form-container">
+        <form class="form-upload" id="formulario" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="<?php echo $libro['id']; ?>">
+            <h2 class="form-titulo">Editar Libro</h2>
 
-    <?php if (!empty($libros)): ?>
-        <table class="admin-table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Título</th>
-                    <th>Autor</th>
-                    <th>Género</th>
-                    <th>Estado</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($libros as $libro): ?>
-                    <tr>
-                        <td><?php echo $libro['id']; ?></td>
-                        <td><?php echo html_entity_decode($libro['titulo']); ?></td>
-                        <td><?php echo html_entity_decode($libro['autor']); ?></td>
-                        <td><?php echo $libro['genero']; ?></td>
-                        <td>
-                            <span class="estado-badge <?php echo $libro['estado']; ?>">
-                                <?php echo ucfirst($libro['estado']); ?>
-                            </span>
-                        </td>
-                        <td class="acciones">
-    <a href="index.php?c=libro&f=editar&id=<?php echo $libro['id']; ?>" 
-       class="btn-editar">Editar</a>
-    
-    <?php if ($libro['estado'] === 'pendiente'): ?>
-        <a href="index.php?c=admin&f=aprobar&id=<?php echo $libro['id']; ?>" 
-           class="btn-aprobar">Aprobar</a>
-        <a href="index.php?c=admin&f=rechazar&id=<?php echo $libro['id']; ?>" 
-           class="btn-eliminar">Rechazar</a>
-    <?php endif; ?>
-    
-    <a href="index.php?c=admin&f=eliminar&id=<?php echo $libro['id']; ?>" 
-       class="btn-eliminar"
-       onclick="return confirm('¿Está seguro que desea eliminar este libro?')">
-        Eliminar
-    </a>
-</td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    <?php else: ?>
-        <div class="no-results">
-            <p>No hay libros para mostrar.</p>
-        </div>
-    <?php endif; ?>
-</div>
+            <!-- Título del libro -->
+            <div class="form-input">
+                <label for="titulo">Título del Libro</label>
+                <input type="text" id="titulo" name="titulo" 
+                       value="<?php echo html_entity_decode($libro['titulo']); ?>" required>
+            </div>
+
+            <!-- Autor -->
+            <div class="form-input">
+                <label for="autor">Autor</label>
+                <input type="text" id="autor" name="autor" 
+                       value="<?php echo html_entity_decode($libro['autor']); ?>" required>
+            </div>
+
+            <!-- Género -->
+            <div class="form-input">
+                <label for="genero">Género</label>
+                <select id="genero" name="genero" required>
+                    <option value="">Seleccione un género</option>
+                    <option value="Novelas" <?php echo $libro['genero'] == 'Novelas' ? 'selected' : ''; ?>>Novelas</option>
+                    <option value="Historia" <?php echo $libro['genero'] == 'Historia' ? 'selected' : ''; ?>>Historia</option>
+                    <option value="Biografia" <?php echo $libro['genero'] == 'Biografia' ? 'selected' : ''; ?>>Biografía</option>
+                    <option value="Amor" <?php echo $libro['genero'] == 'Amor' ? 'selected' : ''; ?>>Amor</option>
+                    <option value="Academicos" <?php echo $libro['genero'] == 'Academicos' ? 'selected' : ''; ?>>Académicos</option>
+                    <option value="Aventura" <?php echo $libro['genero'] == 'Aventura' ? 'selected' : ''; ?>>Aventura</option>
+                </select>
+            </div>
+
+            <!-- Editorial -->
+            <div class="form-input">
+                <label for="editorial">Editorial</label>
+                <input type="text" id="editorial" name="editorial" 
+                       value="<?php echo html_entity_decode($libro['editorial']); ?>">
+            </div>
+
+            <!-- Descripción -->
+            <div class="form-input">
+                <label for="descripcion">Descripción</label>
+                <textarea id="descripcion" name="descripcion" rows="4"><?php echo html_entity_decode($libro['descripcion']); ?></textarea>
+            </div>
+
+            <!-- Imagen actual -->
+            <?php if (!empty($libro['imagen'])): ?>
+            <div class="form-input">
+                <label>Portada Actual</label>
+                <img src="<?php echo $libro['imagen']; ?>" alt="Portada actual" 
+                     style="max-width: 200px; margin: 10px 0; display: block;">
+            </div>
+            <?php endif; ?>
+
+            <!-- Nueva imagen (opcional) -->
+            <div class="form-input">
+                <label for="portada">Nueva Portada (opcional)</label>
+                <input type="file" id="portada" name="portada" accept="image/*">
+                <small class="file-info">Formatos aceptados: JPG, PNG. Máximo 5MB</small>
+            </div>
+
+            <div class="form-input">
+                <button type="submit" class="btn-submit">Guardar Cambios</button>
+            </div>
+        </form>
+    </div>
+</main>
+
 
 <style>
-.admin-container {
-    padding: 30px;
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    margin: 20px;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.admin-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-}
-
-.admin-header h1 {
-    color: #333;
-    font-size: 2em;
-    margin: 0;
-}
-
-.admin-actions {
-    display: flex;
-    gap: 20px;
-}
-
-.btn-crear {
-    background: linear-gradient(135deg, #D98B48, #FF9800);
-    color: white;
-    padding: 12px 24px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    border: none;
-}
-
-.btn-crear:hover {
-    box-shadow: 0 6px 20px rgba(217, 139, 72, 0.4);
-}
-
-.admin-table {
-    width: 100%;
-    margin-top: 20px;
-    background: white;
-}
-
-.admin-table th, 
-.admin-table td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #eee;
-}
-
-.admin-table th {
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-    color: #333;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.9em;
-    letter-spacing: 0.5px;
-}
-
-
-
-.acciones {
-    display: flex;
-    gap: 8px;
-}
-
-.btn-editar,
-.btn-aprobar,
-.btn-eliminar {
-    padding: 8px 16px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.9em;
-    border: none;
-}
-
-.btn-editar {
-    background: linear-gradient(135deg, #2196F3, #1976D2);
-    color: white;
-}
-
-.btn-aprobar {
-    background: linear-gradient(135deg, #4CAF50, #45a049);
-    color: white;
-}
-
-.btn-eliminar {
-    background: linear-gradient(135deg, #f44336, #d32f2f);
-    color: white;
-}
-
-.btn-editar:hover,
-.btn-aprobar:hover,
-.btn-eliminar:hover {
-    cursor: pointer;
-}
-
-.estado-badge {
-    padding: 6px 12px;
-    border-radius: 15px;
-    font-size: 0.85em;
-    font-weight: 500;
-    display: inline-block;
-}
-
-.estado-badge.pendiente {
-    background-color: #fff3cd;
-    color: #856404;
-    border: 1px solid #ffeeba;
-}
-
-.estado-badge.aprobado {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-}
-
-.estado-badge.rechazado {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-}
-
-.checkbox-label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    font-weight: 500;
-    color: #666;
-}
-
-.checkbox-label input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-}
-
-
     .box-titulo {
       height: 320px;
       width: 100%;
@@ -486,7 +341,4 @@
       font-weight: bold;
       cursor: pointer;
     }
-
-
-
-</style>
+  </style>

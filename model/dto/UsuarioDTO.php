@@ -1,3 +1,6 @@
+<!-- Autor: Moran Vera Mickaell -->
+
+
 <?php
 class UsuarioDTO {
     private $id;

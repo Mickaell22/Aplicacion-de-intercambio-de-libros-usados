@@ -1,3 +1,7 @@
+<!-- Autor: Moran Vera Mickaell -->
+
+<!-- Aunq creo que otros compañeñors tambien usaran esta clase -->
+
 <?php
 class AdminController {
     private $libroDAO;

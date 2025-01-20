@@ -1,3 +1,5 @@
+<!-- Autor: Moran Vera Mickaell -->
+
 <?php
 require_once 'config.php';
 

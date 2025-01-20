@@ -1,3 +1,5 @@
+<!-- Autor: Moran Vera Mickaell -->
+
 <?php
 class LoginController {
     private $loginDAO;
