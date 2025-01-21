@@ -41,8 +41,9 @@
         <p class="register-text">
             ¿No tienes una cuenta? ¿Qué esperas para registrarte? ¡Es gratis! Haz clic en el botón de abajo
         </p>
-        <button type="button" class="register-btn button-dos" onclick="location.href='Register.html'">
+        <button type="button" class="register-btn button-dos" onclick="location.href='index.php?c=Register&f=index'">
             Registrarse
         </button>
     </div>
 </div>
+
