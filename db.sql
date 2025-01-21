@@ -52,6 +52,9 @@ CREATE TABLE denuncias (
     FOREIGN KEY (usuario_id) REFERENCES Usuarios(id)
 );
 
+-- tabla
+
+
 
 
 -- Insert

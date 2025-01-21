@@ -23,36 +23,29 @@ class LoginDAO {
 
     public function validarUsuario($email, $password) {
         try {
-            if (!$this->conn) {
-                throw new Exception("No hay conexión a la base de datos");
-            }
-
-            $sql = "SELECT * FROM Usuarios 
-                    WHERE correo_electronico = :email 
-                    AND contrasena = :password 
-                    LIMIT 1";
-            
+            $sql = "SELECT * FROM usuarios WHERE correo_electronico = :email";
             $stmt = $this->conn->prepare($sql);
-            $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-            $stmt->bindParam(':password', $password, PDO::PARAM_STR);
+            $stmt->bindParam(":email", $email, PDO::PARAM_STR);
             $stmt->execute();
+
+            $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
             
-            if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                $usuario = new UsuarioDTO();
-                $usuario->setId($row['id']);
-                $usuario->setNombre($row['nombre']);
-                $usuario->setApellido($row['apellido']);
-                $usuario->setNombreUsuario($row['nombre_usuario']);
-                $usuario->setCorreoElectronico($row['correo_electronico']);
-                $usuario->setPais($row['pais']);
-                $usuario->setUbicacion($row['ubicacion']);
-                $usuario->setRol($row['rol']);
+            if ($usuario && password_verify($password, $usuario['contrasena'])) {
+                $usuarioDTO = new UsuarioDTO();
+                $usuarioDTO->setId($usuario['id']);
+                $usuarioDTO->setNombre($usuario['nombre']);
+                $usuarioDTO->setApellido($usuario['apellido']);
+                $usuarioDTO->setNombreUsuario($usuario['nombre_usuario']);
+                $usuarioDTO->setCorreoElectronico($usuario['correo_electronico']);
+                $usuarioDTO->setPais($usuario['pais']);
+                $usuarioDTO->setUbicacion($usuario['ubicacion']);
+                $usuarioDTO->setRol($usuario['rol']);
                 
-                return $usuario;
+                return $usuarioDTO;
             }
-            
             return null;
-        } catch(PDOException $e) {
+
+        } catch (PDOException $e) {
             error_log("Error en validarUsuario: " . $e->getMessage());
             throw $e;
         }

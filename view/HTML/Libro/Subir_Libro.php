@@ -302,6 +302,8 @@
 
 </head>
 
+
+
 <main class="main">
   <div class="frase">
     <h3 class="frase-principal">¡Comparte tu libro con nuestra comunidad!</h3>

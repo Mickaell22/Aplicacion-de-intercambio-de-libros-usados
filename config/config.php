@@ -8,6 +8,8 @@ define("LIBROS_VIEW", "view/HTML/Libro/libros.php");
 define("MENSAJERIA_VIEW", "view/HTML/Denuncia/Contacto_Directo.php");
 define("GESTIONAR_DENUNCIAS", "view/HTML/Denuncia/gestionar.php");
 define("EDITAR_DENUNCIA", "view/HTML/Denuncia/editar.php");
+define("COMENTARIOS_VIEW", "view/HTML/Comentarios/Comentarios.php");
+define("REGISTER_VIEW", "view/HTML/Register/Register.php");
 
 //HEADER
 define("HEADER", "view/templates/header.php");
