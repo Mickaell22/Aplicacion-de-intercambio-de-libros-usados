@@ -78,6 +78,30 @@ class DenunciaDAO
         }
     }
 
+    public function actualizarDenuncia($id, $datos) {
+        try {
+            $sql = "UPDATE denuncias 
+                    SET tipo = :tipo,
+                        estado = :estado,
+                        fecha_incidente = :fecha_incidente,
+                        descripcion = :descripcion
+                    WHERE id = :id";
+                    
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(':tipo', $datos['tipo'], PDO::PARAM_STR);
+            $stmt->bindParam(':estado', $datos['estado'], PDO::PARAM_STR);
+            $stmt->bindParam(':fecha_incidente', $datos['fecha_incidente'], PDO::PARAM_STR);
+            $stmt->bindParam(':descripcion', $datos['descripcion'], PDO::PARAM_STR);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            
+            return $stmt->execute();
+            
+        } catch(PDOException $e) {
+            error_log("Error en actualizarDenuncia: " . $e->getMessage());
+            return false;
+        }
+    }
+
     public function eliminarDenuncia($id) {
         try {
             // Primero, verificamos si la denuncia existe

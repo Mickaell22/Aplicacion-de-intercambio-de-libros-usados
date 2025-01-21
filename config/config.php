@@ -7,6 +7,7 @@ define("LIBRO_INFO", "view/HTML/Libro/Libro_Info.php");
 define("LIBROS_VIEW", "view/HTML/Libro/libros.php");
 define("MENSAJERIA_VIEW", "view/HTML/Denuncia/Contacto_Directo.php");
 define("GESTIONAR_DENUNCIAS", "view/HTML/Denuncia/gestionar.php");
+define("EDITAR_DENUNCIA", "view/HTML/Denuncia/editar.php");
 
 //HEADER
 define("HEADER", "view/templates/header.php");

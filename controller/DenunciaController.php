@@ -209,6 +209,53 @@ class DenunciaController
         exit;
     }
 
+    public function editar() {
+        if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'admin') {
+            header('Location: ' . URL_BASE . 'index.php');
+            exit;
+        }
+    
+        $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+    
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // Procesar formulario
+            $datos = [
+                'tipo' => $_POST['tipo'],
+                'estado' => $_POST['estado'],
+                'fecha_incidente' => $_POST['fecha_incidente'],
+                'descripcion' => $_POST['descripcion']
+            ];
+    
+            try {
+                if ($this->denunciaDAO->actualizarDenuncia($id, $datos)) {
+                    $_SESSION['mensaje'] = "Denuncia actualizada exitosamente";
+                    $_SESSION['tipo'] = "success";
+                    header('Location: ' . URL_BASE . 'index.php?c=denuncia&f=ver&id=' . $id);
+                    exit;
+                } else {
+                    $_SESSION['mensaje'] = "Error al actualizar la denuncia";
+                    $_SESSION['tipo'] = "error";
+                }
+            } catch (Exception $e) {
+                error_log("Error en editar denuncia: " . $e->getMessage());
+                $_SESSION['mensaje'] = "Error al procesar la solicitud";
+                $_SESSION['tipo'] = "error";
+            }
+        }
+    
+        // Obtener datos actuales de la denuncia
+        $denuncia = $this->denunciaDAO->getDenunciaDetalle($id);
+        
+        if (!$denuncia) {
+            header('Location: ' . URL_BASE . 'index.php?c=denuncia&f=gestionar');
+            exit;
+        }
+    
+        require_once SUB_HEADER;
+        require_once 'view/HTML/Denuncia/editar.php';
+        require_once FOOTER;
+    }
+
     public function eliminar()
     {
         if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'admin') {
