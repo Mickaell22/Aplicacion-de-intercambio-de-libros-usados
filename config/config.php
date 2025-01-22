@@ -10,6 +10,7 @@ define("GESTIONAR_DENUNCIAS", "view/HTML/Denuncia/gestionar.php");
 define("EDITAR_DENUNCIA", "view/HTML/Denuncia/editar.php");
 define("COMENTARIOS_VIEW", "view/HTML/Comentarios/Comentarios.php");
 define("REGISTER_VIEW", "view/HTML/Register/Register.php");
+define("BUSCAR_LOGISTICA_VIEW", "view/HTML/Logistica/Buscar_intercambio.php"); 
 
 //HEADER
 define("HEADER", "view/templates/header.php");
