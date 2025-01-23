@@ -313,7 +313,7 @@
 
       <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin'): ?>
             <div class="admin-actions">
-                <button type="button" class="admin-button" onclick="location.href=''">
+                <button type="button" class="admin-button" onclick="location.href='index.php?c=admin&f=libros'">
                     Gestionar Intercambios
                 </button>
             </div>
@@ -327,7 +327,7 @@
 
       <!-- Fecha de Intercambio -->
       <div class="form-input">
-        <label for="fecha_intercambio">Fecha del Intercambio</label>
+        <label for="fecha_intercambio">Fecha de Intercambio</label>
         <input type="date" id="fecha_intercambio" name="fecha_intercambio" required>
       </div>
 
@@ -339,8 +339,8 @@
 
       <!-- Ubicacion -->
       <div class="form-input">
-        <label for="autor">Ubicación de Intercambio</label>
-        <input type="text" id="autor" name="autor">
+        <label for="ubicacion">Ubicación de Intercambio</label>
+        <input type="text" id="ubicacion" name="ubicacion">
       </div>
 
       <!-- Año de publicación -->
