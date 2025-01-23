@@ -17,56 +17,6 @@
         </div>
     </div>
 
-    <?php if (!empty($libros)): ?>
-        <table class="admin-table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Título</th>
-                    <th>Autor</th>
-                    <th>Género</th>
-                    <th>Estado</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($libros as $libro): ?>
-                    <tr>
-                        <td><?php echo $libro['id']; ?></td>
-                        <td><?php echo html_entity_decode($libro['titulo']); ?></td>
-                        <td><?php echo html_entity_decode($libro['autor']); ?></td>
-                        <td><?php echo $libro['genero']; ?></td>
-                        <td>
-                            <span class="estado-badge <?php echo $libro['estado']; ?>">
-                                <?php echo ucfirst($libro['estado']); ?>
-                            </span>
-                        </td>
-                        <td class="acciones">
-    <a href="index.php?c=libro&f=editar&id=<?php echo $libro['id']; ?>" 
-       class="btn-editar">Editar</a>
-    
-    <?php if ($libro['estado'] === 'pendiente'): ?>
-        <a href="index.php?c=admin&f=aprobar&id=<?php echo $libro['id']; ?>" 
-           class="btn-aprobar">Aprobar</a>
-        <a href="index.php?c=admin&f=rechazar&id=<?php echo $libro['id']; ?>" 
-           class="btn-eliminar">Rechazar</a>
-    <?php endif; ?>
-    
-    <a href="index.php?c=admin&f=eliminar&id=<?php echo $libro['id']; ?>" 
-       class="btn-eliminar"
-       onclick="return confirm('¿Está seguro que desea eliminar este intercambio?')">
-        Eliminar
-    </a>
-</td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    <?php else: ?>
-        <div class="no-results">
-            <p>No hay libros para mostrar.</p>
-        </div>
-    <?php endif; ?>
 </div>
 
 <style>

@@ -34,18 +34,29 @@
         <?php else: ?>
             <?php foreach ($intercambios as $intercambio): ?>
                 <div class="elemento">
-                    <a href="index.php?c=libro&f=info&id=<?php echo htmlspecialchars($intercambio['id']); ?>">
+                    <a href="             <?php echo htmlspecialchars($intercambio['id']); ?>">
                         <img src="<?php echo htmlspecialchars($intercambio['imagen']); ?>"
                             alt="<?php echo htmlspecialchars($intercambio['titulo']); ?>">
                     </a>
                     <h3><?php echo htmlspecialchars($intercambio['titulo']); ?></h3>
                     <p class="autor">por <?php echo htmlspecialchars($intercambio['autor']); ?></p>
                     <input type="button" class="Info-button" value="Información"
-                        onclick="location.href='index.php?c=libro&f=info&id=<?php echo htmlspecialchars($intercambio['id']); ?>'">
+                        onclick="location.href='                 <?php echo htmlspecialchars($intercambio['id']); ?>'">
                     <input type="button" class="Comprar-button" value="Pedir">
                 </div>
             <?php endforeach; ?>
         <?php endif; ?>
+
+
+        <!-- Botón de envío -->
+      <div class="form-input">
+      <button type="button" class="admin-button" onclick="location.href='index.php?c=Intercambio_info&f=index'">
+                    Detalles del Intercambio
+      </button>
+      </div>
+        
+
+
     </main>
 </body>
 
@@ -273,6 +284,24 @@
     .button:hover {
         font-weight: bold;
         box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .admin-button {
+      width: 100%;
+      padding: 15px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      margin-left: 140px;
+    }
+
+    .btn-submit:hover {
+      background-color: #2980b9;
     }
 
     .footer-content {

@@ -2,7 +2,7 @@
 <main class="main">
     <div class="form-container">
         <form class="form-upload" id="formulario" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="id" value="<?php echo $libro['id']; ?>">
+            <input type="hidden" name="id" value="<?php echo $intercambio['id']; ?>">
             <h2 class="form-titulo">Editar Logistica de Intercambio</h2>
 
         <!-- Fecha de Intercambio -->
@@ -61,8 +61,9 @@
       </div>
 
         <div class="form-input">
-                <button type="submit" class="btn-submit">Guardar Cambios</button>
-            </div>
+        <button type="submit" class="btn-submit" onclick="location.href='index.php?c=Intercambio_info&f=index'">
+        Guardar Cambios
+        </div>
         </form>
     </div>
 </main>

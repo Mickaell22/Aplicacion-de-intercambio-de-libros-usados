@@ -51,7 +51,10 @@
                     <td>Presencial</td>
                     <td>El intercambio se realizó sin inconvenientes, buen trato entre las partes.</td>
                     <td class="action-buttons">
-                        <button class="btn btn-primary">Editar</button>
+                    <button type="button" class="btn btn-danger" onclick="location.href='index.php?c=Editar_intercambio&f=index'">
+                    Editar
+                    </button>
+                        
                         <button class="btn btn-danger">Eliminar</button>
                     </td>
                 </tr>
@@ -61,7 +64,9 @@
 
         <!-- Botones de Acción -->
         <div class="text-center">
-            <a href="#" class="btn btn-success">Registrar Intercambio</a>
+        <button type="button" class="btn btn-danger" onclick="location.href='index.php?c=Registrar_intercambio&f=index'">
+                    Registrar Intercambio
+        </button>
         </div>
     </div>
 
@@ -92,27 +97,17 @@
         transition: background-color 0.3s ease, transform 0.3s ease; /* Animación al pasar el cursor */
     }
 
-    /* Botón de Editar */
-    .btn-primary {
-        background-color: #007bff;
-        color: white;
-        border: none;
-    }
-
-    .btn-primary:hover {
-        background-color: #0056b3;
-        transform: scale(1.05); /* Efecto de ampliación */
-    }
+    
 
     /* Botón de Eliminar */
     .btn-danger {
-        background-color: #dc3545;
+        background-color: #00BFFF;
         color: white;
         border: none;
     }
 
     .btn-danger:hover {
-        background-color: #c82333;
+        background-color: green;
         transform: scale(1.05); /* Efecto de ampliación */
     }
 

@@ -306,22 +306,16 @@
 
 <main class="main">
   <div class="frase">
-    <h3 class="frase-principal">¡Comparte tu libro con nuestra comunidad!</h3>
-    <p class="frase-secundaria">Comienza tu viaje con nosotros y descubre un mundo de posibilidades.</p>
+    <h3 class="frase-principal">¡Registra tu intercambio y comparte tu experiencia!</h3>
+    
     <img src="https://img.freepik.com/fotos-premium/hombre-sienta-pila-libros-libro-su-regazo_853645-14105.jpg"
       alt="Una persona sentada sobre una pila de libros">
 
-      <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin'): ?>
-            <div class="admin-actions">
-                <button type="button" class="admin-button" onclick="location.href='index.php?c=admin&f=libros'">
-                    Gestionar Intercambios
-                </button>
-            </div>
-        <?php endif; ?>
+      
 
   </div>
   <div class="form-container">
-    <form class="form-upload" id="formulario" method="POST" action="index.php?c=libro&f=publicar"
+    <form class="form-upload" id="formulario" method="POST" action="index.php?c=logistica&f=index"
       enctype="multipart/form-data" onsubmit="return validarFormulario()">
       <h2 class="form-titulo">Registrar Intercambio</h2>
 
@@ -380,15 +374,15 @@
 
       <!-- Botón de envío -->
       <div class="form-input">
-        <button type="submit" class="btn-submit">Registrar Intercambio</button>
+      <button type="button" class="btn-submit" onclick="location.href='index.php?c=Intercambio_info&f=index'">
+                    Añadir Intercambio
+      </button>
       </div>
     </form>
-  </div>
+  </div>   
 </main>
 
 
-
-<script src="../JavaScript/Validaciones_Subir-libro.js"></script>
 
 </body>
 

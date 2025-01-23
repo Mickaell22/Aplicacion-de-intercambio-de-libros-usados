@@ -11,6 +11,14 @@ define("EDITAR_DENUNCIA", "view/HTML/Denuncia/editar.php");
 define("COMENTARIOS_VIEW", "view/HTML/Comentarios/Comentarios.php");
 define("REGISTER_VIEW", "view/HTML/Register/Register.php");
 define("INTERCAMBIO_VIEW", "view/HTML/Logistica/intercambio.php");
+//BUSCAR LOGISTICA
+define("BUSCAR_LOGISTICA_VIEW", "view/HTML/Logistica/Buscar_intercambio.php"); 
+//INFO LOGISTICA
+define("INFO_LOGISTICA_VIEW","view/HTML/Logistica/Intercambio_info.php");
+//EDITAR LOGISTICA
+define("EDITAR_LOGISTICA_VIEW","view/HTML/Logistica/editar_intercambio.php");
+//REGISTRAR LOGISTICA
+define("REGISTRAR_LOGISTICA_VIEW","view/HTML/Logistica/subir_intercambio.php");
 
 
 // Rutas
@@ -26,11 +34,6 @@ define("LOGIN","view/templates/login.php");
 
 // BUSCAR CATEGORIA
 define("BCATEGORIA","view/HTML/Libro/Buscar_Categoria.php");
-
-//BUSCAR LOGISTICA
-define("BUSCAR_LOGISTICA_VIEW", "view/HTML/Logistica/Buscar_intercambio.php"); 
-
-
 
 // FIBICON
 define("FIBICON","assets/CSS/Image/icon.png");
