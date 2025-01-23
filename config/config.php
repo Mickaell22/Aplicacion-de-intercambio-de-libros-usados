@@ -10,8 +10,10 @@ define("GESTIONAR_DENUNCIAS", "view/HTML/Denuncia/gestionar.php");
 define("EDITAR_DENUNCIA", "view/HTML/Denuncia/editar.php");
 define("COMENTARIOS_VIEW", "view/HTML/Comentarios/Comentarios.php");
 define("REGISTER_VIEW", "view/HTML/Register/Register.php");
-define("BUSCAR_LOGISTICA_VIEW", "view/HTML/Logistica/Buscar_intercambio.php"); 
+define("INTERCAMBIO_VIEW", "view/HTML/Logistica/intercambio.php");
 
+
+// Rutas
 //HEADER
 define("HEADER", "view/templates/header.php");
 define("SUB_HEADER", "view/templates/sub_header.php");
@@ -24,6 +26,9 @@ define("LOGIN","view/templates/login.php");
 
 // BUSCAR CATEGORIA
 define("BCATEGORIA","view/HTML/Libro/Buscar_Categoria.php");
+
+//BUSCAR LOGISTICA
+define("BUSCAR_LOGISTICA_VIEW", "view/HTML/Logistica/Buscar_intercambio.php"); 
 
 
 

@@ -1,6 +1,5 @@
-<!-- Autor: Moran Vera Mickaell -->
-
 <?php
+//Modificar valores con mis clases
 require_once 'model/dao/LibroDAO.php';
 
 class BusquedaController {
