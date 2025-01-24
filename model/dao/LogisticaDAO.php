@@ -37,6 +37,21 @@ class LogisticaDAO
         return false;
     }
 }
+
+    public function getAllIntercambios() {
+    try {
+        $sql = "SELECT * FROM intercambios"; // Consulta para obtener todos los intercambios
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC); // Obtener todos los resultados como un array asociativo
+
+        return $result; // Retornar los resultados
+    } catch (PDOException $e) {
+        error_log("Error al obtener intercambios: " . $e->getMessage());
+        return [];
+    }
+}
+
 }
 
 

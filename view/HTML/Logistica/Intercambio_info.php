@@ -1,80 +1,69 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <!-- Autor -->
     <meta name="author" content="Troya Garzon Geancarlos">
-
-    <!-- Metadatos -->
     <meta name="description" content="Este es un proyecto de diseño de aplicaciones web diseñado por el grupo 5">
     <meta name="keywords" content="Libro, intercambio, busqueda, filtrado, foro">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Open Graph -->
-    <meta name="OG::title" content="Proyecto">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="../CSS/estilos-comunes-2.css">
-
-    <!-- Favicon -->
     <link rel="icon" href="../Image/icon.png" type="image/png">
-
-    <!-- Titulo de pagiona -->
     <title>Intercambios de libros usados</title>
 </head>
 
 <div class="container">
-        <h1 class="text-center mt-5">Intercambios de Libros</h1>
+<h1 class="text-center mt-5" style="margin-left: 200px;">Registro de Logística de Intercambios</h1>
 
-        <!-- Tabla de Datos del Intercambio -->
-        <table class="table table-bordered">
-            <thead class="header-table">
+    <!-- Tabla de Datos del Intercambio -->
+    <table class="table table-bordered">
+        <thead class="header-table">
+            <tr>
+                <th>Fecha del Intercambio</th>
+                <th>Fecha de Registro</th>
+                <th>Ubicación de Intercambio</th>
+                <th>Calificación del Servicio</th>
+                <th>Estado</th>
+                <th>Método de Entrega</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php if (!empty($intercambios)): ?>
+                <?php foreach ($intercambios as $intercambio): ?>
+                    <tr>
+                        <td><?php echo $intercambio['fechaintercambio']; ?></td>
+                        <td><?php echo $intercambio['fecharegistro']; ?></td>
+                        <td><?php echo $intercambio['ubicacion']; ?></td>
+                        <td><?php echo $intercambio['calificacion']; ?></td>
+                        <td><?php echo $intercambio['estado']; ?></td>
+                        <td><?php echo $intercambio['metodo']; ?></td>
+                        <td class="action-buttons">
+                            <button type="button" class="btn btn-danger" onclick="location.href='index.php?c=Editar_intercambio&f=index&id=<?php echo $intercambio['id']; ?>'">Editar</button>
+                            <button class="btn btn-eliminar">Eliminar</button>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            <?php else: ?>
                 <tr>
-                    <th>Fecha del Intercambio</th>
-                    <th>Fecha de Registro</th>
-                    <th>Ubicación de Intercambio</th>
-                    <th>Calificación del Servicio</th>
-                    <th>Estado</th>
-                    <th>Método de Entrega</th>
-                    <th>Descripción</th>
-                    <th>Acciones</th>
+                    <td colspan="8" class="text-center">No hay intercambios registrados</td>
                 </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>2025-01-22</td>
-                    <td>2025-01-15</td>
-                    <td>Ciudad Central</td>
-                    <td>8</td>
-                    <td>Realizado</td>
-                    <td>Presencial</td>
-                    <td>El intercambio se realizó sin inconvenientes, buen trato entre las partes.</td>
-                    <td class="action-buttons">
-                    <button type="button" class="btn btn-danger" onclick="location.href='index.php?c=Editar_intercambio&f=index'">
-                    Editar
-                    </button>
-                        
-                        <button class="btn btn-danger">Eliminar</button>
-                    </td>
-                </tr>
-                <!-- Aquí puedes agregar más filas según sea necesario -->
-            </tbody>
-        </table>
+            <?php endif; ?>
+        </tbody>
+    </table>
 
-        <!-- Botones de Acción -->
-        <div class="text-center">
-        <button type="button" class="btn btn-danger" onclick="location.href='index.php?c=Registrar_intercambio&f=index'">
-                    Registrar Intercambio
-        </button>
-        </div>
+    <!-- Botones de Acción -->
+    <div class="text-center">
+        <button type="button" class="btn btn-registrar" onclick="location.href='index.php?c=Registrar_intercambio&f=index'">Registrar Intercambio</button>
     </div>
+</div>
 
-    <!-- Vincular Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
 </body>
+</html>
+
 
         
 
@@ -97,13 +86,32 @@
         transition: background-color 0.3s ease, transform 0.3s ease; /* Animación al pasar el cursor */
     }
 
-    
+    /* Botón de Editar */
+    .btn-eliminar {
+        background-color: red;
+        color: white;
+        border: none;
+    }
 
-    /* Botón de Eliminar */
+    .btn-eliminar:hover {
+        background-color: green;
+        transform: scale(1.05); /* Efecto de ampliación */
+    }
+
+    /* Botón de Editar */
     .btn-danger {
         background-color: #00BFFF;
         color: white;
         border: none;
+    }
+    .btn-registrar {
+        background: linear-gradient(#2196F3, #4CAF50);
+        color: #fffe;
+    }
+
+    .btn-registrar:hover {
+        background-color: green;
+        transform: scale(1.05); /* Efecto de ampliación */
     }
 
     .btn-danger:hover {
@@ -136,6 +144,7 @@
     .table {
             margin-top: 30px;
             margin-bottom: 50px;
+            margin-left: 250px;
             border: 2px solid black; /* Borde negro */
             border-collapse: collapse; 
         }
