@@ -35,6 +35,44 @@ class LogisticaDAO {
         }
     }
 
+    // Método para buscar intercambios con filtros
+    public function buscarIntercambios($query, $filtros) {
+        try {
+            // Construir la consulta base
+            $sql = "SELECT * FROM intercambios WHERE 1=1";
+
+            // Añadir filtros a la consulta
+            if (!empty($query)) {
+                $sql .= " AND (fechaintercambio LIKE :query OR metodo LIKE :query OR ubicacion LIKE :query)";
+            }
+            if ($filtros['fecha']) {
+                $sql .= " AND fechaintercambio IS NOT NULL";
+            }
+            if ($filtros['metodo']) {
+                $sql .= " AND metodo IS NOT NULL";
+            }
+            if ($filtros['id']) {
+                $sql .= " AND id > 0";
+            }
+
+            $stmt = $this->conn->prepare($sql);
+
+            // Enlazar parámetros
+            if (!empty($query)) {
+                $stmt->bindValue(':query', '%' . $query . '%', PDO::PARAM_STR);
+            }
+
+            $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+
+        } catch (PDOException $e) {
+            error_log("Error en la búsqueda de intercambios: " . $e->getMessage());
+            return [];
+        }
+    }
+
+
     public function update($intercambio) {
         try {
             // Verificar los valores que llegan al DAO
@@ -82,6 +120,8 @@ class LogisticaDAO {
         }
     }
 
+
+
     public function getAllIntercambios() {
         try {
             $sql = "SELECT * FROM intercambios"; // Consulta para obtener todos los intercambios
@@ -96,5 +136,5 @@ class LogisticaDAO {
         }
     }
 }
-
+// aqui va el metodo eliminar
 ?>

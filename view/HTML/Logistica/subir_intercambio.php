@@ -365,11 +365,7 @@
       </div>
       
 
-      <!-- Descripción -->
-      <div class="form-input">
-        <label for="descripcion">Descripción</label>
-        <textarea id="descripcion" name="descripcion" rows="4"></textarea>
-      </div>
+     
 
 
       <!-- Botón de envío -->
