@@ -39,17 +39,18 @@ ADD COLUMN rol ENUM('admin', 'usuario') NOT NULL DEFAULT 'usuario';
 
 
 -- Intercambios
-CREATE TABLE Intercambios (
-    id INT PRIMARY KEY AUTO_INCREMENT,                
-    fechaintercambio DATE NOT NULL,                   
-    fecharegistro DATETIME DEFAULT CURRENT_TIMESTAMP, 
-    usuario VARCHAR(255) NOT NULL,                    
-    ubicacion VARCHAR(255) NOT NULL,                  
-    calificacion TINYINT CHECK (calificacion BETWEEN 1 AND 5), 
-    estado ENUM('pendiente', 'realizado', 'cancelado') DEFAULT 'pendiente', 
-    metodo ENUM('presencial', 'envio') DEFAULT 'presencial' 
+CREATE TABLE intercambios (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    fechaintercambio DATE NOT NULL,
+    fecharegistro DATETIME DEFAULT CURRENT_TIMESTAMP,
+    usuario_id INT NOT NULL, -- Columna para la clave foránea
+    ubicacion VARCHAR(255) NOT NULL,
+    calificacion TINYINT CHECK (calificacion BETWEEN 1 AND 5),
+    estado ENUM('pendiente', 'realizado', 'cancelado') DEFAULT 'pendiente',
+    metodo ENUM('presencial', 'envio') DEFAULT 'presencial',
+    FOREIGN KEY (usuario_id) REFERENCES Usuarios(id) -- Definición de la clave foránea
 ) ENGINE=InnoDB;
- 
+
 -- denuncias
 CREATE TABLE denuncias (
     id INT PRIMARY KEY AUTO_INCREMENT,

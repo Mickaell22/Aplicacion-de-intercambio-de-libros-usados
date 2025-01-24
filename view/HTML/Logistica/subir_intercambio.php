@@ -315,20 +315,20 @@
 
   </div>
   <div class="form-container">
-    <form class="form-upload" id="formulario" method="POST" action="index.php?c=logistica&f=index"
-      enctype="multipart/form-data" onsubmit="return validarFormulario()">
+  <form class="form-upload" id="formulario" method="POST" action="index.php?c=registrar_intercambio&f=insert" 
+            enctype="multipart/form-data" onsubmit="return validarFormulario()">
       <h2 class="form-titulo">Registrar Intercambio</h2>
 
       <!-- Fecha de Intercambio -->
       <div class="form-input">
-        <label for="fecha_intercambio">Fecha de Intercambio</label>
-        <input type="date" id="fecha_intercambio" name="fecha_intercambio" required>
+        <label for="fechaintercambio">Fecha de Intercambio</label>
+        <input type="date" id="fechaintercambio" name="fechaintercambio" required>
       </div>
 
        <!-- Fecha de Registro -->
        <div class="form-input">
-        <label for="fecha_registro">Fecha de Registro</label>
-        <input type="date" id="fecha_registro" name="fecha_registro" required>
+        <label for="fecharegistro">Fecha de Registro</label>
+        <input type="date" id="fecharegistro" name="fecharegistro" required>
       </div>
 
       <!-- Ubicacion -->
@@ -339,8 +339,8 @@
 
       <!-- Año de publicación -->
       <div class="form-input">
-        <label for="anio">Calificación del  Servicio (del 1 al 10)</label>
-        <input type="number" id="anio" name="anio" min="1" max="10">
+        <label for="calificacion">Calificación del  Servicio (del 1 al 10)</label>
+        <input type="number" id="calificacion" name="calificacion" min="1" max="10">
       </div>
   
       <!-- Estado del Intercambio -->
@@ -356,8 +356,8 @@
 
       <!-- Método de Entrega -->
       <div class="form-input">
-        <label for="metodo_entrega">Método de Entrega</label>
-        <select id="metodo_entrega" name="metodo_entrega" required>
+        <label for="metodo">Método de Entrega</label>
+        <select id="metodo" name="metodo" required>
           <option value="">Seleccione un método</option>
           <option value="presencial">Presencial</option>
           <option value="envio">Envío</option>
@@ -374,9 +374,8 @@
 
       <!-- Botón de envío -->
       <div class="form-input">
-      <button type="button" class="btn-submit" onclick="location.href='index.php?c=Intercambio_info&f=index'">
-                    Añadir Intercambio
-      </button>
+      <button type="submit" class="btn-submit">Añadir Intercambio</button>
+
       </div>
     </form>
   </div>   
