@@ -1,22 +1,24 @@
 <!-- Autor: TROYA-->
 <main class="main">
     <div class="form-container">
-        <form class="form-upload" id="formulario" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="id" value="<?php echo $intercambio['id']; ?>">
+        <form class="form-upload" id="formulario" method="POST" action="index.php?c=registrar_intercambio&f=insert" 
+        enctype="multipart/form-data" onsubmit="return validarFormulario()">
+        <input type="hidden" name="usuario_id" value="<?php echo $intercambio['usuario_id']; ?>">
+
             <h2 class="form-titulo">Editar Logistica de Intercambio</h2>
 
         <!-- Fecha de Intercambio -->
        <div class="form-input">
-       <label for="fecha_intercambio">Fecha de Intercambio</label>
-       <input type="date" id="fecha_intercambio" name="fecha_intercambio" 
-           value="<?php echo isset($intercambio['fecha_intercambio']) ? html_entity_decode($intercambio['fecha_intercambio']) : ''; ?>" required>
+       <label for="fechaintercambio">Fecha de Intercambio</label>
+       <input type="date" id="fechaintercambio" name="fechaintercambio" 
+           value="<?php echo isset($intercambio['fechaintercambio']) ? html_entity_decode($intercambio['fechaintercambio']) : ''; ?>" required>
        </div>
 
        <!-- Fecha de Registro -->
        <div class="form-input">
-       <label for="fecha_registro">Fecha de Registro</label>
-       <input type="date" id="fecha_registro" name="fecha_registro" 
-           value="<?php echo isset($intercambio['fecha_registro']) ? html_entity_decode($intercambio['fecha_registro']) : ''; ?>" required>
+       <label for="fecharegistro">Fecha de Registro</label>
+       <input type="date" id="fecharegistro" name="fecharegistro" 
+           value="<?php echo isset($intercambio['fecharegistro']) ? html_entity_decode($intercambio['fecharegistro']) : ''; ?>" required>
        </div>
 
        <!-- Ubicación -->
@@ -28,9 +30,9 @@
 
        <!-- Año de publicación -->
        <div class="form-input">
-       <label for="anio">Calificación del Servicio (del 1 al 10)</label>
-       <input type="number" id="anio" name="anio" min="1" max="10"
-           value="<?php echo isset($intercambio['anio']) ? html_entity_decode($intercambio['anio']) : ''; ?>" required>
+       <label for="calificacion">Calificación del Servicio (del 1 al 10)</label>
+       <input type="number" id="calificacion" name="calificacion" min="1" max="10"
+           value="<?php echo isset($intercambio['calificacion']) ? html_entity_decode($intercambio['calificacion']) : ''; ?>" required>
        </div>
 
        <!-- Estado -->
@@ -46,11 +48,11 @@
 
        <!-- Método de Entrega -->
        <div class="form-input">
-       <label for="metodo_entrega">Método de Entrega</label>
-       <select id="metodo_entrega" name="metodo_entrega" required>
+       <label for="metodo">Método de Entrega</label>
+       <select id="metodo" name="metodo" required>
         <option value="">Seleccione un método</option>
-        <option value="presencial" <?php echo isset($intercambio['metodo_entrega']) && $intercambio['metodo_entrega'] == 'presencial' ? 'selected' : ''; ?>>Presencial</option>
-        <option value="envio" <?php echo isset($intercambio['metodo_entrega']) && $intercambio['metodo_entrega'] == 'envio' ? 'selected' : ''; ?>>Envío</option>
+        <option value="presencial" <?php echo isset($intercambio['metodo']) && $intercambio['metodo'] == 'presencial' ? 'selected' : ''; ?>>Presencial</option>
+        <option value="envio" <?php echo isset($intercambio['metodo']) && $intercambio['metodo'] == 'envio' ? 'selected' : ''; ?>>Envío</option>
        </select>
        </div>
 
@@ -61,7 +63,7 @@
       </div>
 
         <div class="form-input">
-        <button type="submit" class="btn-submit" onclick="location.href='index.php?c=Intercambio_info&f=index'">
+        <button type="submit" class="btn-submit">
         Guardar Cambios
         </div>
         </form>
