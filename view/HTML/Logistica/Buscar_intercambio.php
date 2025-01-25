@@ -1,3 +1,4 @@
+<!-- Autor: Troya Garzón Geancarlos -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -77,9 +78,6 @@
 
 </body>
 </html>
-
-
-        
 
 <style>
       /* Eliminar subrayado de los enlaces */

@@ -1,70 +1,82 @@
-<!-- Autor: TROYA-->
+<!-- Autor: Troya Garzón Geancarlos -->
 <main class="main">
     <div class="form-container">
-        <form class="form-upload" id="formulario" method="POST" action="index.php?c=editar_intercambio&f=editar" 
-        enctype="multipart/form-data" onsubmit="return validarFormulario()">
-        <input type="hidden" name="id" value="<?php echo $intercambio['id']; ?>">
+        <form class="form-upload" id="formulario" method="POST" action="index.php?c=editar_intercambio&f=editar" enctype="multipart/form-data" onsubmit="return validarFormulario()">
+            <input type="hidden" name="id" value="<?php echo $intercambio['id']; ?>">
 
             <h2 class="form-titulo">Editar Logistica de Intercambio</h2>
 
-        <!-- Fecha de Intercambio -->
-       <div class="form-input">
-       <label for="fechaintercambio">Fecha de Intercambio</label>
-       <input type="date" id="fechaintercambio" name="fechaintercambio" 
-           value="<?php echo isset($intercambio['fechaintercambio']) ? html_entity_decode($intercambio['fechaintercambio']) : ''; ?>" required>
-       </div>
+            <!-- Fecha de Intercambio -->
+            <div class="form-input">
+                <label for="fechaintercambio">Fecha de Intercambio</label>
+                <input type="date" id="fechaintercambio" name="fechaintercambio" value="<?php echo isset($intercambio['fechaintercambio']) ? html_entity_decode($intercambio['fechaintercambio']) : ''; ?>" required>
+                <div class="error-message" id="fechaintercambio-error">
+                    <?php echo isset($_SESSION['errores']['fechaintercambio']) ? $_SESSION['errores']['fechaintercambio'] : ''; ?>
+                </div>
+            </div>
 
-       <!-- Fecha de Registro -->
-       <div class="form-input">
-       <label for="fecharegistro">Fecha de Registro</label>
-       <input type="date" id="fecharegistro" name="fecharegistro" 
-           value="<?php echo isset($intercambio['fecharegistro']) ? html_entity_decode($intercambio['fecharegistro']) : ''; ?>" required>
-       </div>
+            <!-- Fecha de Registro -->
+            <div class="form-input">
+                <label for="fecharegistro">Fecha de Registro</label>
+                <input type="date" id="fecharegistro" name="fecharegistro" value="<?php echo isset($intercambio['fecharegistro']) ? html_entity_decode($intercambio['fecharegistro']) : ''; ?>" required>
+                <div class="error-message" id="fecharegistro-error">
+                    <?php echo isset($_SESSION['errores']['fecharegistro']) ? $_SESSION['errores']['fecharegistro'] : ''; ?>
+                </div>
+            </div>
 
-       <!-- Ubicación -->
-       <div class="form-input">
-       <label for="ubicacion">Ubicación de Intercambio</label>
-       <input type="text" id="ubicacion" name="ubicacion"
-           value="<?php echo isset($intercambio['ubicacion']) ? html_entity_decode($intercambio['ubicacion']) : ''; ?>" required>
-       </div>
+            <!-- Ubicación -->
+            <div class="form-input">
+                <label for="ubicacion">Ubicación de Intercambio</label>
+                <input type="text" id="ubicacion" name="ubicacion" value="<?php echo isset($intercambio['ubicacion']) ? html_entity_decode($intercambio['ubicacion']) : ''; ?>" required>
+                <div class="error-message" id="ubicacion-error">
+                    <?php echo isset($_SESSION['errores']['ubicacion']) ? $_SESSION['errores']['ubicacion'] : ''; ?>
+                </div>
+            </div>
 
-       <!-- Año de publicación -->
-       <div class="form-input">
-       <label for="calificacion">Calificación del Servicio (del 1 al 10)</label>
-       <input type="number" id="calificacion" name="calificacion" min="1" max="10"
-           value="<?php echo isset($intercambio['calificacion']) ? html_entity_decode($intercambio['calificacion']) : ''; ?>" required>
-       </div>
+            <!-- Calificación -->
+            <div class="form-input">
+                <label for="calificacion">Calificación del Servicio (del 1 al 10)</label>
+                <input type="number" id="calificacion" name="calificacion" min="1" max="10" value="<?php echo isset($intercambio['calificacion']) ? html_entity_decode($intercambio['calificacion']) : ''; ?>" required>
+                <div class="error-message" id="calificacion-error">
+                    <?php echo isset($_SESSION['errores']['calificacion']) ? $_SESSION['errores']['calificacion'] : ''; ?>
+                </div>
+            </div>
 
-       <!-- Estado -->
-       <div class="form-input">
-       <label for="estado">Estado</label>
-       <select id="estado" name="estado" required>
-        <option value="">Seleccione un estado</option>
-        <option value="pendiente" <?php echo isset($intercambio['estado']) && $intercambio['estado'] == 'pendiente' ? 'selected' : ''; ?>>Pendiente</option>
-        <option value="realizado" <?php echo isset($intercambio['estado']) && $intercambio['estado'] == 'realizado' ? 'selected' : ''; ?>>Realizado</option>
-        <option value="cancelado" <?php echo isset($intercambio['estado']) && $intercambio['estado'] == 'cancelado' ? 'selected' : ''; ?>>Cancelado</option>
-       </select>
-       </div>
+            <!-- Estado -->
+            <div class="form-input">
+                <label for="estado">Estado</label>
+                <select id="estado" name="estado" required>
+                    <option value="">Seleccione un estado</option>
+                    <option value="pendiente" <?php echo isset($intercambio['estado']) && $intercambio['estado'] == 'pendiente' ? 'selected' : ''; ?>>Pendiente</option>
+                    <option value="realizado" <?php echo isset($intercambio['estado']) && $intercambio['estado'] == 'realizado' ? 'selected' : ''; ?>>Realizado</option>
+                    <option value="cancelado" <?php echo isset($intercambio['estado']) && $intercambio['estado'] == 'cancelado' ? 'selected' : ''; ?>>Cancelado</option>
+                </select>
+                <div class="error-message" id="estado-error">
+                    <?php echo isset($_SESSION['errores']['estado']) ? $_SESSION['errores']['estado'] : ''; ?>
+                </div>
+            </div>
 
-       <!-- Método de Entrega -->
-       <div class="form-input">
-       <label for="metodo">Método de Entrega</label>
-       <select id="metodo" name="metodo" required>
-        <option value="">Seleccione un método</option>
-        <option value="presencial" <?php echo isset($intercambio['metodo']) && $intercambio['metodo'] == 'presencial' ? 'selected' : ''; ?>>Presencial</option>
-        <option value="envio" <?php echo isset($intercambio['metodo']) && $intercambio['metodo'] == 'envio' ? 'selected' : ''; ?>>Envío</option>
-       </select>
-       </div>
+            <!-- Método de Entrega -->
+            <div class="form-input">
+                <label for="metodo">Método de Entrega</label>
+                <select id="metodo" name="metodo" required>
+                    <option value="">Seleccione un método</option>
+                    <option value="presencial" <?php echo isset($intercambio['metodo']) && $intercambio['metodo'] == 'presencial' ? 'selected' : ''; ?>>Presencial</option>
+                    <option value="envio" <?php echo isset($intercambio['metodo']) && $intercambio['metodo'] == 'envio' ? 'selected' : ''; ?>>Envío</option>
+                </select>
+                <div class="error-message" id="metodo-error">
+                    <?php echo isset($_SESSION['errores']['metodo']) ? $_SESSION['errores']['metodo'] : ''; ?>
+                </div>
+            </div>
 
-      
-
-        <div class="form-input">
-        <button type="submit" class="btn-submit">
-        Guardar Cambios
-        </div>
+            <div class="form-input">
+                <button type="submit" class="btn-submit">Guardar Cambios</button>
+            </div>
         </form>
     </div>
 </main>
+
+<script src="assets/JavaScript/Validaciones_Editar_intercambio.js"></script>
 
 
 <style>
@@ -314,6 +326,15 @@
       background-size: cover;
       background-attachment: fixed;
     }
+
+    .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    display:none;
+    
+    }
+   
 
     .error {
       color: red;

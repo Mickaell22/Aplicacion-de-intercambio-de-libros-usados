@@ -1,5 +1,5 @@
-<!-- Autor: Troya Garzon Geancarlos -->
 <?php
+//Autor: Troya Garzón Geancarlos
 require_once 'model/dao/LogisticaDAO.php';
 require_once 'model/dto/LogisticaDTO.php';
 

@@ -1,3 +1,4 @@
+<!-- Autor: Troya Garzón Geancarlos -->
 <?php
 
 class LogisticaDAO {
@@ -13,11 +14,11 @@ class LogisticaDAO {
             // Verificar los valores que llegan al DAO
             error_log("Datos en DAO: " . print_r($intercambio, true)); // Verificar el objeto intercambios
             
-            $sql = "INSERT INTO intercambios (fechaintercambio, fecharegistro, usuario_id, ubicacion, calificacion, estado, metodo) 
-                    VALUES (:fechaintercambio, :fecharegistro, :usuario_id, :ubicacion, :calificacion, :estado, :metodo)";
+            $sql = "INSERT INTO intercambios (id,fechaintercambio, fecharegistro, usuario_id, ubicacion, calificacion, estado, metodo) 
+                    VALUES (:id,:fechaintercambio, :fecharegistro, :usuario_id, :ubicacion, :calificacion, :estado, :metodo)";
             
             $stmt = $this->conn->prepare($sql);
-            
+            $stmt->bindParam(":id", $intercambio->getId(), PDO::PARAM_INT);
             $stmt->bindParam(":fechaintercambio", $intercambio->getFechaintercambio(), PDO::PARAM_STR);
             $stmt->bindParam(":fecharegistro", $intercambio->getFecharegistro(), PDO::PARAM_STR);
             $stmt->bindParam(":usuario_id", $intercambio->getUsuarioId(), PDO::PARAM_INT);
@@ -42,7 +43,7 @@ class LogisticaDAO {
         try {
             // Verificar los valores que llegan al DAO
             error_log("Datos en DAO (actualización): " . print_r($intercambio, true));
-
+    
             $sql = "UPDATE intercambios 
                     SET fechaintercambio = :fechaintercambio, 
                         fecharegistro = :fecharegistro, 
@@ -51,20 +52,39 @@ class LogisticaDAO {
                         estado = :estado, 
                         metodo = :metodo 
                     WHERE id = :id";
-            
+    
             $stmt = $this->conn->prepare($sql);
-            
-            $stmt->bindParam(":id", $intercambio->getId(), PDO::PARAM_INT); // Asegurarse de que se actualice el intercambio correcto
-            $stmt->bindParam(":fechaintercambio", $intercambio->getFechaintercambio(), PDO::PARAM_STR);
-            $stmt->bindParam(":fecharegistro", $intercambio->getFecharegistro(), PDO::PARAM_STR);
-            $stmt->bindParam(":ubicacion", $intercambio->getUbicacion(), PDO::PARAM_STR);
-            $stmt->bindParam(":calificacion", $intercambio->getCalificacion(), PDO::PARAM_INT);
-            $stmt->bindParam(":estado", $intercambio->getEstado(), PDO::PARAM_STR);
-            $stmt->bindParam(":metodo", $intercambio->getMetodo(), PDO::PARAM_STR);
-
+    
+            // Asignar valores a variables antes de bindParam
+            $id = $intercambio->getId();
+            $fechaintercambio = $intercambio->getFechaintercambio();
+            $fecharegistro = $intercambio->getFecharegistro();
+            $ubicacion = $intercambio->getUbicacion();
+            $calificacion = $intercambio->getCalificacion();
+            $estado = $intercambio->getEstado();
+            $metodo = $intercambio->getMetodo();
+    
+            // Agregar log para verificar los datos que se están vinculando
+            error_log("Enlazando parámetros: ID = $id, Fecha de intercambio = $fechaintercambio, Ubicación = $ubicacion");
+    
+            // Usar variables en bindParam
+            $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+            $stmt->bindParam(":fechaintercambio", $fechaintercambio, PDO::PARAM_STR);
+            $stmt->bindParam(":fecharegistro", $fecharegistro, PDO::PARAM_STR);
+            $stmt->bindParam(":ubicacion", $ubicacion, PDO::PARAM_STR);
+            $stmt->bindParam(":calificacion", $calificacion, PDO::PARAM_INT);
+            $stmt->bindParam(":estado", $estado, PDO::PARAM_STR);
+            $stmt->bindParam(":metodo", $metodo, PDO::PARAM_STR);
+    
             $res = $stmt->execute();
+    
+            // Verificar si la actualización fue exitosa
+            if (!$res) {
+                error_log("Error al ejecutar la consulta de actualización: " . implode(", ", $stmt->errorInfo()));
+            }
+    
             return $res;
-
+    
         } catch (PDOException $e) {
             error_log("Error en update de LogisticaDAO: " . $e->getMessage());
             return false;

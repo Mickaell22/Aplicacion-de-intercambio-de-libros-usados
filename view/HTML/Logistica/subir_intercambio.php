@@ -1,9 +1,9 @@
-
+<!-- Autor: Troya Garzón Geancarlos -->
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-  <!-- Autor -->
+
   <meta name="author" content="Troya Garzón Geancarlos">
 
   <!-- Metadatos -->
@@ -302,47 +302,47 @@
 
 </head>
 
-
-
 <main class="main">
   <div class="frase">
     <h3 class="frase-principal">¡Registra tu intercambio y comparte tu experiencia!</h3>
     
     <img src="https://img.freepik.com/fotos-premium/hombre-sienta-pila-libros-libro-su-regazo_853645-14105.jpg"
       alt="Una persona sentada sobre una pila de libros">
-
-      
-
   </div>
+
   <div class="form-container">
-  <form class="form-upload" id="formulario" method="POST" action="index.php?c=registrar_intercambio&f=insert" 
-            enctype="multipart/form-data" onsubmit="return validarFormulario()">
+    <form class="form-upload" id="formulario" method="POST" action="index.php?c=registrar_intercambio&f=insert" 
+          enctype="multipart/form-data" onsubmit="return validarFormulario()">
       <h2 class="form-titulo">Registrar Intercambio</h2>
 
       <!-- Fecha de Intercambio -->
       <div class="form-input">
         <label for="fechaintercambio">Fecha de Intercambio</label>
         <input type="date" id="fechaintercambio" name="fechaintercambio" required>
+        <span class="error" id="fechaintercambio-error"></span>
       </div>
 
-       <!-- Fecha de Registro -->
-       <div class="form-input">
+      <!-- Fecha de Registro -->
+      <div class="form-input">
         <label for="fecharegistro">Fecha de Registro</label>
         <input type="date" id="fecharegistro" name="fecharegistro" required>
+        <span class="error" id="fecharegistro-error"></span>
       </div>
 
       <!-- Ubicacion -->
       <div class="form-input">
         <label for="ubicacion">Ubicación de Intercambio</label>
-        <input type="text" id="ubicacion" name="ubicacion">
+        <input type="text" id="ubicacion" name="ubicacion" required>
+        <span class="error" id="ubicacion-error"></span>
       </div>
 
-      <!-- Año de publicación -->
+      <!-- Calificación -->
       <div class="form-input">
-        <label for="calificacion">Calificación del  Servicio (del 1 al 10)</label>
-        <input type="number" id="calificacion" name="calificacion" min="1" max="10">
+        <label for="calificacion">Calificación del Servicio (del 1 al 10)</label>
+        <input type="number" id="calificacion" name="calificacion" required min="1" max="10">
+        <span class="error" id="calificacion-error"></span>
       </div>
-  
+
       <!-- Estado del Intercambio -->
       <div class="form-input">
         <label for="estado">Estado</label>
@@ -352,6 +352,7 @@
           <option value="realizado">Realizado</option>
           <option value="cancelado">Cancelado</option>
         </select>
+        <span class="error" id="estado-error"></span>
       </div>
 
       <!-- Método de Entrega -->
@@ -362,20 +363,18 @@
           <option value="presencial">Presencial</option>
           <option value="envio">Envío</option>
         </select>
+        <span class="error" id="metodo-error"></span>
       </div>
-      
-
-     
-
 
       <!-- Botón de envío -->
       <div class="form-input">
-      <button type="submit" class="btn-submit">Añadir Intercambio</button>
-
+        <button type="submit" class="btn-submit">Añadir Intercambio</button>
       </div>
     </form>
-  </div>   
+  </div>
 </main>
+
+<script src="assets/JavaScript/Validaciones_subir_intercambio.js"></script>
 
 
 

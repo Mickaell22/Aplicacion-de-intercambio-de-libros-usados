@@ -37,8 +37,7 @@ CREATE TABLE Usuarios (
 ALTER TABLE Usuarios
 ADD COLUMN rol ENUM('admin', 'usuario') NOT NULL DEFAULT 'usuario';
 
-
--- Intercambios
+-- intercambios
 CREATE TABLE intercambios (
     id INT PRIMARY KEY AUTO_INCREMENT,
     fechaintercambio DATE NOT NULL,

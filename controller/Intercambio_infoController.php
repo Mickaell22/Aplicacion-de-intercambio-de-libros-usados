@@ -1,4 +1,5 @@
 <?php
+//Autor: Troya Garzón Geancarlos
 require_once __DIR__ . '/../model/dao/LogisticaDAO.php'; // Asegúrate de incluir el DAO si no lo has hecho
 
 class Intercambio_infoController {

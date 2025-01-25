@@ -1,4 +1,5 @@
 <?php
+// Autor: Troya Garzón Geancarlos 
 require_once __DIR__ . '/../model/dao/LogisticaDAO.php';
 require_once __DIR__ . '/../model/dto/LogisticaDTO.php';
 
@@ -24,6 +25,7 @@ class Registrar_intercambioController {
     
                 // Crear el objeto LogisticaDTO
                 $logisticaDTO = new LogisticaDTO();
+                $logisticaDTO->setId($_POST['id']);
                 $logisticaDTO->setFechaintercambio($_POST['fechaintercambio']);
                 $logisticaDTO->setFecharegistro($_POST['fecharegistro']);
                 $logisticaDTO->setUsuarioId($_SESSION['usuario_id']);

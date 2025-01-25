@@ -1,7 +1,8 @@
+<!-- Autor: Troya Garzón Geancarlos -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Autor -->
+    
     <meta name="author" content="Troya Garzon Geancarlos">
     <meta name="description" content="Este es un proyecto de diseño de aplicaciones web diseñado por el grupo 5">
     <meta name="keywords" content="Libro, intercambio, busqueda, filtrado, foro">
