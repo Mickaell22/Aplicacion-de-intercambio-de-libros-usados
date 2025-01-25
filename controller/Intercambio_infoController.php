@@ -19,4 +19,9 @@ class Intercambio_infoController {
         require_once FOOTER;
     }
 }
+
+
+
+// aqui va el metodo eliminar
+
 ?>

@@ -249,7 +249,7 @@
             }
         }
     </style>
-    
+
 </head>
 
 <body class="grid-container">
@@ -266,6 +266,11 @@
                     <div class="welcome-container">
                         <h2>¡Hola <?php echo htmlspecialchars($_SESSION['usuario_nombre']); ?>!</h2>
                         <p>Bienvenido de nuevo</p>
+                        <?php
+                        if ($_SESSION['rol'] == 'admin') { ?>
+                            <a class="btn btn-primary" href="index.php?c=categoria&f=index">Listado de categorias</a>
+                        <?php }
+                        ?>
                         <a href="index.php?c=login&f=logout" class="logout-btn">Cerrar sesión</a>
                     </div>
                     <?php

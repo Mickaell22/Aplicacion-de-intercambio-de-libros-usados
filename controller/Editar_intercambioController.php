@@ -30,25 +30,25 @@ class Editar_intercambioController {
     public function editar() {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Obtener los datos del formulario
-            $usuario_id = $_POST['usuario_id']; // Usamos usuario_id en lugar de id
+            $id = $_POST['id']; // Asegúrate de que el campo 'id' esté incluido en el formulario
+            $usuario_id = $_POST['usuario_id'];
             $fechaintercambio = $_POST['fechaintercambio'];
             $fecharegistro = $_POST['fecharegistro'];
             $ubicacion = $_POST['ubicacion'];
             $calificacion = $_POST['calificacion'];
             $estado = $_POST['estado'];
             $metodo = $_POST['metodo'];
-            $descripcion = $_POST['descripcion'];
     
             // Crear un objeto intercambio
             $intercambio = new LogisticaDTO();
-            $intercambio->setUsuarioId($usuario_id);  // Establecer el usuario_id
+            $intercambio->setId($id); // Configurar el ID del objeto
+            $intercambio->setUsuarioId($usuario_id);
             $intercambio->setFechaintercambio($fechaintercambio);
             $intercambio->setFecharegistro($fecharegistro);
             $intercambio->setUbicacion($ubicacion);
             $intercambio->setCalificacion($calificacion);
             $intercambio->setEstado($estado);
             $intercambio->setMetodo($metodo);
-            $intercambio->setDescripcion($descripcion);
     
             // Llamar al DAO para actualizar el intercambio
             $dao = new LogisticaDAO();
@@ -62,6 +62,7 @@ class Editar_intercambioController {
             }
         }
     }
+    
     
 }
 

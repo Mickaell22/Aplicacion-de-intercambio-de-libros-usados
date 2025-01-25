@@ -1,9 +1,9 @@
 <!-- Autor: TROYA-->
 <main class="main">
     <div class="form-container">
-        <form class="form-upload" id="formulario" method="POST" action="index.php?c=registrar_intercambio&f=insert" 
+        <form class="form-upload" id="formulario" method="POST" action="index.php?c=editar_intercambio&f=editar" 
         enctype="multipart/form-data" onsubmit="return validarFormulario()">
-        <input type="hidden" name="usuario_id" value="<?php echo $intercambio['usuario_id']; ?>">
+        <input type="hidden" name="id" value="<?php echo $intercambio['id']; ?>">
 
             <h2 class="form-titulo">Editar Logistica de Intercambio</h2>
 
@@ -56,11 +56,7 @@
        </select>
        </div>
 
-      <!-- Descripción -->
-      <div class="form-input">
-      <label for="descripcion">Descripción</label>
-      <textarea id="descripcion" name="descripcion" rows="4"><?php echo isset($intercambio['descripcion']) ? html_entity_decode($intercambio['descripcion']) : ''; ?></textarea>
-      </div>
+      
 
         <div class="form-input">
         <button type="submit" class="btn-submit">
