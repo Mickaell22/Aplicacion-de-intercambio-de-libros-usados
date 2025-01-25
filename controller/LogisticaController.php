@@ -15,6 +15,8 @@ class LogisticaController {
         $this->LogisticaDAO = new LogisticaDAO();
     }
 
+    
+
     public function index() {
         require_once SUB_HEADER;
         require_once 'view/HTML/Logistica/Buscar_intercambio.php';
@@ -34,7 +36,13 @@ class LogisticaController {
         require_once FOOTER;
     }
 
+    
     public function delete() {
+
+        if($_SESSION["rol"] != 'admin'){
+            
+            header('Location: ' . URL_BASE . 'index.php');
+        }
         // Verificar si el id es válido
         $id = htmlentities($_GET['id']);
         if (isset($id) && is_numeric($id)) {

@@ -60,7 +60,12 @@
     <!-- Botones de Acción -->
     <div class="text-center">
         <button type="button" class="btn btn-registrar" onclick="location.href='index.php?c=Registrar_intercambio&f=index'">Registrar Intercambio</button>
-        <button type="button" class="btn btn-registrar" onclick="location.href='index.php?c=Intercambio_info&f=index'">Gestionar Logistica de Intercambio</button>
+        <?php
+                        if ($_SESSION['rol'] == 'admin') { ?>
+                            <button type="button" class="btn btn-registrar" onclick="location.href='index.php?c=Intercambio_info&f=index'">Gestionar Logistica de Intercambio</button>
+                        <?php }
+        ?>
+        
     </div>
    
 </div>

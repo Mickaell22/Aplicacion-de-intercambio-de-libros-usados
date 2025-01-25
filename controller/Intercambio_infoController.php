@@ -10,6 +10,10 @@ class Intercambio_infoController {
     }
 
     public function index() {
+        if($_SESSION["rol"] != 'admin'){
+            
+            header('Location: ' . URL_BASE . 'index.php');
+        }
         // Obtener todos los intercambios de la base de datos
         $intercambios = $this->logisticaDAO->getAllIntercambios();
 

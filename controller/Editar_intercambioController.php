@@ -28,6 +28,10 @@ class Editar_intercambioController {
     }
 
     public function editar() {
+        if($_SESSION["rol"] != 'admin'){
+            
+            header('Location: ' . URL_BASE . 'index.php');
+        }
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Obtener los datos del formulario
             $id = $_POST['id']; // Asegúrate de que el campo 'id' esté incluido en el formulario
