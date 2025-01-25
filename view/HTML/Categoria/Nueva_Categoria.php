@@ -55,19 +55,34 @@
             </div>
         </fieldset>
         <p class="warnings" id="warnings"></p>
-        <div>
-            <button class="Info button" type="submit">
+        <div class="Botones">
+            <button class="Info boton" type="submit">
                 <h6>Guardar</h6>
             </button>
-            <button type="button" class="Comprar button" onclick="window.location.href='index.php?c=categoria&f=index'">
+            <button type="button" class="Comprar boton" onclick="window.location.href='index.php?c=categoria&f=index'">
                 Cancelar
             </button>
-        </div>    
+        </div>
     </form>
     <script src="assets/CSS/JavaScript/Validaciones_Categoria.js"></script>
 </body>
 
 <style>
+    .Info.boton {
+        background: linear-gradient(#2196F3, #4CAF50);
+        color: #fffe;
+    }
+
+    .Comprar.boton {
+        background: linear-gradient(#FF4081, #FF9800);
+        color: #fffe;
+    }
+
+    .boton:hover {
+        font-weight: bold;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    }
+
     /* Titulo */
     .box-titulo {
         height: 320px;
@@ -192,6 +207,17 @@
         margin-bottom: 50px;
     }
 
+    .form {
+        width: 100%;
+        max-width: none;
+        /* Asegura que no haya límite de ancho */
+        box-sizing: border-box;
+        margin: 0 auto;
+        /* Centrar el contenido si es necesario */
+        padding: 20px;
+        /* Espaciado interno */
+    }
+
     .pie {
         grid-column: 1/7;
         grid-row: 6/7;
@@ -205,7 +231,6 @@
     }
 
     /* bOTONES */
-    .button,
     input {
         margin-top: 20px;
         padding: 10px 25px;
@@ -216,19 +241,47 @@
         text-decoration: none;
     }
 
-    .Info.button {
+    /* Estilos generales para todos los botones */
+    .boton {
+        margin-top: 20px;
+        padding: 10px 25px;
+        border: none;
+        border-radius: 25px;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    /* Estilos específicos de color y fondo */
+    .boton.Info {
         background: linear-gradient(#2196F3, #4CAF50);
         color: #fffe;
     }
 
-    .Comprar.button {
+    .boton.Comprar {
         background: linear-gradient(#FF4081, #FF9800);
         color: white;
     }
 
-    .button:hover {
+    /* Estilo para el estado hover */
+    .boton:hover {
         font-weight: bold;
         box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Estilos específicos para los botones dentro de un formulario */
+    form .boton {
+        border-radius: 10px;
+        color: white;
+        text-align: center;
+        display: inline-block;
+    }
+
+    /* Contenedor de botones */
+    .Botones {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
     }
 
     /*  */
@@ -263,37 +316,6 @@
         margin-left: 20px;
     }
 
-    /* Contenedor de botones */
-    .Botones {
-        grid-column: 3/4;
-        grid-row: 4/5;
-        display: flex;
-        gap: 10px;
-        justify-content: center;
-        padding: 10px 0;
-        margin-top: auto;
-    }
-
-    .resenia {
-        grid-column: 2/4;
-        grid-row: 2/3;
-        margin-right: 20px;
-        border-bottom: 2px solid #D98b48;
-    }
-
-    .resenia h2 {
-        margin: 10px;
-        padding-left: 30px;
-        border-bottom: 2px solid #D98b48;
-        margin-bottom: 10px;
-    }
-
-    .resenia p {
-        margin: 10px;
-        text-align: justify;
-        margin: 20px 10%;
-
-    }
 
     /* Footer */
     .footer-content {
@@ -353,14 +375,6 @@
         height: 100px;
     }
 
-    form .button {
-        border-radius: 10px;
-        border: none;
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-    }
 
     input[type="text"],
     input[type="email"],

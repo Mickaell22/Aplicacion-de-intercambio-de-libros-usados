@@ -230,7 +230,7 @@
         overflow-x: auto;
         scroll-behavior: smooth;
         background-color: #F2D7B6;
-        border: 1px solid #333;
+        border: 2px solid #333;
         border-radius: 12px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         justify-content: flex-start;
@@ -270,6 +270,7 @@
     .articulo>img {
         width: 230px;
         height: 150px;
+        border-radius: 15px;
     }
 
     .articulo a {
@@ -286,5 +287,17 @@
 
     .articulo button:hover {
         background: #0056b3;
+    }
+
+    .articulo {
+        background-color: #fffe;
+        width: 430px;
+        height: 350px;
+        border: 2px solid #333;
+        /* Borde de 2px, puedes ajustar el grosor */
+        border-radius: 15px;
+        /* Borde redondeado */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        /* Sombra ligera */
     }
 </style>
