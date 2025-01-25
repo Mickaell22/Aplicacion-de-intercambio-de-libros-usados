@@ -30,13 +30,13 @@
         <h2>Lista de categorias</h2>
         <div class="">
             <form action="index.php?c=categoria&f=search" method="POST">
-                <input type="text" name="b" id="busqueda" placeholder="buscar..." />
-                <button type="submit" class=""><i></i>Buscar</button>
+                <input type="text" name="b" id="busqueda" placeholder="buscar por nombre..." />
+                <button type="submit" class="Buscar button"><i></i>Buscar</button>
             </form>
         </div>
         <div class="">
             <a href="index.php?c=categoria&f=view_new">
-                <button type="button" class="">
+                <button type="button" class="Info button">
                     <i class=""></i>
                     Nuevo</button>
             </a>
@@ -58,8 +58,15 @@
                         <td><?php echo $fila['cat_descripcion']; ?></td>
                         <td><?php echo $fila['cat_estado']; ?></td>
                         <td>
-                            <a class="Info button" href="index.php?c=categoria&f=edit_view&id=<?php echo $fila['cat_id']; ?>">Editar</a>
-                            <a class="Comprar button" href="index.php?c=categoria&f=delete&id=<?php echo $fila['cat_id']; ?>">Eliminar</a>
+                            <button class="Editar button"
+                                onclick="window.location.href='index.php?c=categoria&f=edit_view&id=<?php echo $fila['cat_id']; ?>'">
+                                Editar
+                            </button>
+                            <button class="Comprar button"
+                                onclick="window.location.href='index.php?c=categoria&f=delete&id=<?php echo $fila['cat_id']; ?>'">
+                                Eliminar
+                            </button>
+
                         </td>
                     </tr>
                 <?php }
@@ -165,6 +172,11 @@
     }
 
     .Info.button {
+        background: #2196F3;
+        color: #fffe;
+    }
+
+    .Editar.button {
         background: linear-gradient(#2196F3, #4CAF50);
         color: #fffe;
     }
@@ -174,9 +186,33 @@
         color: white;
     }
 
+    .Buscar.button {
+        background: #4CAF50;
+        color: #fffe;
+    }
+
     .button:hover {
         font-weight: bold;
         box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    input {
+        width: 100%;
+        /* Ocupa todo el ancho disponible */
+        max-width: 400px;
+        /* Establece un ancho máximo */
+        padding: 15px;
+        /* Mayor espacio interno para mejor visibilidad */
+        font-size: 18px;
+        /* Texto más grande */
+        border: 2px solid #D98B48;
+        /* Borde con color */
+        border-radius: 25px;
+        /* Bordes redondeados */
+        outline: none;
+        /* Elimina borde de enfoque predeterminado */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Sombra para mejor visibilidad */
     }
 
     /*  */
@@ -268,5 +304,72 @@
     td {
         padding: 7px;
         border-bottom: 1px solid #000;
+    }
+
+    /* Estilos generales de la tabla */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Sombra para destacar la tabla */
+        border: 2px solid #D98B48;
+        /* Borde exterior */
+        border-radius: 10px;
+        /* Bordes redondeados */
+        overflow: hidden;
+        /* Asegura que los bordes redondeados se apliquen */
+    }
+
+    /* Estilo para las celdas de encabezado */
+    th {
+        background-color: #D98B48;
+        /* Color naranja */
+        color: white;
+        /* Texto blanco */
+        font-size: 18px;
+        padding: 15px;
+        text-align: center;
+        border-bottom: 3px solid #c1763e;
+        /* Línea separadora más oscura */
+    }
+
+    /* Estilo para las filas de la tabla */
+    td {
+        padding: 12px;
+        border-bottom: 1px solid #D98B48;
+        /* Línea divisoria naranja */
+        font-size: 16px;
+        color: #333;
+        /* Color del texto */
+    }
+
+    /* Estilo para filas impares */
+    tbody tr:nth-child(odd) {
+        background-color: #f9f3ef;
+        /* Color de fondo alternativo */
+    }
+
+    /* Efecto hover en filas */
+    tbody tr:hover {
+        background-color: #f1e0d1;
+        /* Color de fondo al pasar el mouse */
+        transition: background 0.3s ease-in-out;
+    }
+
+    /* Estilo para los botones dentro de la tabla */
+    td button {
+        background-color: #D98B48;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    td button:hover {
+        background-color: #c1763e;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 </style>
