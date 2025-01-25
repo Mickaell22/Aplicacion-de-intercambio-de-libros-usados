@@ -305,14 +305,14 @@
 <main class="main">
   <div class="frase">
     <h3 class="frase-principal">¡Registra tu intercambio y comparte tu experiencia!</h3>
-    
+
     <img src="https://img.freepik.com/fotos-premium/hombre-sienta-pila-libros-libro-su-regazo_853645-14105.jpg"
       alt="Una persona sentada sobre una pila de libros">
   </div>
 
   <div class="form-container">
-    <form class="form-upload" id="formulario" method="POST" action="index.php?c=registrar_intercambio&f=insert" 
-          enctype="multipart/form-data" onsubmit="return validarFormulario()">
+    <form class="form-upload" id="formulario" method="POST" action="index.php?c=registrar_intercambio&f=insert"
+      enctype="multipart/form-data">
       <h2 class="form-titulo">Registrar Intercambio</h2>
 
       <!-- Fecha de Intercambio -->
@@ -371,10 +371,12 @@
         <button type="submit" class="btn-submit">Añadir Intercambio</button>
       </div>
     </form>
+    <p class="warnings" id="warnings"></p>
+
   </div>
 </main>
 
-<script src="assets/JavaScript/Validaciones_subir_intercambio.js"></script>
+<script src="assets/JavaScript/Validaciones_Intercambios.js"></script>
 
 
 

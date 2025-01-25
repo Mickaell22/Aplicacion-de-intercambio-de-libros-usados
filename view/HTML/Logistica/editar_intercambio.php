@@ -1,7 +1,7 @@
 <!-- Autor: Troya Garzón Geancarlos -->
 <main class="main">
     <div class="form-container">
-        <form class="form-upload" id="formulario" method="POST" action="index.php?c=editar_intercambio&f=editar" enctype="multipart/form-data" onsubmit="return validarFormulario()">
+        <form class="form-upload" id="formulario" method="POST" action="index.php?c=editar_intercambio&f=editar" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?php echo $intercambio['id']; ?>">
 
             <h2 class="form-titulo">Editar Logistica de Intercambio</h2>
@@ -73,10 +73,11 @@
                 <button type="submit" class="btn-submit">Guardar Cambios</button>
             </div>
         </form>
+        <p class="warnings" id="warnings"></p>
     </div>
 </main>
 
-<script src="assets/JavaScript/Validaciones_Editar_intercambio.js"></script>
+<script src="assets/JavaScript/Validaciones_Intercambios.js"></script>
 
 
 <style>
