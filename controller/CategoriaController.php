@@ -15,6 +15,9 @@ class CategoriaController{
 
     public function index()
     {
+        if($_SESSION["rol"] != 'admin'){
+            header('Location: ' . URL_BASE . 'index.php');
+        }
         //comunicamos con modelo
         $resultados = $this->categoriaDAO->selectAll();
         //comunicamos con la vista
@@ -26,8 +29,6 @@ class CategoriaController{
 
     public function view_new(){
         if($_SESSION["rol"] != 'admin'){
-            //$_SESSION["mensaje"] = "No tienes los permisos necesarios";
-            //     $_SESSION["color"] = "danger";
             header('Location: ' . URL_BASE . 'index.php');
         }
         //comunicacion con la vista
@@ -110,6 +111,9 @@ class CategoriaController{
     
     public function search()
     {
+        if($_SESSION["rol"] != 'admin'){
+            header('Location: ' . URL_BASE . 'index.php');
+        }
         //recibe parametros de la peticion
         $parametro = htmlentities($_POST["b"]??"");
         //comunicarme con el modelo

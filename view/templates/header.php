@@ -13,7 +13,7 @@
                 <li><a href="index.php?c=busqueda&f=index">Búsqueda</a></li>
                 <li><a href="index.php?c=mensajeria&f=index">Mensajería directa</a></li>
                 <li><a href="index.php?c=logistica&f=index">Logística de Intercambio</a></li>
-                <li><a href="index.php?c=recomendaciones&f=index">Recomendaciones de Libros</a></li>
+                <li><a href="index.php?c=articulo&f=index">Articulos</a></li>
                 <li><a href="index.php?c=comentarios&f=index">Comentarios de Usuarios</a></li>
                 <?php if (isset($_SESSION['usuario_id'])): ?>
                     <li style="float:right">

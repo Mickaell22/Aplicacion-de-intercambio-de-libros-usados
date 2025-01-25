@@ -54,15 +54,17 @@
                 </div>
             </div>
         </fieldset>
+        <p class="warnings" id="warnings"></p>
         <div>
             <button class="Info button" type="submit">
                 <h6>Guardar</h6>
             </button>
-            <a href="index.php?c=categoria&f=index" class="Comprar button">
-                Cancelar</a>
-        </div>
+            <button type="button" class="Comprar button" onclick="window.location.href='index.php?c=categoria&f=index'">
+                Cancelar
+            </button>
+        </div>    
     </form>
-
+    <script src="assets/CSS/JavaScript/Validaciones_Categoria.js"></script>
 </body>
 
 <style>

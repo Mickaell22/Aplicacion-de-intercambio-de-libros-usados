@@ -58,12 +58,14 @@
             </div>
         </fieldset>
         <div>
-            <button class="Info button" type="submit" onclick="if (!confirm('Esta seguro de modificar la categoria?')) return false;" >
+            <button class="Info button" type="submit">
                 Guardar</button>
             <a href="index.php?c=categoria&f=index" class="Comprar button">
                 Cancelar</a>
         </div>
+        <p class="warnings" id="warnings"></p>
     </form>
+    <script src="assets/CSS/JavaScript/Validaciones_Categoria.js"></script>
 
 </body>
 
