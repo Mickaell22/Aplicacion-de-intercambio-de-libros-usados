@@ -20,6 +20,7 @@
     <table class="table table-bordered">
         <thead class="header-table">
             <tr>
+                <th>ID de Intercambio</th>
                 <th>Fecha del Intercambio</th>
                 <th>Fecha de Registro</th>
                 <th>Ubicación de Intercambio</th>
@@ -33,6 +34,7 @@
             <?php if (!empty($intercambios)): ?>
                 <?php foreach ($intercambios as $intercambio): ?>
                     <tr>
+                        <td><?php echo $intercambio['id']; ?></td>
                         <td><?php echo $intercambio['fechaintercambio']; ?></td>
                         <td><?php echo $intercambio['fecharegistro']; ?></td>
                         <td><?php echo $intercambio['ubicacion']; ?></td>

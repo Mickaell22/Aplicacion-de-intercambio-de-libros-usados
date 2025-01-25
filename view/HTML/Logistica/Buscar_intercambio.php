@@ -16,8 +16,8 @@
 <h1 class="text-center mt-5" style="margin-left: 200px;">Registro de Logística de Intercambios</h1>
 <div class="">
             <form action="index.php?c=logistica&f=search" method="POST">
-                <input type="text" name="q" id="busqueda" placeholder="buscar..." />
-                <button type="submit" class=""><i></i>Buscar</button>
+                <input type="text" name="q" id="busqueda" placeholder="buscar por ID..." />
+                <button type="submit" class="search-button"><i></i>Buscar</button>
             </form>
 </div>
 
@@ -26,6 +26,7 @@
     <table class="table table-bordered">
         <thead class="header-table">
             <tr>
+                <th>Id de Intercambio</th>
                 <th>Fecha del Intercambio</th>
                 <th>Fecha de Registro</th>
                 <th>Ubicación de Intercambio</th>
@@ -38,6 +39,7 @@
         <tbody>
             <?php if (!empty($intercambio)): ?>
                <tr>
+                        <td><?php echo $intercambio['id']; ?></td>
                         <td><?php echo $intercambio['fechaintercambio']; ?></td>
                         <td><?php echo $intercambio['fecharegistro']; ?></td>
                         <td><?php echo $intercambio['ubicacion']; ?></td>
@@ -317,6 +319,22 @@
     }
 
     /* bOTONES */
+     /* Estilos para el botón de búsqueda */
+     .search-button {
+        padding: 12px 25px;
+        background-color: #2196F3;
+        color: #fffe;
+        border: none;
+        border-radius: 25px;
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .search-button:hover {
+        background-color: #1976D2;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    }
     .button,
     input {
         margin-top: 20px;
