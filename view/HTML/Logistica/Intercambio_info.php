@@ -15,6 +15,7 @@
 <div class="container">
 <h1 class="text-center mt-5" style="margin-left: 200px;">Registro de Logística de Intercambios</h1>
 
+
     <!-- Tabla de Datos del Intercambio -->
     <table class="table table-bordered">
         <thead class="header-table">
@@ -40,7 +41,7 @@
                         <td><?php echo $intercambio['metodo']; ?></td>
                         <td class="action-buttons">
                             <button type="button" class="btn btn-danger" onclick="location.href='index.php?c=Editar_intercambio&f=index&id=<?php echo $intercambio['id']; ?>'">Editar</button>
-                            <button class="btn btn-eliminar">Eliminar</button>
+                            <button type="button" class="btn btn-eliminar" onclick="location.href='index.php?c=logistica&f=delete&id=<?php echo $intercambio['id']; ?>'">Eliminar</button>
                         </td>
                     </tr>
                 <?php endforeach; ?>

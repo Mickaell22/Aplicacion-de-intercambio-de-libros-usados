@@ -1,72 +1,187 @@
-<!-- Autor: Troya Garzón Geancarlos -->
-<body class="grid-container">
-    <aside class="sidebar">
-        <h2>Filtros de búsqueda</h2>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Autor -->
+    <meta name="author" content="Troya Garzon Geancarlos">
+    <meta name="description" content="Este es un proyecto de diseño de aplicaciones web diseñado por el grupo 5">
+    <meta name="keywords" content="Libro, intercambio, busqueda, filtrado, foro">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/estilos-comunes-2.css">
+    <link rel="icon" href="../Image/icon.png" type="image/png">
+    <title>Intercambios de libros usados</title>
+</head>
 
-        <!-- Filtros de Búsqueda de Intercambio -->
-        <h3>Intercambios</h3>
-        <label for="fecha" class="opcion">
-            <input type="checkbox" name="fecha" id="fecha" value="Fecha"> Fecha
-        </label>
-        <label for="metodo" class="opcion">
-            <input type="checkbox" name="metodo" id="metodo" value="Metodo"> Método
-        </label>
-        <label for="idinter" class="opcion">
-            <input type="checkbox" name="id" id="idinter" value="Id"> ID
-        </label>
-    </aside>
-
-    <main class="main">
-        <div class="search">
-            <form action="index.php" method="GET" class="search-form">
-                <input type="hidden" name="c" value="busqueda">
-                <input type="hidden" name="f" value="index">
-                <input type="text" name="q" class="search-input" placeholder="Busca tus intercambios..."
-                    value="<?php echo isset($_GET['q']) ? htmlspecialchars($_GET['q']) : ''; ?>">
-                <button type="submit" class="search-button">Buscar</button>
+<div class="container">
+<h1 class="text-center mt-5" style="margin-left: 200px;">Registro de Logística de Intercambios</h1>
+<div class="">
+            <form action="index.php?c=logistica&f=search" method="POST">
+                <input type="text" name="q" id="busqueda" placeholder="buscar..." />
+                <button type="submit" class=""><i></i>Buscar</button>
             </form>
-        </div>
-
-        <?php if (empty($intercambios)): ?>
-            <div class="no-results">
-                <p>No se encontraron intercambios que coincidan con tu búsqueda.</p>
-            </div>
-        <?php else: ?>
-            <?php foreach ($intercambios as $intercambio): ?>
-                <div class="elemento">
-                    <a href="             <?php echo htmlspecialchars($intercambio['id']); ?>">
-                        <img src="<?php echo htmlspecialchars($intercambio['imagen']); ?>"
-                            alt="<?php echo htmlspecialchars($intercambio['titulo']); ?>">
-                    </a>
-                    <h3><?php echo htmlspecialchars($intercambio['titulo']); ?></h3>
-                    <p class="autor">por <?php echo htmlspecialchars($intercambio['autor']); ?></p>
-                    <input type="button" class="Info-button" value="Información"
-                        onclick="location.href='                 <?php echo htmlspecialchars($intercambio['id']); ?>'">
-                    <input type="button" class="Comprar-button" value="Pedir">
-                </div>
-            <?php endforeach; ?>
-        <?php endif; ?>
+</div>
 
 
-        <!-- Botón de envío -->
-      <div class="form-input">
-      <button type="button" class="admin-button" onclick="location.href='index.php?c=Intercambio_info&f=index'">
-                    Detalles del Intercambio
-      </button>
-      </div>
+    <!-- Tabla de Datos del Intercambio -->
+    <table class="table table-bordered">
+        <thead class="header-table">
+            <tr>
+                <th>Fecha del Intercambio</th>
+                <th>Fecha de Registro</th>
+                <th>Ubicación de Intercambio</th>
+                <th>Calificación del Servicio</th>
+                <th>Estado</th>
+                <th>Método de Entrega</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php if (!empty($intercambio)): ?>
+               <tr>
+                        <td><?php echo $intercambio['fechaintercambio']; ?></td>
+                        <td><?php echo $intercambio['fecharegistro']; ?></td>
+                        <td><?php echo $intercambio['ubicacion']; ?></td>
+                        <td><?php echo $intercambio['calificacion']; ?></td>
+                        <td><?php echo $intercambio['estado']; ?></td>
+                        <td><?php echo $intercambio['metodo']; ?></td>
+                        <td class="action-buttons">
+                            <button type="button" class="btn btn-danger" onclick="location.href='index.php?c=Editar_intercambio&f=index&id=<?php echo $intercambio['id']; ?>'">Editar</button>
+                            <button class="btn btn-eliminar">Eliminar</button>
+                        </td>
+                    </tr>
+            <?php else: ?>
+                <tr>
+                    <td colspan="8" class="text-center">No hay intercambios registrados</td>
+                </tr>
+            <?php endif; ?>
+        </tbody>
+    </table>
+
+    <!-- Botones de Acción -->
+    <div class="text-center">
+        <button type="button" class="btn btn-registrar" onclick="location.href='index.php?c=Registrar_intercambio&f=index'">Registrar Intercambio</button>
+        <button type="button" class="btn btn-registrar" onclick="location.href='index.php?c=Intercambio_info&f=index'">Gestionar Logistica de Intercambio</button>
+    </div>
+   
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+
         
 
-
-    </main>
-</body>
-
 <style>
+      /* Eliminar subrayado de los enlaces */
+    a {
+    text-decoration: none;
+    }
+
+    /* Si necesitas hacerlo solo para los enlaces de acción, puedes ser más específico */
+    a.btn {
+    text-decoration: none;
+    }
+
+     /* Estilo personalizado para los botones */
+     .btn {
+        border-radius: 25px; /* Bordes redondeados */
+        padding: 10px 25px; /* Tamaño del padding para hacerlo más grande */
+        font-weight: bold; /* Texto en negrita */
+        transition: background-color 0.3s ease, transform 0.3s ease; /* Animación al pasar el cursor */
+    }
+
+    /* Botón de Editar */
+    .btn-eliminar {
+        background-color: red;
+        color: white;
+        border: none;
+    }
+
+    .btn-eliminar:hover {
+        background-color: green;
+        transform: scale(1.05); /* Efecto de ampliación */
+    }
+
+    /* Botón de Editar */
+    .btn-danger {
+        background-color: #00BFFF;
+        color: white;
+        border: none;
+    }
+    .btn-registrar {
+        background: linear-gradient(#2196F3, #4CAF50);
+        color: #fffe;
+    }
+
+    .btn-registrar:hover {
+        background-color: green;
+        transform: scale(1.05); /* Efecto de ampliación */
+    }
+
+    .btn-danger:hover {
+        background-color: green;
+        transform: scale(1.05); /* Efecto de ampliación */
+    }
+
+    /* Botón de Registrar Nuevo Intercambio */
+    .btn-success {
+        background-color: #28a745;
+        color: white;
+        border: none;
+    }
+
+    .btn-success:hover {
+        background-color: #218838;
+        transform: scale(1.05); /* Efecto de ampliación */
+    }
+
+    /* Estilo para los botones cuando estén deshabilitados */
+    .btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    /* Sombra en los botones */
+    .btn:hover {
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+    .table {
+            margin-top: 30px;
+            margin-bottom: 50px;
+            margin-left: 250px;
+            border: 2px solid black; /* Borde negro */
+            border-collapse: collapse; 
+        }
+
+        .header-table th, .table td {
+            border: 1px solid black; /* Borde entre las celdas */
+        }
+
+        .header-table {
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        .header-table th {
+            background-color: #d98b48;
+            color: white;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+    
     .box-titulo {
         height: 320px;
         width: 100%;
         box-sizing: border-box;
         text-align: center;
-        background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20220504/pngtree-woman-in-bookstore-looking-for-book-bookstore-person-woman-photo-image_36345226.jpg);
+        background-image: url(https://cdn.zendalibros.com/wp-content/uploads/2019/03/2-los-editores-e1552065773865.jpg);
         background-position: center;
         box-sizing: border-box;
         background-repeat: no-repeat;
@@ -94,9 +209,9 @@
         text-shadow: 0 0 5px #d94;
     }
 
+    /* grtib */
+
     .grid-container>* {
-        /* box-shadow: 10px 5px 37px -13px rgb(51, 51, 51, 0.74); */
-        /* border-radius: 10px; */
         text-align: center;
         font-weight: 500;
     }
@@ -121,36 +236,74 @@
     }
 
     .sidebar {
-        grid-column: 1/2;
-        grid-row: 3/7;
+        grid-column: 1/3;
+        grid-row: 3/4;
         background-color: rgb(242, 242, 242);
-        /* background-color: rgb(166, 87, 41); */
         margin-left: 20px;
-
-        border-right: 7px solid #D98b48;
-        border-top: 7px solid #D98b48;
-        border-left: 3px solid #D98B48;
-
+        border: 7px solid #D98b48;
         border-radius: 8px;
-        box-shadow: 0 20px 20px rgba(0, 0, 0)
+        box-shadow: 0 20px 20px rgba(0, 0, 0);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .sidebar img {
+        width: 80%;
+        /* O un tamaño fijo como 200px */
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        margin-bottom: 10px;
+    }
+
+    .sidebar h2 {
+        color: #333;
+        margin: 0;
+        font-size: 1.5em;
+        text-align: center;
+        border-bottom: 3px solid #D98b48;
+        padding-bottom: 5px;
+        width: 100%;
+    }
+
+    .sidebar h3 {
+        color: #666;
+        margin: 0;
+        font-size: 1.2em;
+        font-style: italic;
+    }
+
+    .sidebar p {
+        color: #444;
+        text-align: justify;
+        line-height: 1.6;
+        margin: 0;
+        padding: 10px;
+        background-color: #fffa;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 2);
     }
 
     .main {
         grid-template-rows: auto auto;
         grid-column: 2/7;
         grid-row: 3/5;
-        background-color: rgb(242, 242, 242);
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         /* 4 columnas iguales */
         gap: 20px;
-        padding-top: 50px;
+        padding-top: 30px;
+        margin-bottom: 50px;
     }
 
     .pie {
         grid-column: 1/7;
         grid-row: 6/7;
         background-color: rgb(217, 139, 72);
+
     }
 
     .section {
@@ -158,117 +311,16 @@
         grid-row: 5/6;
     }
 
-    img {
-        width: 200px;
-        height: 200px;
-    }
-
-    h2 {
-        margin-top: 25px;
-        font-size: 1em;
-        border-top: 7px solid #A65729;
-        border-radius: 25px;
-        background-color: #f2d7b6;
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-        text-shadow: 0px 0px 15px #fffa;
-    }
-
-    h3 {
-        margin-top: 10px;
-        text-align: left;
-        margin-left: 15px;
-        border-left: 7px solid #000A;
-        padding-left: 5px;
-    }
-
-    .opcion {
-        margin-top: 10px;
-        margin-left: 40px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        cursor: pointer;
-    }
-
-
-
-    /* :/ */
-    .elemento {
-        background-color: #fff;
-        height: 500px;
-        width: 250px;
-        padding: 15px;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    }
-
-    .elemento img {
-        width: 100%;
-        height: 300px;
-        border-radius: 4px;
-    }
-
-    .elemento h3 {
-        margin-top: 10px;
-        text-align: center;
-        margin-left: 0;
-        border-left: none;
-        padding-left: 0;
-        font-size: 1.1em;
-    }
-
-    /* Barra busqueda */
-    /* Estilos para el contenedor de búsqueda */
-    .search {
-        grid-column: 1 / -1;
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        margin-bottom: 20px;
-        padding: 20px;
-    }
-
-    /* Estilos para el input de búsqueda */
-    .search-input {
-        width: 75%;
-        padding: 12px 20px;
-        border: 2px solid #ddda;
-        border-radius: 25px;
-        font-size: 16px;
-        outline: none;
-    }
-
-    .search-input:focus {
-        border-color: #2196F3;
-        box-shadow: 0 0 8px rgba(33, 150, 243, 0.2);
-    }
-
-    /* Estilos para el botón de búsqueda */
-    .search-button {
-        padding: 12px 25px;
-        background-color: #2196F3;
-        color: #fffe;
-        border: none;
-        border-radius: 25px;
-        font-size: 16px;
-        cursor: pointer;
-        font-weight: bold;
-    }
-
-    .search-button:hover {
-        background-color: #1976D2;
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-    }
-
-
     /* bOTONES */
-    .button {
+    .button,
+    input {
         margin-top: 20px;
         padding: 10px 25px;
         border: none;
         border-radius: 25px;
         font-weight: bold;
         cursor: pointer;
+        text-decoration: none;
     }
 
     .Info.button {
@@ -286,32 +338,78 @@
         box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
     }
 
-    .admin-button {
-      width: 100%;
-      padding: 15px;
-      background-color: #3498db;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-      margin-left: 140px;
+    /*  */
+    .info {
+        grid-column: 2/4;
+        grid-row: 1/2;
+        padding: 10px;
+        border-top: 2px solid #D98b48;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        border-bottom: 6px solid #D98b48;
+        margin-right: 20px;
     }
 
-    .btn-submit:hover {
-      background-color: #2980b9;
+    .info h2 {
+        margin: 0;
+        margin-left: 15px;
+        font-size: 2em;
+        color: #333;
     }
 
+    .info h3 {
+        margin: 5px 0;
+        font-size: 1.5em;
+        color: #666;
+        margin-left: 30px;
+    }
+
+    .info p {
+        margin: 5px 0;
+        color: #888;
+        margin-left: 20px;
+    }
+
+    /* Contenedor de botones */
+    .Botones {
+        grid-column: 3/4;
+        grid-row: 4/5;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        padding: 10px 0;
+        margin-top: auto;
+    }
+
+    .resenia {
+        grid-column: 2/4;
+        grid-row: 2/3;
+        margin-right: 20px;
+        border-bottom: 2px solid #D98b48;
+    }
+
+    .resenia h2 {
+        margin: 10px;
+        padding-left: 30px;
+        border-bottom: 2px solid #D98b48;
+        margin-bottom: 10px;
+    }
+
+    .resenia p {
+        margin: 10px;
+        text-align: justify;
+        margin: 20px 10%;
+
+    }
+
+    /* Footer */
     .footer-content {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 30px;
         padding: 40px 20px;
         color: #fff;
-
-        background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20220504/pngtree-woman-in-bookstore-looking-for-book-bookstore-person-woman-photo-image_36345226.jpg);
+        background: url(https://cdn.zendalibros.com/wp-content/uploads/2019/03/2-los-editores-e1552065773865.jpg);
         background-position: center;
         box-sizing: border-box;
         background-repeat: no-repeat;

@@ -35,42 +35,7 @@ class LogisticaDAO {
         }
     }
 
-    // Método para buscar intercambios con filtros
-    public function buscarIntercambios($query, $filtros) {
-        try {
-            // Construir la consulta base
-            $sql = "SELECT * FROM intercambios WHERE 1=1";
-
-            // Añadir filtros a la consulta
-            if (!empty($query)) {
-                $sql .= " AND (fechaintercambio LIKE :query OR metodo LIKE :query OR ubicacion LIKE :query)";
-            }
-            if ($filtros['fecha']) {
-                $sql .= " AND fechaintercambio IS NOT NULL";
-            }
-            if ($filtros['metodo']) {
-                $sql .= " AND metodo IS NOT NULL";
-            }
-            if ($filtros['id']) {
-                $sql .= " AND id > 0";
-            }
-
-            $stmt = $this->conn->prepare($sql);
-
-            // Enlazar parámetros
-            if (!empty($query)) {
-                $stmt->bindValue(':query', '%' . $query . '%', PDO::PARAM_STR);
-            }
-
-            $stmt->execute();
-            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            return $result;
-
-        } catch (PDOException $e) {
-            error_log("Error en la búsqueda de intercambios: " . $e->getMessage());
-            return [];
-        }
-    }
+    //buscar
 
 
     public function update($intercambio) {
@@ -120,7 +85,15 @@ class LogisticaDAO {
         }
     }
 
-
+    public function selectOne($id) {
+        $sql = "select * from intercambios where id= :id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+        $stmt->execute();
+        //recuperacion de resultados
+        $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $resultado;
+    }
 
     public function getAllIntercambios() {
         try {
@@ -135,6 +108,23 @@ class LogisticaDAO {
             return [];
         }
     }
+   
+    public function delete($id) {
+        try {
+            $sql = "DELETE FROM intercambios WHERE id = :id";  // Asegúrate de que 'id' es el nombre correcto de la columna
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+            $res = $stmt->execute();
+    
+            return $res;  // Retorna true si se eliminó correctamente, false si hubo un error
+        } catch (PDOException $e) {
+            error_log("Error al eliminar intercambio: " . $e->getMessage());
+            return false;  // Retorna false si ocurrió un error
+        }
+    }
+
+
+
 }
-// aqui va el metodo eliminar
+
 ?>

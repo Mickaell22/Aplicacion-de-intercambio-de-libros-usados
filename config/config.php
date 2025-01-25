@@ -11,10 +11,11 @@ define("EDITAR_DENUNCIA", "view/HTML/Denuncia/editar.php");
 define("COMENTARIOS_VIEW", "view/HTML/Comentarios/Comentarios.php");
 define("REGISTER_VIEW", "view/HTML/Register/Register.php");
 define("INTERCAMBIO_VIEW", "view/HTML/Logistica/intercambio.php");
-//BUSCAR LOGISTICA
-define("BUSCAR_LOGISTICA_VIEW", "view/HTML/Logistica/Buscar_intercambio.php"); 
 //INFO LOGISTICA
 define("INFO_LOGISTICA_VIEW","view/HTML/Logistica/Intercambio_info.php");
+//BUSCAR LOGISTICA
+define("BUSCAR_LOGISTICA_VIEW","view/HTML/Logistica/Buscar_intercambio.php");
+//CATEGORIA
 //EDITAR LOGISTICA
 define("EDITAR_LOGISTICA_VIEW","view/HTML/Logistica/editar_intercambio.php");
 //REGISTRAR LOGISTICA
