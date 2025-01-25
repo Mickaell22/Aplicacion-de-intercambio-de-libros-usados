@@ -19,7 +19,15 @@ define("INFO_LOGISTICA_VIEW","view/HTML/Logistica/Intercambio_info.php");
 define("EDITAR_LOGISTICA_VIEW","view/HTML/Logistica/editar_intercambio.php");
 //REGISTRAR LOGISTICA
 define("REGISTRAR_LOGISTICA_VIEW","view/HTML/Logistica/subir_intercambio.php");
-
+//CATEGORIA
+define ("LCATEGORIA","view/HTML/Categoria/Listar_Categorias.php");
+define ("NEWCATEGORIA","view/HTML/Categoria/Nueva_Categoria.php");
+define ("EDITCATEGORIA","view/HTML/Categoria/Editar_Categoria.php");
+//ARTICULO
+define ("LARTICULO","view/HTML/Articulo/Mostrar_Articulos.php");
+define("NEWARTICULO","view/HTML/Articulo/Nuevo_Articulo.php");
+define("VIEWARTICULO","view/HTML/Articulo/Ver_Articulo.php");
+define("EDITARTICULO","view/HTML/Articulo/Editar_Articulo.php");
 
 // Rutas
 //HEADER

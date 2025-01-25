@@ -66,10 +66,31 @@ CREATE TABLE denuncias (
     FOREIGN KEY (usuario_id) REFERENCES Usuarios(id)
 );
 
--- tabla
+-- tabla categoria
+CREATE TABLE categoria (
+    cat_id INT AUTO_INCREMENT PRIMARY KEY,
+    cat_nombre VARCHAR(100) NOT NULL,
+    cat_descripcion TEXT,
+    cat_estado BOOLEAN NOT NULL DEFAULT TRUE
+);
 
-
-
+-- tabla articulo
+CREATE TABLE articulo (
+    art_id INT PRIMARY KEY AUTO_INCREMENT,
+    art_titulo VARCHAR(255) NOT NULL,
+    art_introduccion TEXT NOT NULL,
+    art_descripcion TEXT NOT NULL,
+    art_conclusion TEXT NOT NULL,
+    art_estado BOOLEAN NOT NULL DEFAULT TRUE,
+    cat_id INT NOT NULL,
+    art_imagen TEXT,
+    art_usuarioId INT NOT NULL,
+    art_fecha DATETIME NOT NULL,
+    art_ref TEXT,
+    art_autores TEXT NOT NULL,
+    FOREIGN KEY (art_usuarioId) REFERENCES Usuarios(id),
+    FOREIGN KEY (cat_id) REFERENCES categoria(cat_id)
+);
 
 -- Insert
 -- Libro

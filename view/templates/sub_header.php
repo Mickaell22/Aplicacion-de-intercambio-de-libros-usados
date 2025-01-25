@@ -30,7 +30,7 @@ $headerImage = isset($_COOKIE['header_image']) ? $_COOKIE['header_image'] : 'htt
                         <li><a href="index.php?c=busqueda&f=index">Búsqueda</a></li>
                         <li><a href="index.php?c=mensajeria&f=index">Mensajeria directa</a></li>
                         <li><a href="index.php?c=logistica&f=index">Logística de Intercambio</a></li>
-                        <li><a href="index.php?c=recomendaciones&f=index">Recomendaciones de Libros</a></li>
+                        <li><a href="index.php?c=articulo&f=index">Articulos</a></li>
                         <li><a href="index.php?c=comentarios&f=index">Comentarios de Usuarios</a></li>
                         <?php if (isset($_SESSION['usuario_id'])): ?>
                             <li style="float:right"><a href="index.php?c=login&f=logout">Cerrar Sesión</a></li>
