@@ -228,6 +228,17 @@ class ArticuloController
         }
     }
 
+
+    public function search(){
+        //recibe parametros de la peticion
+        $parametro = htmlentities($_POST["b"]??"");
+        //comunicarme con el modelo
+        $articulos = $this->ArticuloDAO->selectName($parametro);
+        //comunicamos con la vista
+        require_once SUB_HEADER;
+        require_once LARTICULO;        
+        require_once FOOTER;
+    }
 }
 
 ?>

@@ -32,6 +32,10 @@
                 <button type="button" class="Info button">
                     <i class=""></i>Nuevo articulo</button>
             </a>
+            <form action="index.php?c=articulo&f=search" method="POST">
+                <input class="input-buscar" type="text" name="b" id="busqueda" placeholder="buscar por nombre..." />
+                <button type="submit" class="button-buscar"><i></i>Buscar</button>
+            </form>
         </div>
     </div>
     <main class="main">
@@ -52,6 +56,38 @@
 </body>
 
 <style>
+    
+    .input-buscar {
+        width: 100%;
+        /* Ocupa todo el ancho disponible */
+        max-width: 400px;
+        /* Establece un ancho máximo */
+        padding: 15px;
+        /* Mayor espacio interno para mejor visibilidad */
+        font-size: 18px;
+        /* Texto más grande */
+        border: 2px solid #D98B48;
+        /* Borde con color */
+        border-radius: 25px;
+        /* Bordes redondeados */
+        outline: none;
+        /* Elimina borde de enfoque predeterminado */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Sombra para mejor visibilidad */
+    }
+
+    .button-buscar{
+        background:  #D98B48;
+        margin-top: 20px;
+        padding: 10px 25px;
+        border: none;
+        border-radius: 25px;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+        color: #fffe;
+    }
+
     /* Titulo */
     .box-titulo {
         height: 320px;
@@ -144,8 +180,6 @@
         font-weight: bold;
         cursor: pointer;
         text-decoration: none;
-        text-align: center;
-        display: inline-block;
     }
 
     .Info.button {
@@ -162,7 +196,6 @@
         font-weight: bold;
         box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
     }
-
 
     /*  */
     .info h2 {
