@@ -28,7 +28,7 @@
 <body class="grid-container">
     <div class="form-container">
         <form class="form-upload" id="formulario" method="POST" action="index.php?c=articulo&f=edit"
-            enctype="multipart/form-data" onsubmit="return validarFormulario()">
+            enctype="multipart/form-data">
             <h2 class="form-titulo">Actualizar articulo</h2>
 
             <!-- Título del libro -->
@@ -120,7 +120,9 @@
                 <button class="Comprar button" type="button" 
                 onclick="window.location.href='index.php?c=articulo&f=index'">Cancelar</button>
             </div>
+            <p class="warnings" id="warnings"></p>
         </form>
+        <script src="assets/CSS/JavaScript/Validaciones_Articulos.js"></script>
     </div>
 </body>
 
@@ -402,5 +404,3 @@
         box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
     }
 </style>
-
-<script src="../JavaScript/Validaciones_Articulos.js"></script>
