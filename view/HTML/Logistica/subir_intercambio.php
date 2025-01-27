@@ -3,7 +3,6 @@
 <html lang="es">
 
 <head>
-
   <meta name="author" content="Troya Garzón Geancarlos">
 
   <!-- Metadatos -->
@@ -19,7 +18,7 @@
   <link rel="stylesheet" href="../CSS/estilos-comunes-2.css">
 
   <!-- Favicon -->
-  <link rel="icon" href="../Image/icon.png" type="image/png">
+  <!-- <link rel="icon" href="../Image/icon.png" type="image/png"> -->
 
   <!-- JavaScipt -->
 
@@ -318,35 +317,35 @@
       <!-- Fecha de Intercambio -->
       <div class="form-input">
         <label for="fechaintercambio">Fecha de Intercambio</label>
-        <input type="date" id="fechaintercambio" name="fechaintercambio" required>
+        <input type="date" id="fechaintercambio" name="fechaintercambio">
         <span class="error" id="fechaintercambio-error"></span>
       </div>
 
       <!-- Fecha de Registro -->
       <div class="form-input">
         <label for="fecharegistro">Fecha de Registro</label>
-        <input type="date" id="fecharegistro" name="fecharegistro" required>
+        <input type="date" id="fecharegistro" name="fecharegistro">
         <span class="error" id="fecharegistro-error"></span>
       </div>
 
       <!-- Ubicacion -->
       <div class="form-input">
         <label for="ubicacion">Ubicación de Intercambio</label>
-        <input type="text" id="ubicacion" name="ubicacion" required>
+        <input type="text" id="ubicacion" name="ubicacion">
         <span class="error" id="ubicacion-error"></span>
       </div>
 
       <!-- Calificación -->
       <div class="form-input">
-        <label for="calificacion">Calificación del Servicio (del 1 al 10)</label>
-        <input type="number" id="calificacion" name="calificacion" required min="1" max="10">
+        <label for="calificacion">Calificación del Servicio (del 1 al 5)</label>
+        <input type="number" id="calificacion" name="calificacion" min="1" max="5">
         <span class="error" id="calificacion-error"></span>
       </div>
 
       <!-- Estado del Intercambio -->
       <div class="form-input">
         <label for="estado">Estado</label>
-        <select id="estado" name="estado" required>
+        <select id="estado" name="estado">
           <option value="">Seleccione un estado</option>
           <option value="pendiente">Pendiente</option>
           <option value="realizado">Realizado</option>
@@ -358,7 +357,7 @@
       <!-- Método de Entrega -->
       <div class="form-input">
         <label for="metodo">Método de Entrega</label>
-        <select id="metodo" name="metodo" required>
+        <select id="metodo" name="metodo">
           <option value="">Seleccione un método</option>
           <option value="presencial">Presencial</option>
           <option value="envio">Envío</option>
@@ -376,8 +375,7 @@
   </div>
 </main>
 
-<script src="assets/JavaScript/Validaciones_Intercambios.js"></script>
-
+<script src="assets/CSS/JavaScript/Validaciones_Intercambios.js"></script>
 
 
 </body>

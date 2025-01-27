@@ -1,3 +1,4 @@
+//Autor: Geancarlos Troya Garzon
 let estado = false;
 let fechaintercambio = document.getElementById("fechaintercambio");
 let fecharegistro = document.getElementById("fecharegistro");
@@ -26,8 +27,8 @@ form.addEventListener("submit", e => {
         warnings += "La ubicación de intercambio es obligatoria <br>";
         estado = true;
     }
-    if (calificacion.value.trim() === "" || calificacion.value < 1 || calificacion.value > 10) {
-        warnings += "La calificación debe ser un número entre 1 y 10 <br>";
+    if (calificacion.value.trim() === "" || calificacion.value < 1 || calificacion.value > 5) {
+        warnings += "La calificación debe ser un número entre 1 y 5 <br>";
         estado = true;
     }
     if (estadoSelect.value.trim() === "") {
