@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/estilos-comunes-2.css">
-    <link rel="icon" href="../Image/icon.png" type="image/png">
+    <!-- <link rel="icon" href="../Image/icon.png" type="image/png"> -->
     <title>Intercambios de libros usados</title>
 </head>
 

@@ -13,7 +13,6 @@
     <meta name="OG::title" content="Proyecto">
     FIBICON
     <link rel="stylesheet" href="<?php echo ESTILOS2; ?>">
-    <link rel="icon" href="<?php echo FIBICON; ?>" type="image/png">
 
     <title>Intercambios de libros usados</title>
 
