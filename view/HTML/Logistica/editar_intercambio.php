@@ -9,7 +9,7 @@
             <!-- Fecha de Intercambio -->
             <div class="form-input">
                 <label for="fechaintercambio">Fecha de Intercambio</label>
-                <input type="date" id="fechaintercambio" name="fechaintercambio" value="<?php echo isset($intercambio['fechaintercambio']) ? html_entity_decode($intercambio['fechaintercambio']) : ''; ?>" required>
+                <input type="date" id="fechaintercambio" name="fechaintercambio" value="<?php echo isset($intercambio['fechaintercambio']) ? html_entity_decode($intercambio['fechaintercambio']) : ''; ?>" >
                 <div class="error-message" id="fechaintercambio-error">
                     <?php echo isset($_SESSION['errores']['fechaintercambio']) ? $_SESSION['errores']['fechaintercambio'] : ''; ?>
                 </div>
@@ -18,7 +18,7 @@
             <!-- Fecha de Registro -->
             <div class="form-input">
                 <label for="fecharegistro">Fecha de Registro</label>
-                <input type="date" id="fecharegistro" name="fecharegistro" value="<?php echo isset($intercambio['fecharegistro']) ? html_entity_decode($intercambio['fecharegistro']) : ''; ?>" required>
+                <input type="date" id="fecharegistro" name="fecharegistro" value="<?php echo isset($intercambio['fecharegistro']) ? html_entity_decode($intercambio['fecharegistro']) : ''; ?>">
                 <div class="error-message" id="fecharegistro-error">
                     <?php echo isset($_SESSION['errores']['fecharegistro']) ? $_SESSION['errores']['fecharegistro'] : ''; ?>
                 </div>
@@ -27,7 +27,7 @@
             <!-- Ubicación -->
             <div class="form-input">
                 <label for="ubicacion">Ubicación de Intercambio</label>
-                <input type="text" id="ubicacion" name="ubicacion" value="<?php echo isset($intercambio['ubicacion']) ? html_entity_decode($intercambio['ubicacion']) : ''; ?>" required>
+                <input type="text" id="ubicacion" name="ubicacion" value="<?php echo isset($intercambio['ubicacion']) ? html_entity_decode($intercambio['ubicacion']) : ''; ?>">
                 <div class="error-message" id="ubicacion-error">
                     <?php echo isset($_SESSION['errores']['ubicacion']) ? $_SESSION['errores']['ubicacion'] : ''; ?>
                 </div>
@@ -35,8 +35,8 @@
 
             <!-- Calificación -->
             <div class="form-input">
-                <label for="calificacion">Calificación del Servicio (del 1 al 10)</label>
-                <input type="number" id="calificacion" name="calificacion" min="1" max="10" value="<?php echo isset($intercambio['calificacion']) ? html_entity_decode($intercambio['calificacion']) : ''; ?>" required>
+                <label for="calificacion">Calificación del Servicio (del 1 al 5)</label>
+                <input type="number" id="calificacion" name="calificacion" min="1" max="5" value="<?php echo isset($intercambio['calificacion']) ? html_entity_decode($intercambio['calificacion']) : ''; ?>">
                 <div class="error-message" id="calificacion-error">
                     <?php echo isset($_SESSION['errores']['calificacion']) ? $_SESSION['errores']['calificacion'] : ''; ?>
                 </div>
@@ -45,7 +45,7 @@
             <!-- Estado -->
             <div class="form-input">
                 <label for="estado">Estado</label>
-                <select id="estado" name="estado" required>
+                <select id="estado" name="estado" >
                     <option value="">Seleccione un estado</option>
                     <option value="pendiente" <?php echo isset($intercambio['estado']) && $intercambio['estado'] == 'pendiente' ? 'selected' : ''; ?>>Pendiente</option>
                     <option value="realizado" <?php echo isset($intercambio['estado']) && $intercambio['estado'] == 'realizado' ? 'selected' : ''; ?>>Realizado</option>
@@ -59,7 +59,7 @@
             <!-- Método de Entrega -->
             <div class="form-input">
                 <label for="metodo">Método de Entrega</label>
-                <select id="metodo" name="metodo" required>
+                <select id="metodo" name="metodo" >
                     <option value="">Seleccione un método</option>
                     <option value="presencial" <?php echo isset($intercambio['metodo']) && $intercambio['metodo'] == 'presencial' ? 'selected' : ''; ?>>Presencial</option>
                     <option value="envio" <?php echo isset($intercambio['metodo']) && $intercambio['metodo'] == 'envio' ? 'selected' : ''; ?>>Envío</option>
@@ -77,7 +77,7 @@
     </div>
 </main>
 
-<script src="assets/JavaScript/Validaciones_Intercambios.js"></script>
+<script src="assets/CSS/JavaScript/Validaciones_Intercambios.js"></script>
 
 
 <style>
