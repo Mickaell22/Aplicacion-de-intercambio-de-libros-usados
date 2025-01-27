@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="../CSS/estilos-comunes-2.css">
 
     <!-- Favicon -->
-    <link rel="icon" href="../Image/icon.png" type="image/png">
+    <!-- <link rel="icon" href="../Image/icon.png" type="image/png"> -->
 
     <!-- Titulo de pagiona -->
     <title>Intercambios de libros usados</title>
