@@ -96,7 +96,7 @@
             <p class="warnings" id="warnings"></p>
 
         </form>
-        <script src="assets/CSS/JavaScript/Validaciones_Articulos.js"></script>
+        <script src="assets/CSS/JavaScript/Validaciones_NuevosArticulos.js"></script>
     </div>
 </body>
 
