@@ -1,5 +1,5 @@
-<!-- Autor: Marco Antonio Salazar Mejia-->
 <?php
+//Autor: Marco Antonio Salazar Mejia
 class ArticuloDTO{
     private $id;
     private $titulo;

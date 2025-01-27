@@ -1,3 +1,4 @@
+//Autor: Marco Antonio Salazar Mejia
 let estado = false;
 let titulo = document.getElementById("titulo");
 let introduccion = document.getElementById("introduccion");

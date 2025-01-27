@@ -1,5 +1,5 @@
-<!-- Autor: Marco Antonio Salazar Mejia-->
 <?php
+//Autor: Marco Antonio Salazar Mejia
 require_once 'model/dao/CategoriaDAO.php';
 require_once 'model/dto/CategoriaDTO.php';
 

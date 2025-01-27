@@ -1,5 +1,5 @@
-<!-- Autor: Marco Antonio Salazar Mejia-->
 <?php
+//Autor: Marco Antonio Salazar Mejia
 require_once 'model/dao/ArticuloDAO.php';
 require_once 'model/dto/ArticuloDTO.php';
 require_once 'model/dao/CategoriaDAO.php';
@@ -218,7 +218,7 @@ class ArticuloController
                 $_SESSION['tipo'] = "error";
                 header('Location: ' . URL_BASE . 'index.php?c=articulo&f=details');
             }
-            header('Location: ' . URL_BASE . 'index.php?c=admin&f=libros');
+            header('Location: ' . URL_BASE . 'index.php?c=articulo&f=index');
             exit;
         } catch (Exception $e) {
             $_SESSION['mensaje'] = "Error al eliminar el articulo";

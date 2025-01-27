@@ -1,6 +1,6 @@
 <!-- Autor: Marco Antonio Salazar Mejia-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <!-- Autor -->
